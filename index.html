@@ -1889,49 +1889,29 @@
           <p>ゴルフ場の一日（予約 ➔ チェックイン ➔ 進行 ➔ 精算 ➔ 日計）と、各システムモジュールがどう連動しているかを俯瞰します。</p>
         </div>
 
-        <div class="card">
-          <h3>⛳ ゴルフ場の一日とシステム連携フロー</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 16px;">
-            <div style="background: var(--primary-soft); border: 1px solid var(--primary-light); padding: 14px; border-radius: 8px;">
-              <div style="font-size: 11px; font-weight: 700; color: var(--primary);">STEP 1</div>
-              <div style="font-weight: 700; margin: 4px 0;">📅 予約受付</div>
-              <div style="font-size: 12px; color: var(--text-muted);">電話・Web予約の登録、半角カナ検索、組数確定</div>
-            </div>
-            <div style="background: var(--blue-soft); border: 1px solid #93c5fd; padding: 14px; border-radius: 8px;">
-              <div style="font-size: 11px; font-weight: 700; color: var(--blue);">STEP 2</div>
-              <div style="font-weight: 700; margin: 4px 0;">🏨 フロント</div>
-              <div style="font-size: 12px; color: var(--text-muted);">チェックイン、同伴者氏名確定、ロッカーキー発行</div>
-            </div>
-            <div style="background: #fdf4ff; border: 1px solid #f0abfc; padding: 14px; border-radius: 8px;">
-              <div style="font-size: 11px; font-weight: 700; color: #a21caf;">STEP 3</div>
-              <div style="font-weight: 700; margin: 4px 0;">⛳ マスター室</div>
-              <div style="font-size: 12px; color: var(--text-muted);">スタート順管理、カート配車、進行管理</div>
-            </div>
-            <div style="background: var(--accent-soft); border: 1px solid #fcd34d; padding: 14px; border-radius: 8px;">
-              <div style="font-size: 11px; font-weight: 700; color: var(--accent);">STEP 4</div>
-              <div style="font-weight: 700; margin: 4px 0;">💳 フロント精算</div>
-              <div style="font-size: 12px; color: var(--text-muted);">個別・一括精算、売掛処理、領収書発行</div>
-            </div>
-            <div style="background: #f1f5f9; border: 1px solid #cbd5e1; padding: 14px; border-radius: 8px;">
-              <div style="font-size: 11px; font-weight: 700; color: #475569;">STEP 5</div>
-              <div style="font-weight: 700; margin: 4px 0;">📊 後方日計</div>
-              <div style="font-size: 12px; color: var(--text-muted);">売上日報、未収金照合、会計データ連携</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- All 7 Modules Table of Contents Card Grid -->
+        <!-- All 7 Modules Table of Contents Card Grid (業務ライフサイクル統合・看板目次) -->
         <div class="card" style="border: 2px solid var(--primary);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 14px; flex-wrap: wrap; gap: 10px;">
             <div>
-              <h3 style="margin: 0; padding: 0; border: none; font-size: 18px; color: var(--primary-dark); display: flex; align-items: center; gap: 8px;">
-                <span>📚</span> 全7大業務 実践マニュアル目次（クリックで即ジャンプ）
+              <h3 style="margin: 0; padding: 0; border: none; font-size: 18.5px; color: var(--primary-dark); display: flex; align-items: center; gap: 8px;">
+                <span>📚</span> 全7大業務 実践マニュアル目次（業務サイクル連動・クリックで即ジャンプ）
               </h3>
-              <p style="font-size: 12.5px; color: var(--text-muted); margin-top: 4px;">
-                読みたい業務カードをクリックすると、実践手順・現場の鉄則・動くシミュレーターへ瞬時にジャンプします。
+              <p style="font-size: 12.5px; color: var(--text-muted); margin: 4px 0 8px 0;">
+                ゴルフ場の一日の流れに沿って01〜07が完全連動。読みたい業務カードをクリックすると、実践手順・現場の鉄則・動くシミュレーターへ瞬時にジャンプします。
               </p>
+              <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--primary-dark); background: var(--primary-soft); padding: 4px 12px; border-radius: 6px; font-weight: 600; flex-wrap: wrap;">
+                <span>⛳ 業務の流れ:</span>
+                <span>🌅 朝（01.予約 ➔ 02.フロント）</span>
+                <span style="opacity: 0.5;">➔</span>
+                <span>⛳ 日中（03.マスター ➔ 04.レストラン ➔ 05.コンペ）</span>
+                <span style="opacity: 0.5;">➔</span>
+                <span>🌆 夕方・後方（06.会員 ➔ 07.経理日締め）</span>
+              </div>
             </div>
-            <span style="font-size: 11px; background: var(--primary-soft); color: var(--primary); padding: 4px 10px; border-radius: 9999px; font-weight: 700;">全モジュール即時閲覧可能</span>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px;">
+              <span style="font-size: 11px; background: var(--primary-soft); color: var(--primary); padding: 4px 10px; border-radius: 9999px; font-weight: 700;">全7大業務 即時閲覧可能</span>
+              <span style="font-size: 11px; color: var(--text-muted);">※各章末尾のナビで通読も可能</span>
+            </div>
           </div>
 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
