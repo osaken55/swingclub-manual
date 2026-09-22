@@ -495,6 +495,713 @@
       box-shadow: var(--shadow-lg);
     }
     .modal-card h3 { font-size: 18px; margin-bottom: 12px; }
+
+    /* Extinguisher (FAQ Red vs Blue) Styles */
+    /* 30-Second Field Rescue Styles */
+    .nav-rescue {
+      background: #fff7ed;
+      color: #c2410c;
+      border: 1px solid #fed7aa;
+    }
+    .nav-rescue:hover {
+      background: #ffedd5;
+      color: #9a3412;
+    }
+    .nav-rescue.active {
+      background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
+      color: #ffffff !important;
+    }
+    .nav-rescue-badge {
+      margin-left: auto;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 9999px;
+      background: #f97316;
+      color: #ffffff;
+    }
+
+    .rescue-hero {
+      background: linear-gradient(135deg, #c2410c 0%, #0369a1 100%);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+    .rescue-hero h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+    .rescue-hero p { font-size: 14px; opacity: 0.95; line-height: 1.6; max-width: 860px; }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+      padding: 12px 16px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+    }
+    .filter-btn {
+      padding: 6px 14px;
+      border-radius: 9999px;
+      border: 1px solid var(--border);
+      background: var(--bg-body);
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-btn:hover { background: #e2e8f0; color: var(--text-main); }
+    .filter-btn.active {
+      background: var(--text-main);
+      color: #ffffff;
+      border-color: var(--text-main);
+    }
+
+    .faq-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+    .faq-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: #cbd5e1;
+    }
+    .faq-card.open {
+      border-color: #f97316;
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.12);
+    }
+    .faq-clickable-header {
+      padding: 14px 18px;
+      background: #f8fafc;
+      border-bottom: 1px solid transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s ease;
+    }
+    .faq-clickable-header:hover {
+      background: #f1f5f9;
+    }
+    .faq-card.open .faq-clickable-header {
+      border-bottom: 1px solid var(--border);
+      background: #fffaf5;
+    }
+    .faq-title-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      min-width: 0;
+    }
+    .faq-case-no {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 12px;
+      color: #ffffff;
+      background: #0f172a;
+      padding: 2px 8px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .faq-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.4;
+    }
+    .faq-card.open .faq-title {
+      color: #c2410c;
+    }
+    .faq-header-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .faq-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .badge-limit { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+    .badge-legal { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+    .badge-safe { background: #ecfdf5; color: #065f46; border: 1px solid #6ee7b7; }
+
+    .faq-toggle-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: var(--text-muted);
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .faq-card.open .faq-toggle-pill {
+      background: #ffedd5;
+      border-color: #fdba74;
+      color: #c2410c;
+    }
+
+    /* Situation Preview Area (常にコンパクトに見せる「こんな時どうする？」) */
+    .faq-situation-summary {
+      padding: 12px 18px;
+      background: #ffffff;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      transition: background 0.15s ease;
+      border-bottom: 1px solid transparent;
+    }
+    .faq-situation-summary:hover {
+      background: #fffdfa;
+    }
+    .faq-card.open .faq-situation-summary {
+      background: #fff7ed;
+      border-bottom: 1px dashed #fed7aa;
+    }
+    .situation-summary-badge {
+      font-size: 11px;
+      font-weight: 700;
+      color: #c2410c;
+      background: #ffedd5;
+      padding: 2px 7px;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .situation-summary-text {
+      font-size: 13.5px;
+      color: #475569;
+      line-height: 1.5;
+      flex: 1;
+    }
+    .faq-card.open .situation-summary-text {
+      color: #7c2d12;
+      font-weight: 500;
+    }
+
+    /* Collapsible Body (展開部分: 理由 ＆ 30秒手順) */
+    .faq-collapsible-body {
+      display: none;
+      padding: 16px 20px 20px;
+      flex-direction: column;
+      gap: 14px;
+      background: #fafbfc;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+    .faq-card.open .faq-collapsible-body {
+      display: flex;
+    }
+
+    /* Category Filter & Expansion Controls */
+    .filter-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .cat-count {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 9999px;
+      background: #e2e8f0;
+      color: #475569;
+      margin-left: 4px;
+    }
+    .filter-btn.active .cat-count {
+      background: rgba(255,255,255,0.3);
+      color: #ffffff;
+    }
+    .expand-btn {
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .expand-btn:hover {
+      background: #f1f5f9;
+      color: var(--text-main);
+    }
+
+    /* Situation Box (こんな時どうする？) */
+    .situation-box {
+      background: #fff7ed;
+      border: 1px solid #ffedd5;
+      border-left: 4px solid #ea580c;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .box-header-situation {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #c2410c;
+      margin-bottom: 6px;
+    }
+    .situation-text {
+      font-size: 14px;
+      color: #7c2d12;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    /* Reason & Safety Warning Box */
+    .reason-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #64748b;
+      border-radius: 8px;
+      padding: 12px 16px;
+    }
+    .reason-header {
+      font-size: 11px;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .reason-text {
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    /* Solution Box (30秒回避手順) */
+    .solution-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 4px solid #16a34a;
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .box-header-solution {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .box-title-solution {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #15803d;
+    }
+    .solution-steps {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 13.5px;
+      color: #166534;
+      line-height: 1.7;
+    }
+    .solution-steps li { margin-bottom: 4px; }
+    .solution-steps strong { color: #14532d; font-weight: 700; }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #ffffff;
+      border: 1px solid #86efac;
+      color: #15803d;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .copy-btn:hover { background: #dcfce7; }
+    .copy-btn:active { transform: scale(0.96); }
+
+    /* Expandable Technical Detail */
+    .accordion-toggle {
+      background: none;
+      border: none;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 0;
+      margin-top: 4px;
+    }
+    .accordion-toggle:hover { color: var(--text-main); }
+    .accordion-content {
+      display: none;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .accordion-content.open { display: block; }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: var(--shadow-lg);
+      z-index: 999;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* CS Console (AI FAQ Factory) Styles */
+    .cs-hero {
+      background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 100%);
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+    .cs-hero h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+    .cs-hero p { font-size: 14px; opacity: 0.95; line-height: 1.6; max-width: 860px; }
+
+    .cs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 900px) {
+      .cs-grid { grid-template-columns: 1fr; }
+    }
+
+    .sample-pill {
+      display: inline-block;
+      font-size: 11px;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      border: 1px solid #cbd5e1;
+      cursor: pointer;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      transition: all 0.15s ease;
+    }
+    .sample-pill:hover { background: #ede9fe; color: #6d28d9; border-color: #c4b5fd; }
+
+    @keyframes pulseHighlight {
+      0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7); transform: scale(1); }
+      50% { box-shadow: 0 0 0 8px rgba(234, 88, 12, 0); transform: scale(1.01); }
+      100% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0); transform: scale(1); }
+    }
+    /* Print Styles (現場貼り出し・A4印刷最適化) */
+    @media print {
+      body { background: #ffffff !important; color: #000000 !important; font-size: 11pt !important; }
+      .sidebar, .topbar, .chat-widget, .filter-bar, .faq-filter-actions, .copy-btn, .sample-pill, button, select, input, textarea, .toast, .nav-item {
+        display: none !important;
+      }
+      .app-container { display: block !important; }
+      .main-wrapper { margin: 0 !important; padding: 0 !important; width: 100% !important; }
+      .content-container { padding: 0 !important; max-width: 100% !important; margin: 0 !important; }
+      .tab-content { display: none !important; }
+      .tab-content.active { display: block !important; }
+      .hero-banner, .cs-hero {
+        background: none !important;
+        color: #000000 !important;
+        border: 2px solid #000000 !important;
+        padding: 12px !important;
+        box-shadow: none !important;
+        margin-bottom: 16px !important;
+      }
+      .hero-banner h2, .cs-hero h2 { color: #000000 !important; font-size: 16pt !important; }
+      .hero-banner p, .cs-hero p { color: #333333 !important; font-size: 10pt !important; }
+      .card, .faq-card {
+        page-break-inside: avoid;
+        border: 1px solid #999999 !important;
+        box-shadow: none !important;
+        margin-bottom: 12px !important;
+        padding: 12px !important;
+      }
+      .faq-card .faq-collapsible-body { display: block !important; max-height: none !important; opacity: 1 !important; }
+      .faq-toggle-pill { display: none !important; }
+      .reason-box, .solution-box { border: 1px solid #cccccc !important; background: #fafafa !important; }
+    }
+
+    /* Support Memo Modal Styles */
+    .memo-modal-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 560px;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .memo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .memo-input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-family: inherit;
+    }
+
+    /* Simulator Widgets Styles */
+    .sim-tool-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 16px 0;
+    }
+    .sim-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .sim-stat-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+      text-align: center;
+    }
+    .sim-stat-val {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 4px;
+    }
+
+    /* Table of Contents Cards */
+    .toc-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .toc-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+      background: #fafcfb;
+    }
+    .toc-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 8px;
+    }
+    .toc-icon { font-size: 22px; line-height: 1; }
+    .toc-step { font-size: 10.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+    .toc-title { font-size: 13.5px; font-weight: 700; color: var(--text-main); line-height: 1.3; }
+    .toc-badge {
+      margin-left: auto;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 9999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 12px 0;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .toc-list li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 3px;
+    }
+    .toc-list li::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    .toc-action {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: right;
+      padding-top: 6px;
+      border-top: 1px dashed #e2e8f0;
+    }
+
+    /* Drill-down Detailed Manual Styles */
+    .drilldown-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-top: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .drilldown-toggle {
+      background: #f8fafc;
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid transparent;
+      user-select: none;
+      transition: background 0.15s ease;
+    }
+    .drilldown-toggle:hover {
+      background: #f1f5f9;
+    }
+    .drilldown-box.open .drilldown-toggle {
+      border-bottom-color: var(--border);
+      background: #f1f5f9;
+    }
+    .drilldown-toggle-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .drilldown-toggle-pill {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-soft);
+      padding: 4px 10px;
+      border-radius: 9999px;
+    }
+    .drilldown-content {
+      display: none;
+      padding: 24px;
+      background: #ffffff;
+      line-height: 1.75;
+      font-size: 13.5px;
+    }
+    .drilldown-box.open .drilldown-content {
+      display: block;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+    .drilldown-content h4 {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 18px 0 8px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--primary-soft);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .drilldown-content h4:first-child { margin-top: 0; }
+    .drilldown-content ol, .drilldown-content ul {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+    .drilldown-content li { margin-bottom: 6px; }
+
+    /* Chapter Navigation Pagination */
+    .chapter-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .chapter-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      color: var(--text-main);
+      font-size: 12.5px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .chapter-nav-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
   </style>
 </head>
 <body>
@@ -507,32 +1214,59 @@
       <h1>SwingClub-CLOUD<br>実践ポータル</h1>
     </div>
     <nav class="sidebar-nav">
+      <div class="nav-group-title" style="color: #c2410c; display: flex; align-items: center; gap: 4px;">
+        <span>⚡ 現場トラブル・逆引き解決</span>
+      </div>
+      <a class="nav-item nav-rescue" id="nav-item-rescue" onclick="switchTab('tab-rescue')">
+        <span>🧯 30秒 現場レスキュー</span>
+        <span class="nav-rescue-badge" id="sidebar-rescue-badge">お困りごと15選</span>
+      </a>
+
       <div class="nav-group-title">全体・導入</div>
-      <a class="nav-item active" onclick="switchTab('tab-overview')">
+      <a class="nav-item active" id="nav-item-overview" onclick="switchTab('tab-overview')">
         <span>🗺️ 全体鳥瞰図・業務マップ</span>
       </a>
       
       <div class="nav-group-title">業務別 実践マニュアル</div>
-      <a class="nav-item" onclick="switchTab('tab-reservation')">
-        <span>📅 01. 予約受付・管理</span>
-        <span class="nav-badge">動画・体験付</span>
+      <a class="nav-item" id="nav-item-reservation" onclick="switchTab('tab-reservation')">
+        <span>📅 01. 予約受付・枠管理</span>
+        <span class="nav-badge">体験付</span>
       </a>
-      <a class="nav-item" onclick="switchTab('tab-front')">
+      <a class="nav-item" id="nav-item-front" onclick="switchTab('tab-front')">
         <span>🏨 02. フロント・チェックイン</span>
       </a>
-      <a class="nav-item" onclick="switchTab('tab-master')">
-        <span>⛳ 03. マスター室・進行</span>
+      <a class="nav-item" id="nav-item-master" onclick="switchTab('tab-master')">
+        <span>⛳ 03. マスター室・進行管理</span>
+        <span class="nav-badge">計算機付</span>
       </a>
-      <a class="nav-item" onclick="switchTab('tab-compe')">
-        <span>🏆 04. コンペ集計・賞品</span>
+      <a class="nav-item" id="nav-item-restaurant" onclick="switchTab('tab-restaurant')">
+        <span>🍽️ 04. レストラン・売店連携</span>
+        <span class="nav-badge">差額付</span>
       </a>
-      <a class="nav-item" onclick="switchTab('tab-member')">
-        <span>👤 05. 会員管理・年会費</span>
+      <a class="nav-item" id="nav-item-compe" onclick="switchTab('tab-compe')">
+        <span>🏆 05. 競技・コンペ集計</span>
+        <span class="nav-badge">抽選付</span>
+      </a>
+      <a class="nav-item" id="nav-item-member" onclick="switchTab('tab-member')">
+        <span>👤 06. 会員管理・名義・年会費</span>
+      </a>
+      <a class="nav-item" id="nav-item-closing" onclick="switchTab('tab-closing')">
+        <span>📊 07. 経理・精算・日締め</span>
+        <span class="nav-badge">免税付</span>
       </a>
 
-      <div class="nav-group-title">AIアシスタント</div>
-      <a class="nav-item" onclick="switchTab('tab-ai-pack')">
-        <span>🧠 NotebookLM / AI連携</span>
+      <div class="nav-group-title" style="color: #6d28d9;">導入オプション（一時金）</div>
+      <a class="nav-item" id="nav-item-ai-pack" onclick="switchTab('tab-ai-pack')">
+        <span>🧠 専用AIアシスタント</span>
+        <span class="nav-badge" style="background: #ede9fe; color: #6d28d9; font-weight: 700;">一時金OP</span>
+      </a>
+
+      <div class="nav-group-title" style="color: #6d28d9; display: flex; align-items: center; gap: 4px; margin-top: 12px;">
+        <span>🛠️ TSHサポート本部</span>
+      </div>
+      <a class="nav-item" id="nav-item-cs" onclick="switchTab('tab-cs-console')" style="background: #faf5ff; color: #6d28d9; border: 1px dashed #c4b5fd;">
+        <span>🪄 AI FAQ Factory</span>
+        <span class="nav-badge" style="background: #ede9fe; color: #6d28d9; font-weight: 700;">CS専用</span>
       </a>
     </nav>
   </aside>
@@ -541,15 +1275,612 @@
   <div class="main-wrapper">
     <header class="topbar">
       <div class="search-box">
-        <input type="text" class="search-input" id="global-search" placeholder="業務キーワード検索（例: 同伴者, 半角カナ, 資格）..." onkeyup="filterContent()">
+        <input type="text" class="search-input" id="global-search" placeholder="業務キーワード検索（例: 同伴者, 半角カナ, 資格, 差額, 新ペリア）..." onkeyup="filterContent()">
       </div>
-      <div class="status-pill">
-        <span class="status-dot"></span>
-        <span>現場検証済 SSOT</span>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <button onclick="window.print()" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border); background: #ffffff; color: var(--text-main); font-size: 12px; font-weight: 600; cursor: pointer;" title="現場貼り出し用にA4で印刷">
+          <span>🖨️ A4現場印刷</span>
+        </button>
+        <button onclick="openSupportMemoModal()" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; border: 1px solid #bae6fd; background: #f0f9ff; color: #0369a1; font-size: 12px; font-weight: 600; cursor: pointer;" title="TSHサポートへ連絡する際の要件メモ作成">
+          <span>📞 サポート連絡メモ</span>
+        </button>
+        <button onclick="switchTab('tab-cs-console')" style="display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 8px; border: 1px solid #c4b5fd; background: #faf5ff; color: #6d28d9; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.15s ease;" title="CS受電メモからFAQを自動生成">
+          <span>🛠️ AI FAQ Factory</span>
+        </button>
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>現場稼働中 SSOT</span>
+        </div>
       </div>
     </header>
 
     <main class="content-container">
+
+      <!-- TAB: 🧯 30秒 現場レスキュー（よくある例外・お困りごと解決） -->
+      <div id="tab-rescue" class="tab-content">
+        <div class="rescue-hero">
+          <h2><span>🧯</span> 30秒 現場レスキュー（よくある例外・お困りごと逆引き解決）</h2>
+          <p>「この予約枠どうする？」「急な例外はどう処理すればいい？」<br>現場で直面する急ぎのお困りごとに対して、なぜその制限があるのか（安全・トラブル防止の理由）と、<strong>今すぐ現場でできる安全な30秒の回避手順</strong>をワンクリックで確認できます。</p>
+        </div>
+
+        <!-- Filter Controls & Category Bar -->
+        <div class="filter-controls">
+          <div style="font-size: 13px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 6px;">
+            <span>⚡ 業務別カテゴリ絞込</span>
+            <span style="font-size: 11px; font-weight: 500; color: var(--text-muted);">（カードタップで30秒手順を展開）</span>
+          </div>
+          <div style="display: flex; gap: 6px;">
+            <button class="expand-btn" onclick="expandAllFaqs(true)">▼ すべて展開</button>
+            <button class="expand-btn" onclick="expandAllFaqs(false)">▲ すべて閉じる</button>
+          </div>
+        </div>
+
+        <!-- Extended Filter Bar -->
+        <div class="filter-bar" id="category-filter-bar">
+          <button class="filter-btn active" data-cat="all" onclick="filterFaqCategory('all', this)">
+            すべて <span class="cat-count" id="count-all">15</span>
+          </button>
+          <button class="filter-btn" data-cat="reservation" onclick="filterFaqCategory('reservation', this)">
+            📅 予約・枠管理 <span class="cat-count" id="count-reservation">3</span>
+          </button>
+          <button class="filter-btn" data-cat="front-settlement" onclick="filterFaqCategory('front-settlement', this)">
+            🏨 フロント・精算 <span class="cat-count" id="count-front-settlement">3</span>
+          </button>
+          <button class="filter-btn" data-cat="master" onclick="filterFaqCategory('master', this)">
+            ⛳ マスター室・進行 <span class="cat-count" id="count-master">2</span>
+          </button>
+          <button class="filter-btn" data-cat="restaurant" onclick="filterFaqCategory('restaurant', this)">
+            🍽️ レストラン・売店 <span class="cat-count" id="count-restaurant">2</span>
+          </button>
+          <button class="filter-btn" data-cat="compe" onclick="filterFaqCategory('compe', this)">
+            🏆 競技・コンペ <span class="cat-count" id="count-compe">1</span>
+          </button>
+          <button class="filter-btn" data-cat="member" onclick="filterFaqCategory('member', this)">
+            👤 会員・名簿 <span class="cat-count" id="count-member">1</span>
+          </button>
+          <button class="filter-btn" data-cat="closing" onclick="filterFaqCategory('closing', this)">
+            📊 経理・日締め <span class="cat-count" id="count-closing">1</span>
+          </button>
+          <button class="filter-btn" data-cat="system" onclick="filterFaqCategory('system', this)">
+            ⚙️ システム・連携 <span class="cat-count" id="count-system">2</span>
+          </button>
+        </div>
+
+        <!-- FAQ Cards Container -->
+        <div id="faq-cards-list">
+
+          <!-- Case 01 (初期状態で開いて見本とする) -->
+          <div class="faq-card open" data-category="reservation" data-keywords="満枠 ねじ込み 予約 枠上限 VIP 理事長 カートナビ 渋滞 ダブルブッキング 楽天GORA GDO 3人枠 スルー枠">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 01</span>
+                <span class="faq-title">【予約枠・満枠時の追加】「満枠の時間帯に、どうしても1組追加したいと言われた！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-limit">⚠️ 物理安全制限</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「重要なお客様やVIPから『どうしても今日の9時台に入れたい』と急ぎの連絡が来たが、画面上は満枠（赤色）でこれ以上枠を追加できない。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">コースの標準所要時間（2時間15分）と日没時間、カートナビの運行間隔から計算された限界値です。無理に枠を増やすと、コース上で全組が30分以上詰まって後続全組からのクレームになり、外部予約サイトへ誤って空枠が公開されて二重予約事故（ダブルブッキング）が発生します。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case01')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case01">
+                  <li>近接するスタート枠を確認し、前後に<strong>「3人組（または2人組）」の枠</strong>がないか探す。</li>
+                  <li>枠を無理に増やすのではなく、<strong>既存枠の幹事様へ「組み合わせ（ジョイント）」または前後7分のスライド調整</strong>をご相談・ご案内する。</li>
+                  <li>または、イン・アウトの<strong>「スルー枠」や「午後スタート枠」へご誘導</strong>するのが現場の安全な正規手順です。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 02 -->
+          <div class="faq-card" data-category="reservation" data-keywords="同伴者 コピー 資格 料金 ビジター 正会員 自動判定 会員番号 誤請求 F4 半角カナ">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 02</span>
+                <span class="faq-title">【同伴者コピーでの料金不整合】「前の組からお名前をコピペしたらビジター料金になってしまった！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-safe">💡 手動紐付け仕様</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「同伴者の入力で、前の組のメンバー名を下の組へコピーしたら、会員様なのにビジター料金で計算されてしまう。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">SwingClubは「お名前」ではなく裏に紐づく「会員番号・資格マスタ」で料金を1円単位で計算しています。名前の文字だけをコピーした際に自動推測を許すと、同姓同名の別人に誤紐付けされたり、ビジター様が会員料金で誤精算される「売上損失事故」に繋がるためです。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（15秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case02')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case02">
+                  <li>該当者の行を選択し、<strong>[F4]（会員検索）または資格入力欄</strong>をクリック。</li>
+                  <li><strong>半角カナで頭3文字を入力して会員番号を再Enter</strong>。</li>
+                  <li>会員資格が正しく再セットされ、一瞬で正規のメンバー料金に再計算されます（所要15秒）。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 03 -->
+          <div class="faq-card" data-category="reservation" data-keywords="半角カナ 全角カナ Web予約 名寄せ エラー 会員紐付け F8 個人情報漏洩 預託金">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 03</span>
+                <span class="faq-title">【半角カナ・名寄せ検索】「Web予約の名前（全角カナやスペース入り）だとエラーで会員紐付けできない！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-safe">🛡️ 個人情報保護仕様</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「Web予約から届いたお客様の氏名を既存会員に紐付けたいが、全角カナやスペースが入っていると検索に引っかからない。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">ゴルフ場には同姓同名の会員様が多数いらっしゃいます。曖昧な自動名寄せを行うと、同姓同名の他人の売掛金や年会費未納情報、プライベートなコンペ成績が別人に合体・漏洩する重大事故を防ぐため、厳格な半角カナ照合が義務付けられています。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（10秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case03')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case03">
+                  <li>氏名欄のスペースや余計な文字を消去する。</li>
+                  <li>キーボードの<strong>[F8] キーで一発半角変換</strong>、または検索窓で<strong>「半角カナ3文字＋Enter」</strong>。</li>
+                  <li>候補一覧から該当の会員様をクリックしてEnter。2クリック・10秒で安全に紐付け完了します。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 04 -->
+          <div class="faq-card" data-category="master" data-keywords="天候 雨 順延 スライド 一括時間ずらし カート事故 昼食 レストラン マスター室 タイムテーブル">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 04</span>
+                <span class="faq-title">【悪天候時の時間変更】「大雨でスタートが1時間遅れたので、全組のスタート時間をずらしたい！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-limit">⚠️ 運行保護制限</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「天候悪化でスタートが60分遅延したため、全体のタイムテーブルを一括で後ろへスライドさせたい。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">タイムテーブルはGPSカートナビの運行指示データやハーフ休憩時間、レストラン厨房と直結しています。一括強制移動を行うと、すでに出走している組や途中リタイア組との運行データが乖離し、コース上での追突や昼食会場の大混乱を引き起こします。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case04')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case04">
+                  <li>マスター室・スタート画面を<strong>「タイムテーブル（枠移動）モード」</strong>にする。</li>
+                  <li><strong>直近のスタート組から順番に、マウスのドラッグ＆ドロップで空き枠へ移動</strong>させる。</li>
+                  <li>1組あたり約3秒、10組動かしても30秒程度で安全に再編成が完了します。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 05 -->
+          <div class="faq-card" data-category="front-settlement" data-keywords="領収書 宛名 会社名 再発行 電子帳簿保存法 電帳法 税務調査 脱税 改ざん 過去履歴">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 05</span>
+                <span class="faq-title">【領収書の宛名変更】「昨日お帰りになったお客様から『会社名の領収書で再発行してほしい』と言われた！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-legal">⚖️ 電帳法準拠仕様</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「昨日個人名で精算された法人のお客様から、本日電話で『会社名宛ての領収書を送ってほしい』と要望された。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">昨日の日締め（レジクローズ）が完了した時点で売上は確定し、会計元帳へ転送されています。過去の確定データを直接上書き改ざんすると、電子帳簿保存法（JIIMA要件）違反となり、税務監査で重大な指摘を受ける原因となります。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case05')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case05">
+                  <li>昨日のデータは直接触らず、<strong>[フロント精算] → [過去履歴照会]</strong> から昨日の伝票を呼び出す。</li>
+                  <li><strong>「再発行（宛名変更）」ボタン</strong>をクリックし、指定の会社名を入力して印刷。</li>
+                  <li>「※〇月〇日精算分の再発行」と正規の監査文言が自動印字され、法的に完全有効な領収書が30秒で発行されます。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 06 -->
+          <div class="faq-card" data-category="front-settlement" data-keywords="精算取消 割引券 出し忘れ 自動精算機 クレジットカード 赤伝 二重決済 二重請求 Void">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 06</span>
+                <span class="faq-title">【精算後の割引券出し忘れ】「精算機で決済を終えたお客様が『割引券を出し忘れたので引き直して』と戻ってきた！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-limit">⚠️ 二重請求防止制限</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「精算を済ませたお客様が『優待割引券を出し忘れていた』とフロントへ戻られ、差額の値引きを求められた。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">クレジットカード等の決済はすでにカード会社ネットワーク（CAFIS等）で売上確定しています。画面上の数字だけを勝手に書き換えてもカード会社からは定価が引き落とされ、二重請求や入金不一致事故が発生します。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case06')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case06">
+                  <li>フロント画面で<strong>「精算取消（赤伝）」を実行</strong>し、クレジット端末でお客様のカードを<strong>「取消（Void）」</strong>で通す（15秒）。</li>
+                  <li>割引券を登録した上で、<strong>正しい割引後金額で再度「チェックアウト決済」</strong>を行う（15秒）。</li>
+                  <li>カード会社・フロント売上・お客様明細が1円の狂いもなく正確に一致します。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 07 -->
+          <div class="faq-card" data-category="closing" data-keywords="日締め 売上日報 打ち間違い 勘定科目 DB書き換え SQL 直接修正 利用税 振替伝票 経理">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 07</span>
+                <span class="faq-title">【日締め後の勘定科目誤り】「昨日の日計を締めた後に、売上科目の打ち間違いに気付いた！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-limit">⚠️ 締め整合性保護</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「昨日締めた売上日報で、カートフィと飲食代の売上コードを取り違えて登録していたことが翌朝判明した。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">ゴルフ場利用税（非課税・課税対象）や軽減税率（8%・10%）の計算がすでにロックされています。締め済みの過去データを直接変更すると税務申告データの整合性が崩れるため、正規の会計振替手順が必要です。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case07')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case07">
+                  <li>昨日の締め済みデータはそのまま残す。</li>
+                  <li><strong>本日の日付で「振替伝票（マイナス売上とプラス売上）」を起票</strong>し、摘要欄に「※〇月〇日科目コード誤りの振替」と入力。</li>
+                  <li>日次では相殺され、月次累計では1円単位で完璧に合致。経理・税務監査にも100%通る正規処理です。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 08 -->
+          <div class="faq-card" data-category="compe" data-keywords="コンペ 成績表 途中棄権 NR 新ペリア 隠しホール 順位繰り上げ 賞対象外 ハンディ計算">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 08</span>
+                <span class="faq-title">【コンペ集計後の途中棄権】「成績表印刷後に『1名ハーフで帰っていた（棄権）』と判明した！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-limit">⚠️ 隠しホール保護</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「コンペ集計表を配布した直後に、参加者の1人が後半プレーせず帰っていたことが判明し、順位を繰り上げたい。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">新ペリア方式は参加者全体のスコア分布で隠しホールが連動しています。該当者をコンペから単純削除すると隠しホールが再抽選され、他の参加者全員のハンディと順位がひっくり返ってしまうためです。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（40秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case08')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case08">
+                  <li>参加者から削除せず、スコア入力を<strong>「途中棄権（NR: No Return）」ステータスに変更</strong>する。</li>
+                  <li>コンペ集計画面で<strong>「賞対象外（順位除外）」のチェックを入れる</strong>。</li>
+                  <li>隠しホールや他の方のハンディ・ネットスコアを一切狂わせずに、賞順位だけを綺麗に繰り上げて成績表を再出力できます。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 09 -->
+          <div class="faq-card" data-category="member" data-keywords="会員権 名義変更 名変 過去日付 遡及 差額返金 預託金台帳 二重譲渡 理事会 承認日">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 09</span>
+                <span class="faq-title">【会員権名義変更の遅延対応】「名義変更書類の登録が遅れ、先月ビジター料金でプレーされた会員様がいる！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-legal">⚖️ 会員台帳法令順守</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「先月中に名変手続きが完了していたのにシステム登録が遅れ、そのお客様が先月ビジター料金で精算されてしまったため差額を返金したい。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">ゴルフ会員権は法的な財産権であり、理事会承認日や証券差替日と厳格に連動しています。過去日に遡ってステータスを変更すると二重譲渡事故の原因となります。また差額返金は「今月の過誤納返金」として処理する必要があります。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case09')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case09">
+                  <li>会員登録は<strong>「本日付（正規の登録日）」</strong>で登録する。</li>
+                  <li>先月プレー分の差額返金は、過去データをいじらず、<strong>「今月のフロント精算で預り金相殺（または振込返金伝票）」を1行起票</strong>する。</li>
+                  <li>摘要欄に「〇月〇日プレー分 名変手続き遅延による差額返還」と記載すれば、経理・税務監査も完璧に通ります。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 10 -->
+          <div class="faq-card" data-category="system" data-keywords="Excel コピペ CSV 一括取込 文字数オーバー 禁則文字 エラー チェックイン機 フリーズ TRIM">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 10</span>
+                <span class="faq-title">【Excelコンペ名簿の一括取込】「100名の大規模名簿Excelをエラーなく一括登録したい！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-safe">💡 CSV標準テンプレ推奨</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「主催者から届いた100名のExcel名簿を、画面の枠へ1人ずつ手打ちせず、短時間で安全に一括登録したい。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">Excelから画面へ直接文字を貼り付けると、不正な文字数オーバーや環境依存文字、改行コードが混入し、当日朝の自動精算機やカートナビ連携バッチがクラッシュする恐れがあります。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（2分）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case10')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case10">
+                  <li>手元のExcelで、名前列に <strong>=TRIM(A1)</strong>（余分な空白削除）をかける。</li>
+                  <li>SwingClubの<strong>「標準CSV取込テンプレート」に値貼り付け</strong>する。</li>
+                  <li>[コンペ名簿取込] からCSVをインポートすれば、エラーゼロで<strong>100名がわずか3秒で一括登録</strong>されます。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 11: レストラン売上付替 -->
+          <div class="faq-card" data-category="restaurant" data-keywords="レストラン 売店 ロッカー番号 入力ミス 誤入力 他人 生ビール 精算機 値引き 売上振替 伝票移動 POS">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 11</span>
+                <span class="faq-title">【レストラン伝票付替】「ロッカー番号の打ち間違いで、他人のビール代が精算機に出てきた！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-warning">⚠️ 精算機手動値引きNG</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「精算機でお客様から『飲んでない生ビールが入っている』と指摘。レジで手動値引きせず、正しいロッカーへ伝票を付け替えたい。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">自動精算機で無理に手動値引きを打つと、夕方のレジ締め（現金・クレカ実査）とレストラン部門売上の間に永久に埋まらない差異が発生し、横領・レジ不正の疑いで内部監査問題になります。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case11')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case11">
+                  <li>フロントまたはレストランPOS画面で <strong>[伝票照会 / ロッカー別売上]</strong> を開く。</li>
+                  <li>誤登録された商品（生ビール等）を選び、<strong>[売上振替（ロッカー付替）]</strong> をクリック。</li>
+                  <li>本来注文されたお客様のロッカー番号を入力して振替確定。</li>
+                  <li>自動精算機の画面で <strong>[更新]</strong> を押せば、正常な金額で即座に精算いただけます。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 12: コンペパーティ料理まとめ精算 -->
+          <div class="faq-card" data-category="restaurant" data-keywords="コンペ パーティ料理 幹事一括 個別精算 ドリンク 伝票分割 レストラン 精算機 インボイス">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 12</span>
+                <span class="faq-title">【コンペ料理の一括精算】「パーティ料理代は幹事が一括払い、追加ドリンクは各自で精算させたい！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-safe">💡 伝票自動分割推奨</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「コンペの料理代（30名分）は幹事に一括請求し、メンバー各自が自席で頼んだ追加アルコールは各自の自動精算機で払わせたい。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">電卓で手計算してレジを手打ちで打ち直すと、インボイス登録番号付き領収書の消費税端数（1円単位）が合わなくなり、法人の幹事企業から経理上の再発行クレームになります。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case12')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case12">
+                  <li>レストラン精算メニューで該当コンペを選び、<strong>[コンペ一括割当]</strong> を開く。</li>
+                  <li>「パーティ料理代（コース）」を選択し、<strong>[幹事ロッカーへ一括振替]</strong> をクリック。</li>
+                  <li>「個人追加飲料」は各メンバーのロッカー番号に残す。</li>
+                  <li>幹事の精算機には「料理代 30名分」が一括計上され、メンバーは自席のドリンク代のみで自動精算機をスマートに通過できます。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 13: 利用税非課税申請 -->
+          <div class="faq-card" data-category="front-settlement" data-keywords="利用税 非課税 免税 70歳以上 高齢者 免許証 障害者 フロント 精算 税務署 追徴課税 現金返金">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 13</span>
+                <span class="faq-title">【利用税免税】「精算直前に『70歳以上だから利用税引いて』と免許証を出された！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-warning">⚠️ 現金手渡し返金絶対NG</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「チェックイン後に高齢者免税の申請を忘れていたお客様から、精算直前に免許証を提示された。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">ゴルフ場利用税は地方税法で定められた公的租税です。「画面直すのが面倒だから」とフロント現金を勝手に手渡し返金すると、県の特別徴収監査で帳簿不整合と判定され、追徴課税・罰則の対象になります。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case13')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case13">
+                  <li>フロント精算画面で該当のお客様を呼び出し、<strong>[顧客詳細・資格]</strong> を開く。</li>
+                  <li>[利用税区分] を「課税」➔ <strong>「非課税（70歳以上）」</strong> に切り替える。</li>
+                  <li>証明書番号欄に <strong>免許証番号の下4桁</strong> を入力して保存。</li>
+                  <li>精算金額が利用税分（700円〜1,200円）即時減額され、正規の非課税領収書が自動出力されます。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 14: 楽天GORA/GDO外部連携枠ズレ -->
+          <div class="faq-card" data-category="system" data-keywords="楽天GORA GDO OTA 外部連携 枠ズレ 時間差 手動ドラッグ ダブルブッキング 二重予約 インターフェース">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 14</span>
+                <span class="faq-title">【OTA枠ズレ】「楽天GORAからの予約がSwingClub側で8分ズレて取り込まれた！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-warning">⚠️ 画面ドラッグ移動絶対禁止</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「ネット予約が入ったが、SwingClubの予約枠時間とズレている。タイムテーブル上で枠を手動移動して合わせてもいいか？」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">SwingClubの予約枠IDとOTAの販売枠IDはAPIで暗号紐付けされています。画面上で枠を別時間へ手動ドラッグ移動すると紐付けが物理切断され、楽天側が「枠が空いた」と誤認して同じ枠に別の予約が飛び込み、二重予約（ダブルブッキング）事故を起こします。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case14')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case14">
+                  <li>SwingClub側のタイムテーブル枠は <strong>絶対にドラッグせずそのまま保持</strong> する。</li>
+                  <li><strong>[外部予約取込一覧]</strong> 画面を開き、対象予約のプラン紐付け設定を確認。</li>
+                  <li>当日のコース運行は、マスター室画面側でスタート順を微調整して対応。</li>
+                  <li>業務終了後に、OTA管理画面側のスタート間隔設定（7分/8分）をSwingClubマスタと合致させます。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 15: 雷雨警報・ハーフ打切り一括処理 -->
+          <div class="faq-card" data-category="master" data-keywords="雷雨 落雷 サイレン 荒天 ハーフ打切り 中断 緊急避難 フロント精算 キャディフィー 利用税半額">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 15</span>
+                <span class="faq-title">【雷雨・荒天中断】「突然の落雷サイレンで全25組がクラブハウスに戻ってきた！一瞬でハーフ料金にしたい！」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-safe">💡 荒天一括コマンド推奨</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「雷で全組プレー中断。ロビーに殺到する100名のお客様を、フロントで1組ずつ手動変更せず、瞬時にハーフ料金で精算させたい。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">雷雨避難時は全組が同時に精算機へ向かいます。フロントで25組（100名）を1人ずつ手動で「18H ➔ 9H」に書き換えていると、ロビーが大混雑して暴動になり、キャディフィーの按分ミスや利用税の減額忘れが連発します。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case15')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case15">
+                  <li>マスター室端末のメイン画面で <strong>[荒天・雷雨一括処理]</strong> ボタンをクリック。</li>
+                  <li><strong>[全組ハーフ打切り（9ホール終了扱い）]</strong> を選択して実行確定。</li>
+                  <li>システムが全組のステータスを一括で「ハーフプレー」「キャディフィー半額」「利用税軽減」へ自動置換。</li>
+                  <li>自動精算機と有人フロントが <strong>瞬時にハーフ金額に同期</strong> され、お客様は待たずに精算退場いただけます。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /#faq-cards-list -->
+      </div><!-- /#tab-rescue -->
 
       <!-- TAB: 全体鳥瞰図 -->
       <div id="tab-overview" class="tab-content active">
@@ -587,6 +1918,166 @@
               <div style="font-size: 12px; color: var(--text-muted);">売上日報、未収金照合、会計データ連携</div>
             </div>
           </div>
+        </div>
+
+        <!-- All 7 Modules Table of Contents Card Grid -->
+        <div class="card" style="border: 2px solid var(--primary);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+            <div>
+              <h3 style="margin: 0; padding: 0; border: none; font-size: 18px; color: var(--primary-dark); display: flex; align-items: center; gap: 8px;">
+                <span>📚</span> 全7大業務 実践マニュアル目次（クリックで即ジャンプ）
+              </h3>
+              <p style="font-size: 12.5px; color: var(--text-muted); margin-top: 4px;">
+                読みたい業務カードをクリックすると、実践手順・現場の鉄則・動くシミュレーターへ瞬時にジャンプします。
+              </p>
+            </div>
+            <span style="font-size: 11px; background: var(--primary-soft); color: var(--primary); padding: 4px 10px; border-radius: 9999px; font-weight: 700;">全モジュール即時閲覧可能</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+            <!-- 01 予約 -->
+            <div class="toc-card" onclick="switchTab('tab-reservation')">
+              <div class="toc-header">
+                <span class="toc-icon">📅</span>
+                <div>
+                  <div class="toc-step">第1章</div>
+                  <div class="toc-title">01. 予約受付・枠管理</div>
+                </div>
+                <span class="toc-badge">体験付</span>
+              </div>
+              <ul class="toc-list">
+                <li>タイムテーブル空枠確保と予約登録</li>
+                <li>同伴者未定ルール（空欄登録の鉄則）</li>
+                <li>半角カナ検索 ＆ 資格コピーの罠</li>
+              </ul>
+              <div class="toc-action">👉 このマニュアルを開く</div>
+            </div>
+
+            <!-- 02 フロント -->
+            <div class="toc-card" onclick="switchTab('tab-front')">
+              <div class="toc-header">
+                <span class="toc-icon">🏨</span>
+                <div>
+                  <div class="toc-step">第2章</div>
+                  <div class="toc-title">02. フロント・受付</div>
+                </div>
+                <span class="toc-badge">実機注記付</span>
+              </div>
+              <ul class="toc-list">
+                <li>朝のチェックイン個別登録フロー</li>
+                <li>五十音タッチパレット顧客検索</li>
+                <li>ロッカーキー発行と同伴者確定</li>
+              </ul>
+              <div class="toc-action">👉 このマニュアルを開く</div>
+            </div>
+
+            <!-- 03 マスター室 -->
+            <div class="toc-card" onclick="switchTab('tab-master')">
+              <div class="toc-header">
+                <span class="toc-icon">⛳</span>
+                <div>
+                  <div class="toc-step">第3章</div>
+                  <div class="toc-title">03. マスター室・進行</div>
+                </div>
+                <span class="toc-badge">計算機付</span>
+              </div>
+              <ul class="toc-list">
+                <li>GPSカート運行とハーフ2時間15分管理</li>
+                <li>遅延時の昼休憩調整＆厨房アラート</li>
+                <li>雷雨サイレン時のハーフ一括切替</li>
+              </ul>
+              <div class="toc-action">👉 このマニュアルを開く</div>
+            </div>
+
+            <!-- 04 レストラン -->
+            <div class="toc-card" onclick="switchTab('tab-restaurant')">
+              <div class="toc-header">
+                <span class="toc-icon">🍽️</span>
+                <div>
+                  <div class="toc-step">第4章</div>
+                  <div class="toc-title">04. レストラン・売店連携</div>
+                </div>
+                <span class="toc-badge">差額付</span>
+              </div>
+              <ul class="toc-list">
+                <li>ハンディPDAからの注文即時連動</li>
+                <li>昼食付プランの差額自動計算</li>
+                <li>コンペ料理代の幹事一括振替</li>
+              </ul>
+              <div class="toc-action">👉 このマニュアルを開く</div>
+            </div>
+
+            <!-- 05 コンペ -->
+            <div class="toc-card" onclick="switchTab('tab-compe')">
+              <div class="toc-header">
+                <span class="toc-icon">🏆</span>
+                <div>
+                  <div class="toc-step">第5章</div>
+                  <div class="toc-title">05. 競技・コンペ集計</div>
+                </div>
+                <span class="toc-badge">抽選付</span>
+              </div>
+              <ul class="toc-list">
+                <li>新ペリア集計ロジック（隠し12ホール）</li>
+                <li>同ネット時の年長者優先タイブレーク</li>
+                <li>成績表・賞品一覧表の出力作法</li>
+              </ul>
+              <div class="toc-action">👉 このマニュアルを開く</div>
+            </div>
+
+            <!-- 06 会員管理 -->
+            <div class="toc-card" onclick="switchTab('tab-member')">
+              <div class="toc-header">
+                <span class="toc-icon">👤</span>
+                <div>
+                  <div class="toc-step">第6章</div>
+                  <div class="toc-title">06. 会員管理・名義・年会費</div>
+                </div>
+                <span class="toc-badge">書類付</span>
+              </div>
+              <ul class="toc-list">
+                <li>正会員・平日・法人会員台帳管理</li>
+                <li>名義書換5ステップと必要書類判定</li>
+                <li>年会費全銀協FB口座振替データ作成</li>
+              </ul>
+              <div class="toc-action">👉 このマニュアルを開く</div>
+            </div>
+
+            <!-- 07 経理日締め -->
+            <div class="toc-card" onclick="switchTab('tab-closing')">
+              <div class="toc-header">
+                <span class="toc-icon">📊</span>
+                <div>
+                  <div class="toc-step">第7章</div>
+                  <div class="toc-title">07. 経理・精算・日締め</div>
+                </div>
+                <span class="toc-badge">免税付</span>
+              </div>
+              <ul class="toc-list">
+                <li>レジクローズの不可逆性とロック原則</li>
+                <li>ゴルフ場利用税（70歳以上免税）判定</li>
+                <li>日締め完了後の売上修正（赤黒伝票）</li>
+              </ul>
+              <div class="toc-action">👉 このマニュアルを開く</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Assistant Option Box (一時金オプション) -->
+        <div style="background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); border: 1px solid #c4b5fd; border-radius: var(--radius); padding: 20px 24px; display: flex; gap: 20px; align-items: center; margin-bottom: 24px;">
+          <div style="font-size: 36px; line-height: 1;">🧠</div>
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap;">
+              <span style="font-size: 11px; font-weight: 700; background: #6d28d9; color: #ffffff; padding: 2px 8px; border-radius: 4px;">導入オプション（一時金）</span>
+              <div style="font-weight: 700; font-size: 15px; color: #4c1d95;">SwingClub 専用AIアシスタント連携パック（一時金 30万円）</div>
+            </div>
+            <div style="font-size: 12.5px; color: #5b21b6; line-height: 1.6;">
+              「目次から探すだけでなく、現場スタッフがスマホやPCから自然言語・音声で質問して即答させたい」ゴルフ場様向けに、<strong>SwingClub専用NotebookLM ＆ Geminiチャットボットを初期構築・調律して納品する一時金オプション（30万円）</strong>をご用意。月額サブスクの基本マニュアルに後からいつでも追加可能です。
+            </div>
+          </div>
+          <button onclick="switchTab('tab-ai-pack')" style="background: #6d28d9; color: #ffffff; border: none; padding: 10px 18px; border-radius: 8px; font-size: 12.5px; font-weight: 700; cursor: pointer; white-space: nowrap; box-shadow: 0 2px 4px rgba(109,40,217,0.2);">
+            AI連携デモを見る →
+          </button>
         </div>
 
         <div class="card">
@@ -755,6 +2246,59 @@
             </div>
           </div>
         </div>
+
+        <!-- Detailed Drilldown Manual -->
+        <div class="drilldown-box">
+          <div class="drilldown-toggle" onclick="toggleDrilldown(this)">
+            <div class="drilldown-toggle-title">
+              <span>📖</span> 【詳細ドリルダウン】予約業務 体系的マニュアル（全手順・テキスト詳細）
+            </div>
+            <span class="drilldown-toggle-pill">▼ 📖 詳細マニュアル（テキスト手順）を読む</span>
+          </div>
+          <div class="drilldown-content">
+            <h4>1. 基本予約フロー（1組予約の詳細ステップ）</h4>
+            <ol>
+              <li><strong>日付選択</strong>: 3か月カレンダーからプレー希望日をクリック（組数ボーダー超で黄色、満枠で赤色）。</li>
+              <li><strong>スタート枠選択</strong>: タイムテーブルから希望コース（OUT/IN）の空き枠をクリックし、「予約」ボタンを押す。</li>
+              <li><strong>予約者（代表者）入力</strong>:
+                <ul>
+                  <li>会員様の場合: 「会員」チェック ➔ 氏名カナに<strong>半角カタカナ</strong>で姓を入力して [Enter] ➔ マスタから会員番号・氏名・電話番号・資格が自動セット。</li>
+                  <li>ビジター様の場合: 「ゲスト」チェック ➔ カナ入力でビジタマスタ検索（未登録時は直接入力）。</li>
+                  <li>代表者が当日プレーする場合: <strong>「プレイヤー1にコピー」</strong> をクリック。</li>
+                </ul>
+              </li>
+              <li><strong>同伴プレイヤー入力</strong>: 名前判明時は入力。<strong>未定時は空欄のまま保持</strong>（代表者名のコピペ厳禁）。</li>
+              <li><strong>オプション設定</strong>: キャディ有無、5人乗りカート、パーティ有無、特記事項を備考欄に入力。</li>
+              <li><strong>予約確定</strong>: 右下の「予約」ボタンをクリックしてDB登録完了。</li>
+            </ol>
+
+            <h4>2. コンペ・複数組の団体予約フロー</h4>
+            <ol>
+              <li><strong>複数枠選択</strong>: タイムテーブル上で連続するスタート枠（例: 8:00, 8:08, 8:16）をドラッグまたは複数選択。</li>
+              <li><strong>グループ採番</strong>: 「グループNO」横の [自] ボタンを押して空きグループ番号を自動採番し、コンペ名を入力。</li>
+              <li><strong>組切り替え入力</strong>: 右下の [次頁][前頁] で各組（1/3組、2/3組等）を切り替えてプレイヤーを入力。</li>
+              <li><strong>一括備考コピー</strong>: [備考コピー] を押して全組にパーティ・料理条件を一括反映し、「予約」ボタンで確定。</li>
+            </ol>
+
+            <h4>3. 変更・キャンセル・キャンセル待ち</h4>
+            <ul>
+              <li><strong>プレイヤー変更</strong>: 枠を開いて名前を打ち直し「予約」押下。または「アクション」➔「個人入れ替え」。</li>
+              <li><strong>予約キャンセル</strong>: 枠選択 ➔「キャンセル関連」➔「キャンセル処理」➔ 理由選択 ➔「キャンセル」確定。</li>
+              <li><strong>キャンセル復活</strong>: 空枠選択 ➔「キャンセル復活」➔ 過去履歴から選択して再反映。</li>
+              <li><strong>キャンセル待ち</strong>:「キャンセル待ち登録」で顧客を登録。空き枠発生時にワンクリックで本予約へ移行可能。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+          <button class="chapter-nav-btn" onclick="switchTab('tab-overview')">
+            <span>🗺️ 全体目次に戻る</span>
+          </button>
+          <button class="chapter-nav-btn" onclick="switchTab('tab-front')">
+            <span>次の章：02. フロント受付・精算 →</span>
+          </button>
+        </div>
       </div>
 
       <!-- TAB: 02 フロント・チェックイン -->
@@ -798,8 +2342,793 @@
             </div>
           </div>
         </div>
+
+        <!-- Detailed Drilldown Manual -->
+        <div class="drilldown-box">
+          <div class="drilldown-toggle" onclick="toggleDrilldown(this)">
+            <div class="drilldown-toggle-title">
+              <span>📖</span> 【詳細ドリルダウン】フロント受付 体系的マニュアル（全手順・テキスト詳細）
+            </div>
+            <span class="drilldown-toggle-pill">▼ 📖 詳細マニュアル（テキスト手順）を読む</span>
+          </div>
+          <div class="drilldown-content">
+            <h4>1. 朝のチェックイン個別登録フロー</h4>
+            <ol>
+              <li><strong>お客様のお名前確認</strong>: サイン帳または会員証からお名前を確認。</li>
+              <li><strong>顧客検索</strong>:
+                <ul>
+                  <li>「氏名カナ（半角）」を入力して [Enter]。または五十音タッチパレット（ア〜ワ）をタップ。</li>
+                  <li>同姓同名が多い場合は生年月日・電話番号で特定。</li>
+                </ul>
+              </li>
+              <li><strong>予約組との紐付け</strong>: 該当のスタート枠（P1〜P4）を選択。</li>
+              <li><strong>同伴者の氏名確定</strong>: 予約時に「空欄」だった同伴者の氏名をこの場で正式入力。</li>
+              <li><strong>ロッカー番号交付</strong>: 空きロッカー番号を割り当て（自動または手動選択）。</li>
+              <li><strong>チェックイン確定</strong>: 青い [チェックイン] ボタンを押して完了。ロッカーキーをお渡しします。</li>
+            </ol>
+
+            <h4>2. 自動チェックイン機連携とトラブル対応</h4>
+            <ul>
+              <li><strong>QR/カードリーダー受付</strong>: 会員カードや予約バーコードの読取で1秒チェックイン。</li>
+              <li><strong>エラー発生時（マスタ未登録・予約相違）</strong>: 有人フロント画面へ即座に誘導し、手動検索からチェックイン実行。</li>
+              <li><strong>ロッカーキー詰まり</strong>: 予備キー番号を手動で再割当し、マスタのロッカー排他ロックを解除。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+          <button class="chapter-nav-btn" onclick="switchTab('tab-reservation')">
+            <span>← 前の章：01. 予約受付・枠管理</span>
+          </button>
+          <button class="chapter-nav-btn" onclick="switchTab('tab-overview')">
+            <span>🗺️ 全体目次</span>
+          </button>
+          <button class="chapter-nav-btn" onclick="switchTab('tab-master')">
+            <span>次の章：03. マスター室・進行 →</span>
+          </button>
+        </div>
       </div>
 
+      <!-- TAB: 03 マスター室・進行管理 -->
+      <div id="tab-master" class="tab-content">
+        <div class="hero-banner" style="background: linear-gradient(135deg, #14532d 0%, #15803d 100%);">
+          <h2>03. マスター室・進行管理 実践マニュアル ＆ コース運行計算機</h2>
+          <p>GPSカートナビ連動、標準所要時間（2時間15分）の維持、遅延時のインターバル調整、雷雨中断時のハーフ切替、アテストとスコア回収の鉄則を解説します。</p>
+        </div>
+
+        <div class="card">
+          <h3>⛳ マスター室モニターと進行管理の基本構造</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">
+            マスター室では、コース上の全カートのGPS位置とハーフターン所要時間を常時監視します。7分〜8分のスタート間隔が崩れると、ハーフターンでの待ち時間増大や日没にかかる重大トラブルへ発展します。
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+            <div style="padding: 16px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px;">
+              <div style="font-weight: 700; color: #15803d; margin-bottom: 4px;">🟢 正常ペース（ハーフ 2時間15分以内）</div>
+              <div style="font-size: 12.5px; color: var(--text-muted);">先行組との間隔が1ホール以内。カートナビ画面は通常表示。昼食休憩は標準45分〜50分でスムーズに後半スタートへ接続。</div>
+            </div>
+            <div style="padding: 16px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px;">
+              <div style="font-weight: 700; color: #b45309; margin-bottom: 4px;">🟡 注意ペース（+5分〜10分遅れ）</div>
+              <div style="font-size: 12.5px; color: var(--text-muted);">前の組から1ホール以上離脱。カートナビから「プレーペースアップ」の自動通知を送信。マーシャル（巡回）による声がけ。</div>
+            </div>
+            <div style="padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px;">
+              <div style="font-weight: 700; color: #b91c1c; margin-bottom: 4px;">🔴 停滞警告（+15分以上の重大遅延）</div>
+              <div style="font-size: 12.5px; color: var(--text-muted);">後続全組に連鎖渋滞。マスター室端末でスタート順入れ替えまたは昼食時間の短縮調整（40分）を実施し、レストラン厨房へ即時連絡。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Master Simulator -->
+        <div class="card" style="border: 2px solid #15803d;">
+          <h3>🎮 【動く実機ツール】コース進行・ハーフターン所要時間 ＆ アラート計算機</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+            スタートコース・時間・遅延状況を選択すると、ハーフターン時刻、推奨昼休憩時間、レストラン厨房連絡の要否を即座にシミュレートします。
+          </p>
+
+          <div class="sim-tool-box">
+            <div class="sim-grid-3">
+              <div>
+                <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">スタートコース:</label>
+                <select id="sim-master-course" class="memo-input">
+                  <option value="OUT">OUTコース スタート</option>
+                  <option value="IN">INコース スタート</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">スタート時刻:</label>
+                <select id="sim-master-time" class="memo-input">
+                  <option value="08:00">08:00</option>
+                  <option value="08:30">08:30</option>
+                  <option value="09:00" selected>09:00</option>
+                  <option value="09:30">09:30</option>
+                  <option value="10:00">10:00</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">前半の進行状況（遅延）:</label>
+                <select id="sim-master-delay" class="memo-input">
+                  <option value="0">定刻通り（ハーフ 2時間15分）</option>
+                  <option value="15">+15分 遅延（ハーフ 2時間30分）</option>
+                  <option value="30">+30分 重大遅延（ハーフ 2時間45分）</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="text-align: right; margin-bottom: 12px;">
+              <button class="btn btn-primary" onclick="calcMasterProgress()" style="background: #15803d; border: none; padding: 8px 18px; font-size: 13px; font-weight: 700; cursor: pointer;">
+                ⏱️ ハーフターン時刻と推奨昼休憩を計算する
+              </button>
+            </div>
+
+            <div id="sim-master-result" style="display: none; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px;">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 12px;">
+                <div class="sim-stat-card">
+                  <div style="font-size: 11px; color: var(--text-muted);">前半ホールアウト予定</div>
+                  <div class="sim-stat-val" id="master-res-turn">11:15</div>
+                </div>
+                <div class="sim-stat-card">
+                  <div style="font-size: 11px; color: var(--text-muted);">推奨昼食休憩時間</div>
+                  <div class="sim-stat-val" id="master-res-break" style="color: #b45309;">45分</div>
+                </div>
+                <div class="sim-stat-card">
+                  <div style="font-size: 11px; color: var(--text-muted);">後半スタート推奨時刻</div>
+                  <div class="sim-stat-val" id="master-res-start" style="color: #2563eb;">12:00</div>
+                </div>
+              </div>
+              <div id="master-res-alert" style="padding: 10px 14px; border-radius: 6px; font-size: 12.5px; line-height: 1.5;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>⚡ マスター室の3大鉄則（やってはいけないNG集）</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="annotation-box">
+              <span class="annotation-tag" style="background: #15803d;">鉄則 1</span>
+              <div style="font-weight: 700; color: #15803d; margin-bottom: 4px;">スタート順の入れ替えは、必ず【カート号車番号】を同時に変更する！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">画面上で組順だけを入れ替えてカート番号をそのままにすると、カートナビのGPS追跡と画面が逆転し、先行カートと衝突判定の誤警告が連発します。</div>
+            </div>
+            <div class="annotation-box" style="border-color: var(--danger); background: #fef2f2;">
+              <span class="annotation-tag" style="background: var(--danger);">鉄則 2</span>
+              <div style="font-weight: 700; color: var(--danger); margin-bottom: 4px;">昼食休憩を40分未満に削って無理に後半へ押し出さない！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">昼食時間を30分等に圧縮すると、レストラン厨房のオーダー提供が間に合わず、後半スタート遅延の二次災害を誘発します。</div>
+            </div>
+            <div class="annotation-box" style="border-color: var(--primary); background: #f0fdf4;">
+              <span class="annotation-tag" style="background: var(--primary);">鉄則 3</span>
+              <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px;">アテスト（スコア確認）未完了の暫定スコアで競技承認を出さない！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">カートナビ入力の未確定スコアのまま承認ボタンを押すと、誤記修正が不能になり、夕方のコンペ表彰式で順位訂正の謝罪騒動になります。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Drilldown Manual -->
+        <div class="drilldown-box">
+          <div class="drilldown-toggle" onclick="toggleDrilldown(this)">
+            <div class="drilldown-toggle-title">
+              <span>📖</span> 【詳細ドリルダウン】マスター室・進行管理 体系的マニュアル（全手順・テキスト詳細）
+            </div>
+            <span class="drilldown-toggle-pill">▼ 📖 詳細マニュアル（テキスト手順）を読む</span>
+          </div>
+          <div class="drilldown-content">
+            <h4>1. 朝のスタート運行管理フロー</h4>
+            <ol>
+              <li><strong>カートナビ号車照合</strong>: タイムテーブル上の組と、配車されたGPSカート番号（1号車〜）を一致確認。</li>
+              <li><strong>スタート点呼と出走</strong>: 定刻（7分/8分間隔）でお客様をお見送りし、出走ステータスを「進行中」へ変更。</li>
+              <li><strong>リアルタイムペース監視</strong>: マスター室画面でカート間隔をモニタリング（標準ハーフ2時間15分）。</li>
+            </ol>
+
+            <h4>2. 進行遅延リカバリー ＆ ハーフターン調整手順</h4>
+            <ol>
+              <li><strong>遅延警告組へのアプローチ</strong>: +10分以上離脱した組に対し、ナビメッセージ送信またはマーシャルが直接巡回支援。</li>
+              <li><strong>昼休憩時間の調整</strong>: 前半ホールアウト時間から逆算し、昼休憩を「40分〜50分」の間で安全に設定。</li>
+              <li><strong>レストラン厨房連絡</strong>: 遅延組の着時刻をレストランへ内線連絡し、優先配膳を要請。</li>
+            </ol>
+
+            <h4>3. アテストと競技スコア確定手順</h4>
+            <ul>
+              <li><strong>スコアカード回収</strong>: プレー終了後、マスター室窓口でマーカー署名入りスコアカードを回収。</li>
+              <li><strong>カートナビデータ照合</strong>: お客様がカートに入力したデジタルスコアと紙スコアカードを照合。</li>
+              <li><strong>アテスト確定</strong>: 照合完了後、[アテスト完了] ボタンを押してコンペ集計へスコアを転送。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+          <button class="chapter-nav-btn" onclick="switchTab('tab-front')">
+            <span>← 前の章：02. フロント受付・精算</span>
+          </button>
+          <button class="chapter-nav-btn" onclick="switchTab('tab-overview')">
+            <span>🗺️ 全体目次</span>
+          </button>
+          <button class="chapter-nav-btn" onclick="switchTab('tab-restaurant')">
+            <span>次の章：04. レストラン・売店連携 →</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB: 04 レストラン・売店連携 -->
+      <div id="tab-restaurant" class="tab-content">
+        <div class="hero-banner" style="background: linear-gradient(135deg, #b45309 0%, #d97706 100%);">
+          <h2>04. レストラン・売店連携 実践マニュアル ＆ 差額伝票シミュレーター</h2>
+          <p>ハンディ端末（PDA）からのオーダー送信、昼食付プランの差額精算、コンペパーティ料理の幹事一括請求フローを解説します。</p>
+        </div>
+
+        <div class="card">
+          <h3>🍽️ レストランPOSとSwingClub連携の基本ルール</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">
+            レストランの注文は、お客様のロッカー番号（またはビジター番号）を入力してハンディPDAから送信します。送信されたデータは即座にSwingClubの顧客元帳へ加算され、フロント・自動精算機とリアルタイム同期します。
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+            <div style="padding: 16px; background: #fefce8; border: 1px solid #fef08a; border-radius: 8px;">
+              <div style="font-weight: 700; color: #a16207; margin-bottom: 4px;">🍱 昼食付プラン（パック料金内メニュー）</div>
+              <div style="font-size: 12.5px; color: var(--text-muted);">プレー代金にあらかじめ「昼食基本代（例: 1,100円）」が含まれます。差額なしメニュー（ざる蕎麦等）は精算額0円として自動相殺されます。</div>
+            </div>
+            <div style="padding: 16px; background: #fff7ed; border: 1px solid #ffedd5; border-radius: 8px;">
+              <div style="font-weight: 700; color: #c2410c; margin-bottom: 4px;">🥩 差額追加メニュー（特選料理等）</div>
+              <div style="font-size: 12.5px; color: var(--text-muted);">うな重やステーキ等、基本額を超えるメニューは「差額（例: +550円）」のみが顧客ロッカーに計上され、夕方フロントで追加精算されます。</div>
+            </div>
+            <div style="padding: 16px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px;">
+              <div style="font-weight: 700; color: #1d4ed8; margin-bottom: 4px;">🍺 個人追加飲料・パーティ料理の一括分割</div>
+              <div style="font-size: 12.5px; color: var(--text-muted);">生ビールやデザートは個人負担。コンペパーティの料理代（オードブル等）は「幹事ロッカー一括」へ伝票分割機能でスマートに移動可能。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Restaurant Simulator -->
+        <div class="card" style="border: 2px solid #d97706;">
+          <h3>🎮 【動く実務ツール】レストラン伝票分割 ＆ 精算振替シミュレーター</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+            プランと注文内容を選ぶと、プレー代金に含まれる分と、夕方フロント精算機で支払うべき追加金額の内訳をリアルタイムに計算します。
+          </p>
+
+          <div class="sim-tool-box">
+            <div class="sim-grid-3">
+              <div>
+                <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">予約プラン種別:</label>
+                <select id="sim-rest-plan" class="memo-input" onchange="calcRestBill()">
+                  <option value="pack">昼食付パック（基本1,100円含む）</option>
+                  <option value="none">通常プラン（昼食別）</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">昼食メニュー:</label>
+                <select id="sim-rest-dish" class="memo-input" onchange="calcRestBill()">
+                  <option value="0">ざる蕎麦御膳（基本内・差額0円）</option>
+                  <option value="440">黒毛和牛カレー（差額 +440円）</option>
+                  <option value="880">特製うな重（差額 +880円）</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">追加飲料・おつまみ:</label>
+                <select id="sim-rest-drink" class="memo-input" onchange="calcRestBill()">
+                  <option value="0">なし（0円）</option>
+                  <option value="770">生ビール（中）1杯（+770円）</option>
+                  <option value="1540">生ビール（中）2杯（+1,540円）</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="sim-rest-result" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px; margin-top: 10px;">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 12px;">
+                <div class="sim-stat-card">
+                  <div style="font-size: 11px; color: var(--text-muted);">プレー代金に含む分</div>
+                  <div class="sim-stat-val" id="rest-res-pack" style="color: #059669;">¥1,100</div>
+                </div>
+                <div class="sim-stat-card">
+                  <div style="font-size: 11px; color: var(--text-muted);">料理の差額追加分</div>
+                  <div class="sim-stat-val" id="rest-res-diff" style="color: #d97706;">¥0</div>
+                </div>
+                <div class="sim-stat-card">
+                  <div style="font-size: 11px; color: var(--text-muted);">夕方フロント精算額</div>
+                  <div class="sim-stat-val" id="rest-res-total" style="color: #dc2626;">¥0</div>
+                </div>
+              </div>
+              <div id="rest-res-note" style="font-size: 12.5px; color: var(--text-muted); line-height: 1.5; padding: 8px 12px; background: #f8fafc; border-radius: 6px;">
+                ✅ 差額なし。フロント自動精算機での追加飲食代請求は発生しません。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>⚡ レストラン連携の3大鉄則（やってはいけないNG集）</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="annotation-box" style="border-color: #d97706; background: #fffbeb;">
+              <span class="annotation-tag" style="background: #d97706;">鉄則 1</span>
+              <div style="font-weight: 700; color: #b45309; margin-bottom: 4px;">ロッカー番号の押し間違いはその場でPOS「売上振替」を行う！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">精算機でお客様が指摘した際にレジ手動値引きを行うと、店舗売上とフロント現金が合致しなくなります。必ず「ロッカー付替」を実行してください。</div>
+            </div>
+            <div class="annotation-box" style="border-color: var(--danger); background: #fef2f2;">
+              <span class="annotation-tag" style="background: var(--danger);">鉄則 2</span>
+              <div style="font-weight: 700; color: var(--danger); margin-bottom: 4px;">昼食付プランの追加注文（ビール等）を無理にパック内へ合算しない！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">酒類・追加メニューを無理に昼食代に含めると、インボイス軽減税率（8%食品）と標準税率（10%酒類）の按分ミスとなり税務調査で否認されます。</div>
+            </div>
+            <div class="annotation-box" style="border-color: var(--primary); background: #f0fdf4;">
+              <span class="annotation-tag" style="background: var(--primary);">鉄則 3</span>
+              <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px;">コース売店（茶屋）の端末オフライン時は帰着後に即時一括送信！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">コース売店の売上送信が遅れると、お客様が先にフロント自動精算機を通過してしまい、「未収金（取りっぱぐれ）」事故が発生します。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Drilldown Manual -->
+        <div class="drilldown-box">
+          <div class="drilldown-toggle" onclick="toggleDrilldown(this)">
+            <div class="drilldown-toggle-title">
+              <span>📖</span> 【詳細ドリルダウン】レストラン・売店連携 体系的マニュアル（全手順・テキスト詳細）
+            </div>
+            <span class="drilldown-toggle-pill">▼ 📖 詳細マニュアル（テキスト手順）を読む</span>
+          </div>
+          <div class="drilldown-content">
+            <h4>1. ハンディ端末（PDA）操作とリアルタイム通信フロー</h4>
+            <ol>
+              <li><strong>着席とロッカー番号入力</strong>: お客様ご案内のテーブル番号と、代表者・同伴者のロッカー番号をPDAに入力。</li>
+              <li><strong>オーダー登録と厨房キッチンプリンター連携</strong>: 料理・飲料をタップして送信すると、厨房・デシャッププリンターへ調理指示が即座に出力。</li>
+              <li><strong>SwingClub元帳リアルタイム加算</strong>: 送信完了と同時にSwingClub顧客元帳へ利用明細が連携され、フロント画面で閲覧可能になります。</li>
+            </ol>
+
+            <h4>2. 昼食付プランの差額精算ロジックと伝票分割手順</h4>
+            <ol>
+              <li><strong>昼食付基本メニュー</strong>: プラン内基本額（例: 1,100円）の範囲内メニューは、伝票上で自動相殺され顧客請求0円として処理。</li>
+              <li><strong>特選メニューの差額加算</strong>: うな重やステーキ等、基本額を超過するメニューは「差額分（例: +550円）」のみが追加飲食代として計上。</li>
+              <li><strong>コンペパーティ料理の幹事一括振替</strong>: オードブルや乾杯ビールの伝票は、レストランレジ画面で「伝票分割 ➔ 幹事ロッカーへ一括振替」を実行。個々の参加者ロッカーにはチャージされません。</li>
+            </ol>
+
+            <h4>3. コース売店（茶屋）連携と夕方未収金防止チェック</h4>
+            <ul>
+              <li><strong>コース売店データの送信</strong>: 売店スタッフは、ハーフ終了時および最終組通過時に売店POS端末から売上データを親機へ一括送信。</li>
+              <li><strong>スルー・ハーフプレー客の先行精算防止</strong>: 途中退場や早退者がいる場合、マスター室からの内線連絡を受け、売店利用明細を即時手動反映。</li>
+              <li><strong>インボイス対応（軽減税率8%と標準税率10%）</strong>: テイクアウト飲料・菓子（8%）とレストラン店内飲食・酒類（10%）はマスタで厳格に分離され、合算請求書で適格税率ごとに自動内訳出力。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+          <button class="chapter-nav-btn" onclick="switchTab('tab-master')">
+            <span>← 前の章：03. マスター室・進行管理</span>
+          </button>
+          <button class="chapter-nav-btn" onclick="switchTab('tab-overview')">
+            <span>🗺️ 全体目次</span>
+          </button>
+          <button class="chapter-nav-btn" onclick="switchTab('tab-compe')">
+            <span>次の章：05. 競技・コンペ集計 →</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB: 05 競技・コンペ集計 -->
+      <div id="tab-compe" class="tab-content">
+        <div class="hero-banner" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
+          <h2>05. 競技・コンペ集計 実践マニュアル ＆ 新ペリア抽選シミュレーター</h2>
+          <p>新ペリア（ダブルペリア）方式の集計ロジック、隠しホール抽選、同ネット時のタイブレーク判定、賞品割当表出力を完全解説します。</p>
+        </div>
+
+        <div class="card">
+          <h3>🏆 コンペ集計の基本フローと新ペリア計算ロジック</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">
+            マスター室で全組のスコアがアテスト（確認完了）されると、ワンクリックでコンペ集計が実行されます。新ペリア方式では18ホール中12ホール（OUT 6, IN 6）を隠しホールとして抽出し、ハンディキャップ（HDCP）を自動算出します。
+          </p>
+          <div style="padding: 14px 18px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; font-size: 13px; line-height: 1.7; color: #1e3a8a; margin-bottom: 16px;">
+            <b>📐 新ペリア ハンディキャップ計算式:</b><br>
+            <code>HDCP = (隠し12ホールの打数合計 × 1.5 − 18ホールのパー合計 72) × 0.8</code><br>
+            <code>NET = 18ホールのグロス合計 − HDCP</code>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+            <div style="padding: 16px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px;">
+              <div style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">⚖️ タイブレーク優先順位（同ネット時）</div>
+              <div style="font-size: 12.5px; color: var(--text-muted);">①年長者優先（生年月日順） ➔ ②ローハンディ（HDCPが少ない方） ➔ ③マッチングスコアカード方式（INコース後半のスコア比較）。</div>
+            </div>
+            <div style="padding: 16px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px;">
+              <div style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">🎁 賞品自動割り当て</div>
+              <div style="font-size: 12.5px; color: var(--text-muted);">優勝、準優勝、3位、5位、7位、10位、飛び賞（15位、20位等）、ブービー（BB）、ブービーメーカー（BM）、ドラコン、ニアピンの自動紐付け出力。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compe Simulator -->
+        <div class="card" style="border: 2px solid #2563eb;">
+          <h3>🎮 【動く実機ツール】新ペリア隠しホール抽選 ＆ タイブレーク判定体験</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+            「🎲 隠しホールをランダム抽選」を押すと、OUT 6ホール・IN 6ホールが選ばれ、同ネットになった2名の参加者の勝敗判定（年長者優先）をリアルに実演します。
+          </p>
+
+          <div class="sim-tool-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: gap: 8px;">
+              <div style="font-size: 13px; font-weight: 700; color: #1e3a8a;">隠しホール（合計12ホール・パー48）:</div>
+              <button class="btn btn-primary" onclick="drawHiddenHoles()" style="background: #2563eb; border: none; padding: 8px 16px; font-size: 13px; font-weight: 700; cursor: pointer;">
+                🎲 隠しホールをランダム抽選する
+              </button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
+              <div style="background: #ffffff; padding: 10px 14px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                <div style="font-size: 11.5px; font-weight: 700; color: var(--text-muted);">OUTコース 隠しホール:</div>
+                <div id="compe-out-holes" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700; color: #1e3a8a; margin-top: 4px;">
+                  Hole 1, 2, 4, 6, 7, 9 (パー24)
+                </div>
+              </div>
+              <div style="background: #ffffff; padding: 10px 14px; border-radius: 6px; border: 1px solid #cbd5e1;">
+                <div style="font-size: 11.5px; font-weight: 700; color: var(--text-muted);">INコース 隠しホール:</div>
+                <div id="compe-in-holes" style="font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700; color: #1e3a8a; margin-top: 4px;">
+                  Hole 10, 11, 13, 15, 16, 18 (パー24)
+                </div>
+              </div>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px;">
+              <div style="font-weight: 700; font-size: 13px; margin-bottom: 8px; color: var(--text-main);">🥊 同ネット時のタイブレーク判定結果:</div>
+              <table class="player-table" style="margin-bottom: 8px;">
+                <thead>
+                  <tr>
+                    <th>順位</th>
+                    <th>参加者氏名</th>
+                    <th>年齢</th>
+                    <th>GROSS</th>
+                    <th>HDCP</th>
+                    <th>NET</th>
+                    <th>判定理由</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="background: #f0fdf4;">
+                    <td><b style="color: #15803d;">🥇 優勝</b></td>
+                    <td><b>佐藤 健一 様</b></td>
+                    <td><b>72歳</b></td>
+                    <td>92</td>
+                    <td>20.0</td>
+                    <td><b>72.0</b></td>
+                    <td><span style="color: #15803d; font-weight: 600;">✅ 年長者優先により1位</span></td>
+                  </tr>
+                  <tr>
+                    <td><b>🥈 準優勝</b></td>
+                    <td>田中 浩司 様</td>
+                    <td>45歳</td>
+                    <td>92</td>
+                    <td>20.0</td>
+                    <td><b>72.0</b></td>
+                    <td><span style="color: var(--text-muted);">同ネット・生年月日順で2位</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div style="font-size: 12px; color: var(--text-muted);">※SwingClubでは会員・ビジターの生年月日マスタを参照し、コンペ規約に則ってタイブレークを厳密に自動判定します。</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>⚡ コンペ集計の3大鉄則（やってはいけないNG集）</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="annotation-box" style="border-color: #2563eb; background: #eff6ff;">
+              <span class="annotation-tag" style="background: #2563eb;">鉄則 1</span>
+              <div style="font-weight: 700; color: #1e3a8a; margin-bottom: 4px;">成績表配布後に途中棄権者（WD）やスコア誤記を修正してはいけない！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">隠しホールの再計算が走り、優勝者を含む全員の順位が総崩れします。表彰式で一度授与された賞品は回収不能になるため、印刷前のマーカー確認を死守します。</div>
+            </div>
+            <div class="annotation-box" style="border-color: var(--danger); background: #fef2f2;">
+              <span class="annotation-tag" style="background: var(--danger);">鉄則 2</span>
+              <div style="font-weight: 700; color: var(--danger); margin-bottom: 4px;">参加者の生年月日マスタ未入力のまま集計を走らせない！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">生年月日が空欄だと年長者判定が正しく行われず、タイブレーク時にシステムが意図しない順位付けを行い、幹事からクレームになります。</div>
+            </div>
+            <div class="annotation-box" style="border-color: var(--primary); background: #f0fdf4;">
+              <span class="annotation-tag" style="background: var(--primary);">鉄則 3</span>
+              <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px;">幹事への成績表CSV提供時は、個人情報（電話・住所）非表示を徹底！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">SwingClubの成績表エクスポート設定で「個人情報保護モード」をONにし、氏名とスコアのみを幹事へ引き渡すのが情報漏洩防止の鉄則です。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Drilldown Manual -->
+        <div class="drilldown-box">
+          <div class="drilldown-toggle" onclick="toggleDrilldown(this)">
+            <div class="drilldown-toggle-title">
+              <span>📖</span> 【詳細ドリルダウン】競技・コンペ集計 体系的マニュアル（全手順・テキスト詳細）
+            </div>
+            <span class="drilldown-toggle-pill">▼ 📖 詳細マニュアル（テキスト手順）を読む</span>
+          </div>
+          <div class="drilldown-content">
+            <h4>1. コンペ競技マスタ設定とルール登録フロー</h4>
+            <ol>
+              <li><strong>コンペ基本情報登録</strong>: コンペ名、開催日、組数・人数、幹事連絡先、表彰式会場（コンペルーム等）をマスタ登録。</li>
+              <li><strong>競技方式とHDCPルール策定</strong>: 新ペリア方式／ペリア方式／HDCP戦を選択。上限設定（HDCP上限：男子36・女子40・無制限、上限カット：ダブルパー等）を幹事と確認の上固定。</li>
+              <li><strong>タイブレーク規約の設定</strong>: 同ネット時の順位決定基準を登録（標準: ①年長者優先 ②ローハンディ ③マッチングスコアカード方式）。</li>
+            </ol>
+
+            <h4>2. カートナビ連携とスコア集計確定（アテスト）手順</h4>
+            <ol>
+              <li><strong>カートナビデータ自動受信</strong>: 最終組ホールアウト後、カートナビから全ホールのスコアデータが自動集約。</li>
+              <li><strong>紙スコアカード（アテスト署名）照合</strong>: マーカーとアテスト者の署名入り原本とデジタル入力を照合し、不一致時は原本を優先して修正。</li>
+              <li><strong>途中棄権者（WD）・失格（DQ）の除外処理</strong>: 9ホール終了後にリタイアした参加者がいる場合、集計除外フラグをONにして18ホール集計の分母から外します。</li>
+            </ol>
+
+            <h4>3. 隠しホール抽選、成績表確定、賞品自動割当手順</h4>
+            <ul>
+              <li><strong>隠し12ホールの乱数抽選</strong>: OUT 6ホール、IN 6ホールをボタン1つで自動選出。パー合計が標準48（±0）になっていることを画面上で確認。</li>
+              <li><strong>新ペリアHDCP・NET自動算出</strong>: <code>(隠し12ホールの打数合計 × 1.5 − 72) × 0.8</code> に基づき小数第1位まで自動計算（四捨五入）。</li>
+              <li><strong>賞品表印刷 ＆ 個人情報保護CSV出力</strong>: 優勝・準優勝・飛び賞・BB・BM・ドラニアが自動印字された表彰式用台本を出力。幹事へ渡すデータは個人情報（住所・電話）を除外した「結果CSV」で安全に提供。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+          <button class="chapter-nav-btn" onclick="switchTab('tab-restaurant')">
+            <span>← 前の章：04. レストラン・売店連携</span>
+          </button>
+          <button class="chapter-nav-btn" onclick="switchTab('tab-overview')">
+            <span>🗺️ 全体目次</span>
+          </button>
+          <button class="chapter-nav-btn" onclick="switchTab('tab-member')">
+            <span>次の章：06. 会員管理・名義・年会費 →</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB: 06 会員管理・名義・年会費 -->
+      <div id="tab-member" class="tab-content">
+        <div class="hero-banner" style="background: linear-gradient(135deg, #334155 0%, #475569 100%);">
+          <h2>06. 会員管理・名義・年会費 実践マニュアル ＆ 書換チェッカー</h2>
+          <p>正会員・平日会員・法人会員の台帳管理、名義書換の厳格フロー、年会費口座振替（全銀協FBデータ）の作成を解説します。</p>
+        </div>
+
+        <div class="card">
+          <h3>👤 会員台帳と名義書換業務の基本サイクル</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">
+            会員マスタは、ゴルフ場の最高資産であるメンバー様の「預託金」「名義」「プレー権資格」「オフィシャルHDCP」を一括管理します。
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+            <div style="padding: 16px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px;">
+              <div style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">📑 名義書換（5ステップ）</div>
+              <div style="font-size: 12.5px; color: var(--text-muted);">①書類受付 ➔ ②理事会・資格審査 ➔ ③書換料入金 ➔ ④会員証券発行 ➔ ⑤SwingClub有効フラグ切替。過去日遡及は絶対禁止。</div>
+            </div>
+            <div style="padding: 16px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px;">
+              <div style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">🏦 年会費請求と口座振替（全銀協）</div>
+              <div style="font-size: 12.5px; color: var(--text-muted);">毎年指定月に全銀協フォーマットのFB（ファームバンキング）データを自動生成。銀行からの引落結果CSVを取込、即座に入金消込。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Member Tool -->
+        <div class="card" style="border: 2px solid #475569;">
+          <h3>🎮 【実務チェックツール】名義書換 手続きフロー ＆ 必要書類チェッカー</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+            名義書換の種別を選ぶと、必要書類、手数料税区分、システム登録手順を即座に確認できます。
+          </p>
+
+          <div class="sim-tool-box">
+            <div style="margin-bottom: 12px;">
+              <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">名義書換の種別を選択:</label>
+              <select id="sim-member-type" class="memo-input" onchange="checkMemberDoc()">
+                <option value="third">第三者への譲渡（個人正会員・一般譲渡）</option>
+                <option value="corp">法人会員の記名者変更（同一法人内）</option>
+                <option value="inherit">相続・生前贈与（直系尊属・卑属への継承）</option>
+              </select>
+            </div>
+
+            <div id="member-doc-result" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px;">
+              <div style="font-weight: 700; font-size: 13.5px; color: #1e293b; margin-bottom: 8px;" id="member-doc-title">
+                📋 個人正会員・第三者譲渡の手続き要件
+              </div>
+              <div style="font-size: 12.5px; color: var(--text-muted); line-height: 1.6;" id="member-doc-body">
+                <b>【必要提出書類】:</b><br>
+                ・名義書換申請書（譲渡人・譲受人双方の実印捺印）<br>
+                ・会員証券原本（裏書捺印）<br>
+                ・印鑑証明書（発行後3か月以内、両名分）<br>
+                ・譲受人の住民票・顔写真2枚・推薦会員2名の署名捺印<br>
+                <b>【システム登録手順】:</b><br>
+                理事会承認日以降に新会員番号を発行し、旧会員を「譲渡退会」としてステータス同期。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>⚡ 会員管理の3大鉄則（やってはいけないNG集）</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="annotation-box" style="border-color: #475569; background: #f8fafc;">
+              <span class="annotation-tag" style="background: #475569;">鉄則 1</span>
+              <div style="font-weight: 700; color: #334155; margin-bottom: 4px;">名義書換の有効日を過去日に遡及して登録してはいけない！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">過去日に遡って会員フラグを付けると、過去のプレー料金、利用税、売掛金がすべて再計算対象となり、締め済みの財務諸表が壊れます。</div>
+            </div>
+            <div class="annotation-box" style="border-color: var(--danger); background: #fef2f2;">
+              <span class="annotation-tag" style="background: var(--danger);">鉄則 2</span>
+              <div style="font-weight: 700; color: var(--danger); margin-bottom: 4px;">法人記名者変更時は、旧記名者の売掛残高をゼロにしてから移行する！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">旧記名者の個人ツケ（未精算分）が残ったまま変更すると、新記名者の請求書に混入し、法人クライアントと大揉めになります。</div>
+            </div>
+            <div class="annotation-box" style="border-color: var(--primary); background: #f0fdf4;">
+              <span class="annotation-tag" style="background: var(--primary);">鉄則 3</span>
+              <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px;">休会・資格停止会員はマスタで「予約禁止フラグ」を必ず有効化！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">年会費滞納などで資格停止された会員様がネット予約を通さないよう、マスタ側で予約制限ポップアップを確実に設定します。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Drilldown Manual -->
+        <div class="drilldown-box">
+          <div class="drilldown-toggle" onclick="toggleDrilldown(this)">
+            <div class="drilldown-toggle-title">
+              <span>📖</span> 【詳細ドリルダウン】会員管理・名義書換・年会費 体系的マニュアル（全手順・テキスト詳細）
+            </div>
+            <span class="drilldown-toggle-pill">▼ 📖 詳細マニュアル（テキスト手順）を読む</span>
+          </div>
+          <div class="drilldown-content">
+            <h4>1. 会員台帳マスタの構造と基本管理フロー</h4>
+            <ol>
+              <li><strong>会員種別と権限マスタ</strong>: 正会員（全日プレー可）、平日会員（月〜金）、週日会員（月〜土）、法人正会員（記名式）の料金区分・予約優先権を定義。</li>
+              <li><strong>台帳基本情報と証書管理</strong>: 会員番号、氏名、住所、生年月日、勤務先、預託金証券番号、額面金額、取得日を厳格に保持。</li>
+              <li><strong>オフィシャルHDCP ＆ 来場実績連携</strong>: JGA/USGAハンディキャップインデックスと月例杯・倶楽部選手権の競技成績を台帳と自動紐付け。</li>
+            </ol>
+
+            <h4>2. 名義書換（トランスファー）厳格5ステップ手順</h4>
+            <ol>
+              <li><strong>【Step 1】書類受領 ＆ 形式審査</strong>: 名義書換申請書（実印）、会員証書原本、印鑑証明書（3ヶ月以内）の欠落がないか確認。</li>
+              <li><strong>【Step 2】理事会・入会資格審査</strong>: 会員権審査委員会への付議、クラブハウス内での入会公示（約2週間）、面接の実施。</li>
+              <li><strong>【Step 3】名義書換料・入会金の入金消込</strong>: 指定口座への名義書換料（税込）入金を確認し、領収書発行と売掛金消込。</li>
+              <li><strong>【Step 4】新証券発行 ＆ 旧証券の消印無効化</strong>: 旧会員証書にパンチ穴消印を施し金庫保管。新名義人の会員証券を発行・郵送。</li>
+              <li><strong>【Step 5】SwingClubシステム切替</strong>: 理事会承認日当日にステータスを「有効」へ切替（※過去日への遡及入力は財務諸表崩壊のため厳禁）。</li>
+            </ol>
+
+            <h4>3. 年会費請求と口座振替（全銀協FBデータ）自動処理手順</h4>
+            <ul>
+              <li><strong>請求データ抽出と休会チェック</strong>: 毎年指定月（例: 1月）に在籍会員を自動抽出し、除名・資格停止・休会フラグの会員を除外。</li>
+              <li><strong>全銀協フォーマットFBファイル生成</strong>: 委託者コード、振替日、会員口座情報、年会費額をセットした固定長テキスト（120バイト）を出力しネットバンキングへ送信。</li>
+              <li><strong>振替結果の自動インポート</strong>: 数日後の引落結果CSVを取込、振替不能者（残高不足等）に対して督促状送付リストを自動印刷。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+          <button class="chapter-nav-btn" onclick="switchTab('tab-compe')">
+            <span>← 前の章：05. 競技・コンペ集計</span>
+          </button>
+          <button class="chapter-nav-btn" onclick="switchTab('tab-overview')">
+            <span>🗺️ 全体目次</span>
+          </button>
+          <button class="chapter-nav-btn" onclick="switchTab('tab-closing')">
+            <span>次の章：07. 経理・精算・日締め →</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB: 07 経理・精算・日締め -->
+      <div id="tab-closing" class="tab-content">
+        <div class="hero-banner" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+          <h2>07. 経理・精算・日締め 実践マニュアル ＆ 免税判定ツール</h2>
+          <p>自動精算機と現金・クレジットの残高照合、ゴルフ場利用税（70歳以上等）の免税管理、レジクローズ後の赤黒伝票修正を解説します。</p>
+        </div>
+
+        <div class="card">
+          <h3>📊 レジクローズ（日締め）と利用税申告の基本原則</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 14px;">
+            夕方のフロント精算終了後に行う「レジクローズ」は、当日の全取引（プレー代、飲食代、売店代、消費税、ゴルフ場利用税）を確定し、会計元帳へロックする不可逆な処理です。
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+            <div style="padding: 16px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px;">
+              <div style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">🔒 トランザクションロックの原則</div>
+              <div style="font-size: 12.5px; color: var(--text-muted);">日締め完了後は、電子帳簿保存法（JIIMA）要件により元データの改変が禁止されます。修正は必ず翌朝の「赤黒伝票（修正仕訳）」で行います。</div>
+            </div>
+            <div style="padding: 16px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px;">
+              <div style="font-weight: 700; color: var(--text-main); margin-bottom: 4px;">🏛️ ゴルフ場利用税の特別徴収</div>
+              <div style="font-size: 12.5px; color: var(--text-muted);">ゴルフ場利用税（地方税）は、70歳以上・18歳未満・障害者手帳保持者等が非課税となります。証明書類の確認・番号記録が法律で義務付けられています。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Closing Tool -->
+        <div class="card" style="border: 2px solid #0f172a;">
+          <h3>🎮 【実務判定ツール】ゴルフ場利用税 免税判定 ＆ 公的確認書類チェッカー</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+            お客様の年齢や資格条件を入力すると、利用税の免税可否、減額金額、提示が必要な証明書を瞬時に判定します。
+          </p>
+
+          <div class="sim-tool-box">
+            <div class="sim-grid-3">
+              <div>
+                <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">お客様のご年齢:</label>
+                <input type="number" id="sim-tax-age" value="71" min="1" max="100" class="memo-input" onchange="checkTaxExemption()">
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">公的資格・手帳の有無:</label>
+                <select id="sim-tax-cert" class="memo-input" onchange="checkTaxExemption()">
+                  <option value="none">特になし（一般）</option>
+                  <option value="handicap">身体障害者手帳・療育手帳等あり</option>
+                  <option value="athlete">国民スポーツ大会・公式競技選手</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700; display: block; margin-bottom: 6px;">標準利用税額（三重県基準）:</label>
+                <input type="text" value="1,200円" readonly class="memo-input" style="background: #f1f5f9;">
+              </div>
+            </div>
+
+            <div id="sim-tax-result" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px; margin-top: 10px;">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 12px;">
+                <div class="sim-stat-card">
+                  <div style="font-size: 11px; color: var(--text-muted);">判定結果</div>
+                  <div class="sim-stat-val" id="tax-res-status" style="color: #15803d;">【非課税】全額免除</div>
+                </div>
+                <div class="sim-stat-card">
+                  <div style="font-size: 11px; color: var(--text-muted);">利用税控除額</div>
+                  <div class="sim-stat-val" id="tax-res-amount" style="color: #2563eb;">-¥1,200</div>
+                </div>
+                <div class="sim-stat-card">
+                  <div style="font-size: 11px; color: var(--text-muted);">提示確認書類</div>
+                  <div class="sim-stat-val" id="tax-res-doc" style="font-size: 14px; color: #b45309; line-height: 1.3; margin-top: 6px;">運転免許証 / マイナンバーカード</div>
+                </div>
+              </div>
+              <div id="tax-res-note" style="font-size: 12.5px; color: var(--text-muted); line-height: 1.5; padding: 8px 12px; background: #f0fdf4; border-radius: 6px;">
+                ✅ 70歳以上のため全額非課税。フロント精算画面で「利用税免税」にチェックを入れ、免許証番号下4桁を記録してください。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>⚡ 経理・精算・日締めの3大鉄則（やってはいけないNG集）</h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="annotation-box" style="border-color: #0f172a; background: #f8fafc;">
+              <span class="annotation-tag" style="background: #0f172a;">鉄則 1</span>
+              <div style="font-weight: 700; color: #0f172a; margin-bottom: 4px;">日締め後の売上データ直接修正を要求しない！（翌日赤黒伝票で処理）</div>
+              <div style="font-size: 13px; color: var(--text-muted);">締まったデータを直接改変することは脱税・粉飾と見なされ法律違反になります。必ず翌日以降の赤伝（取消）＋黒伝（再売上）で帳簿を合わせます。</div>
+            </div>
+            <div class="annotation-box" style="border-color: var(--danger); background: #fef2f2;">
+              <span class="annotation-tag" style="background: var(--danger);">鉄則 2</span>
+              <div style="font-weight: 700; color: var(--danger); margin-bottom: 4px;">利用税の免税は必ずプレー当日の精算前までに証明書の提示を受ける！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">帰宅後の「昨日利用税引くの忘れてたから返金して」に対する現金返金は禁止。公的証明の原本確認がない免税は税務調査で否認されます。</div>
+            </div>
+            <div class="annotation-box" style="border-color: var(--primary); background: #f0fdf4;">
+              <span class="annotation-tag" style="background: var(--primary);">鉄則 3</span>
+              <div style="font-weight: 700; color: var(--primary); margin-bottom: 4px;">自動精算機のレシート詰まり時は、有人端末で売上状態を即座に確認！</div>
+              <div style="font-size: 13px; color: var(--text-muted);">精算機が紙詰まりを起こした際、再印字ボタンを押さずに慌てて有人レジで打ち直すと、「二重売上・クレジットカード二重決済」が発生します。</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed Drilldown Manual -->
+        <div class="drilldown-box">
+          <div class="drilldown-toggle" onclick="toggleDrilldown(this)">
+            <div class="drilldown-toggle-title">
+              <span>📖</span> 【詳細ドリルダウン】経理・精算・日締め 体系的マニュアル（全手順・テキスト詳細）
+            </div>
+            <span class="drilldown-toggle-pill">▼ 📖 詳細マニュアル（テキスト手順）を読む</span>
+          </div>
+          <div class="drilldown-content">
+            <h4>1. 夕方フロント精算フローと売上照合手順</h4>
+            <ol>
+              <li><strong>自動精算機（KIOSK）機内現金回収</strong>: 夕方全組プレー終了後、精算機から金庫カセットを取り出し、紙幣・硬貨計数機で実査。機内残高ログと照合。</li>
+              <li><strong>CAT端末（クレジット・電子マネー）日計照合</strong>: クレジット決済端末の業務終了集計を印字し、SwingClub売上日報の「クレジット売上計」と完全に一致することを確認。</li>
+              <li><strong>有人フロントレジ点検と釣銭準備金管理</strong>: 有人レジの現金有高から釣銭準備金（フロート）を控除し、当日現金売上との過不足ゼロを確定。</li>
+            </ol>
+
+            <h4>2. ゴルフ場利用税の免税管理と特別徴収申告手順</h4>
+            <ol>
+              <li><strong>免税対象者の確認と公的証明記録</strong>: 70歳以上、18歳未満、障害者手帳保持者について、運転免許証・マイナンバーカード原本を確認。精算画面で「利用税非課税」を選択し、証書番号下4桁を登録。</li>
+              <li><strong>非課税利用者名簿の自動出力</strong>: 地方税法に基づき、免税適用者の氏名・生年月日・確認書類番号が印字された「特別徴収免税名簿」を毎日出力・保管。</li>
+              <li><strong>月末申告書作成</strong>: 毎月末に「ゴルフ場利用税特別徴収金納入申告書」をSwingClubから出力し、翌月15日までに管轄県税事務所へ提出・納入。</li>
+            </ol>
+
+            <h4>3. レジクローズ（日締めロック）と翌朝赤黒伝票修正手順</h4>
+            <ul>
+              <li><strong>日締めロック処理</strong>: 現金・売掛・クレジットの全残高一致を確認後、[日締め実行] を押下。当日の全データにJIIMA電帳法タイムスタンプが付与され、直接改変が不可逆ロックされます。</li>
+              <li><strong>翌朝の売上修正（赤黒伝票処理）</strong>: 日締め後に発覚した誤謬（領収書宛名違い・割引漏れ等）は、元データをいじらず翌日日付で「取消赤伝（マイナス売上）」と「正しい黒伝（新規売上）」を起票して差額を調整。</li>
+              <li><strong>会計基幹システム（ERP）への仕訳連携</strong>: 確定した日次売上・売掛金・預り利用税・仮受消費税を、財務会計ソフト（勘定奉行、PCA、弥生会計等）向け汎用仕訳CSVとしてエクスポート。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Chapter Navigation -->
+        <div class="chapter-nav">
+          <button class="chapter-nav-btn" onclick="switchTab('tab-member')">
+            <span>← 前の章：06. 会員管理・名義・年会費</span>
+          </button>
+          <button class="chapter-nav-btn" onclick="switchTab('tab-overview')">
+            <span>🗺️ 全体目次に戻る</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB: 公式AIナレッジ ＆ NotebookLM 連携 -->
       <div id="tab-ai-pack" class="tab-content">
         <div class="hero-banner" style="background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);">
           <h2>SwingClub 公式AIナレッジ ＆ NotebookLM 連携</h2>
@@ -814,9 +3143,118 @@
           <div style="padding: 16px; background: #f5f3ff; border: 1px solid #ddd6fe; border-radius: 8px;">
             <div style="font-weight: 700; color: #6d28d9; margin-bottom: 8px;">💡 NotebookLMへの質問例（タップで右下AIが回答）</div>
             <div class="chat-quick-btns">
-              <button class="quick-chip" onclick="askAiBot('同伴者の名前が決まっていない時はどうすればいい？')">「同伴者未定の時は？」</button>
-              <button class="quick-chip" onclick="askAiBot('半角カナ検索をすると何が自動セットされる？')">「半角カナ検索のメリットは？」</button>
-              <button class="quick-chip" onclick="askAiBot('資組一括コピーボタンを押してはいけない理由は？')">「資組一括コピーの危険性は？」</button>
+              <button class="quick-chip" onclick="askAiBot('満枠の予約時間帯にVIPをねじ込みたい')">🧯 満枠ねじ込み</button>
+              <button class="quick-chip" onclick="askAiBot('同伴者の名前が決まっていない時はどうすればいい？')">👥 同伴者未定</button>
+              <button class="quick-chip" onclick="askAiBot('前の組から同伴者をコピーしたらビジター料金になった')">📋 同伴者コピーと料金</button>
+              <button class="quick-chip" onclick="askAiBot('半角カナ検索をすると何が自動セットされる？')">🔍 半角カナ検索</button>
+              <button class="quick-chip" onclick="askAiBot('大雨でスタートが1時間遅れたので全組一括でずらしたい')">🌧️ 一括時間ずらし</button>
+              <button class="quick-chip" onclick="askAiBot('昨日帰った客から会社名で領収書を再発行しろと言われた')">🧾 領収書宛名変更</button>
+              <button class="quick-chip" onclick="askAiBot('精算完了後に割引券を出し忘れたと客が戻ってきた')">💳 精算取消と割引券</button>
+              <button class="quick-chip" onclick="askAiBot('昨日締めた売上日報の勘定科目をDBから直してほしい')">📊 日締め後売上修正</button>
+              <button class="quick-chip" onclick="askAiBot('コンペ成績表配布後に途中棄権が発覚した')">🏆 コンペ途中棄権</button>
+              <button class="quick-chip" onclick="askAiBot('会員権名義変更を忘れていたので先月日付で遡及したい')">👤 名義変更過去遡及</button>
+              <button class="quick-chip" onclick="askAiBot('100名の名簿Excelを直接コピペしたい')">📑 Excelコピペ一括</button>
+              <button class="quick-chip" onclick="askAiBot('資組一括コピーボタンを押してはいけない理由は？')">⚠️ 資組一括の罠</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: 🛠️ CS専用：AI FAQ Factory（自律学習・即時同期コンソール） -->
+      <div id="tab-cs-console" class="tab-content">
+        <div class="cs-hero">
+          <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.05em;">
+            <span>🛡️ TSHサポート本部 / 月額サブスク自律進化Flywheel</span>
+          </div>
+          <h2><span>🪄</span> CS専用：AI FAQ Factory（受電メモから現場FAQ自動増殖）</h2>
+          <p>カスタマーサポートが受けた「よくある電話の質問」や「現場の例外トラブル」を入力するだけで、Gemini AIが【理由】と【安全な30秒回避手順】を自動構造化。ワンクリックで現場用「🧯 30秒 現場レスキュー」へ即座に新着FAQとして同期・反映されます。</p>
+        </div>
+
+        <div class="cs-grid">
+          <!-- Left Column: Input & Samples -->
+          <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <h3 style="font-size: 16px; font-weight: 700; color: #4c1d95;">【STEP 1】受電メモ・現場の質問を入力</h3>
+                <span style="font-size: 11px; background: #ede9fe; color: #6d28d9; padding: 2px 8px; border-radius: 4px; font-weight: 700;">CSオペレーター用</span>
+              </div>
+              <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.5;">
+                ゴルフ場のフロントや予約担当者から受電した際のメモをそのまま貼り付けるか、下のクイックサンプルをクリックしてください。
+              </p>
+            </div>
+
+            <!-- Quick Samples -->
+            <div>
+              <label style="font-size: 11.5px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px;">💡 受電サンプル（タップで自動入力）:</label>
+              <div>
+                <button type="button" class="sample-pill" onclick="loadCsSample('ota')">📱 OTA連携の枠ズレ・取込時間差</button>
+                <button type="button" class="sample-pill" onclick="loadCsSample('pos')">🧾 自動精算機レシート詰まりと宙に浮いた売上</button>
+                <button type="button" class="sample-pill" onclick="loadCsSample('locker')">🔑 ICロッカーキーの不具合・手動割当</button>
+                <button type="button" class="sample-pill" onclick="loadCsSample('thunder')">⚡ 雷・荒天ハーフ中断時の精算処理</button>
+              </div>
+            </div>
+
+            <div>
+              <label style="font-size: 12px; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 6px;">対象の業務カテゴリ:</label>
+              <select id="cs-input-category" style="width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px; background: #ffffff; color: var(--text-main); font-family: inherit;">
+                <option value="reservation">📅 01. 予約受付・枠管理</option>
+                <option value="front-settlement">🏨 02. フロント・チェックイン・精算</option>
+                <option value="master">⛳ 03. マスター室・コース進行</option>
+                <option value="restaurant">🍽️ 04. レストラン・売店</option>
+                <option value="compe">🏆 05. 競技・コンペ集計</option>
+                <option value="member">👤 06. 会員管理・名簿・年会費</option>
+                <option value="closing">📊 07. 経理・売上日報締め</option>
+                <option value="system">⚙️ 08. マスタ設定・外部システム連携</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 12px; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 6px;">受電メモ / 現場からの質問内容:</label>
+              <textarea id="cs-input-memo" rows="6" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px; line-height: 1.6; font-family: inherit; resize: vertical;" placeholder="例: 楽天GORAから予約が入ったが、SwingClubの予約画面のスタート時間が1組分ズレていると電話があった。手動で直していいか？"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="generateFaqFromAi()" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); border: none; padding: 12px 20px; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.3); cursor: pointer;">
+              <span>🪄 Gemini AIでレスキューカードを自動構造化する</span>
+            </button>
+          </div>
+
+          <!-- Right Column: AI Structured Preview & Publish -->
+          <div class="card" style="display: flex; flex-direction: column; gap: 16px; background: #fdfaff; border: 1px solid #ddd6fe;">
+            <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ede9fe; padding-bottom: 10px;">
+              <h3 style="font-size: 16px; font-weight: 700; color: #4c1d95; display: flex; align-items: center; gap: 6px;">
+                <span>⚡</span> 【STEP 2】Gemini AI 構造化プレビュー
+              </h3>
+              <span id="cs-ai-status" style="font-size: 11px; background: #ede9fe; color: #6d28d9; padding: 3px 8px; border-radius: 9999px; font-weight: 700;">待機中</span>
+            </div>
+
+            <!-- Preview Card Area -->
+            <div id="cs-preview-area" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 280px; text-align: center; color: var(--text-muted); border: 2px dashed #c4b5fd; border-radius: 12px; padding: 20px; background: #ffffff;">
+              <div style="font-size: 36px; margin-bottom: 8px;">🪄</div>
+              <div style="font-weight: 700; font-size: 14px; color: #4c1d95; margin-bottom: 4px;">受電メモを入力して自動生成を実行してください</div>
+              <div style="font-size: 12px; max-width: 320px; line-height: 1.5;">Geminiが「現場の困りごと」「安全理由」「30秒安全手順」を自動抽出してここにプレビュー表示します。</div>
+            </div>
+
+            <!-- Actions -->
+            <div id="cs-publish-actions" style="display: none; align-items: center; justify-content: space-between; gap: 10px; padding-top: 8px;">
+              <button type="button" class="btn btn-secondary" onclick="resetCsPreview()" style="font-size: 12px; padding: 8px 14px; cursor: pointer;">リセット</button>
+              <button type="button" class="btn btn-primary" onclick="publishFaqToRescue()" style="background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%); border: none; font-size: 13px; font-weight: 700; padding: 10px 18px; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 6px -1px rgba(234, 88, 12, 0.3); cursor: pointer;">
+                <span>💾 現場レスキューFAQへ公式追加・即時同期</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flywheel Pitch Box for Meeting / Presentation -->
+        <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; display: flex; gap: 20px; align-items: flex-start; margin-top: 12px;">
+          <div style="font-size: 32px; line-height: 1;">💡</div>
+          <div style="flex: 1;">
+            <div style="font-weight: 700; font-size: 14px; color: var(--text-main); margin-bottom: 4px;">商談・定例会でのプレゼンストーリー（月額サブスク即決 ＆ 初期構築支援）</div>
+            <div style="font-size: 12.5px; color: var(--text-muted); line-height: 1.6; margin-bottom: 8px;">
+              「一般的なWebマニュアルは納品した瞬間から陳腐化が始まります。しかし当システムは、<strong>TSHサポート本部が受けた電話内容を1回入力するだけで、全国のゴルフ場画面に安全な回避策が即座に自動増殖</strong>します。この自律進化型Flywheelこそが、月額サブスクリプションを継続していただく最大の価値です。」
+            </div>
+            <div style="background: #fdf4ff; border: 1px dashed #d8b4fe; border-radius: 6px; padding: 8px 12px; font-size: 12px; color: #7e22ce;">
+              <b>🎯 即決クロージングトーク（初期受電ログ投入オプション 10万円/20件）:</b><br>
+              「『過去の受電ログが溜まっていて初期構築が大変』というご懸念に対し、10万円/20件（20万/40件、30万/60件）のログ一括投入オプションを用意。さらに<strong>案B（月額5万円サブスク）ご成約特典として、40件分（20万円相当）を完全無償代行（初期費用実質0円）</strong>でご提供し、即決を促せます。」
             </div>
           </div>
         </div>
@@ -841,6 +3279,65 @@
   </div>
 </div>
 
+<!-- Support Memo Modal (TSHサポート連絡メモ作成) -->
+<div id="support-memo-modal" class="modal-overlay">
+  <div class="memo-modal-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
+      <h3 style="margin: 0; padding: 0; border: none; font-size: 16px; color: #0369a1; display: flex; align-items: center; gap: 6px;">
+        <span>📞</span> TSHサポート連絡メモ作成
+      </h3>
+      <button onclick="closeSupportMemoModal()" style="background: none; border: none; font-size: 18px; cursor: pointer; color: var(--text-muted);">✕</button>
+    </div>
+    <p style="font-size: 12.5px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.5;">
+      TSHサポートデスク（03-XXXX-XXXX / 平日9:00〜18:00・土日祝緊急待機）へ電話する前に、以下の項目をメモしておくと対応が劇的にスムーズになります。
+    </p>
+
+    <div class="memo-grid">
+      <div>
+        <label style="font-size: 11.5px; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 4px;">ゴルフ場名:</label>
+        <input type="text" id="memo-course" class="memo-input" value="津カントリー倶楽部">
+      </div>
+      <div>
+        <label style="font-size: 11.5px; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 4px;">担当者氏名:</label>
+        <input type="text" id="memo-staff" class="memo-input" placeholder="例: フロント 長田">
+      </div>
+      <div>
+        <label style="font-size: 11.5px; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 4px;">発生画面・メニュー:</label>
+        <select id="memo-screen" class="memo-input">
+          <option>01. 予約登録・タイムテーブル</option>
+          <option>02. フロントチェックイン・ロッカー</option>
+          <option>03. マスター室・GPSカート運行</option>
+          <option>04. レストラン・PDAオーダー</option>
+          <option>05. コンペ集計・新ペリア</option>
+          <option>06. 会員管理・年会費FB</option>
+          <option>07. 自動精算機・日締めレジ</option>
+          <option>08. 外部OTA連携（楽天/GDO）</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size: 11.5px; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 4px;">緊急度:</label>
+        <select id="memo-priority" class="memo-input">
+          <option>🚨 高（チェックイン・精算が停止）</option>
+          <option selected>⚡ 中（特定顧客・画面の例外）</option>
+          <option>💡 低（操作方法・仕様の確認）</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 12px;">
+      <label style="font-size: 11.5px; font-weight: 700; color: var(--text-main); display: block; margin-bottom: 4px;">症状・エラーメッセージ・直前の操作:</label>
+      <textarea id="memo-desc" rows="3" class="memo-input" placeholder="例: 自動精算機でレシート詰まりが発生後、画面がフリーズ。再印字ボタンが反応しない。顧客ロッカー番102。"></textarea>
+    </div>
+
+    <div style="text-align: right; display: flex; justify-content: flex-end; gap: 8px;">
+      <button class="btn btn-secondary" onclick="closeSupportMemoModal()">閉じる</button>
+      <button class="btn btn-primary" onclick="copySupportMemo()" style="background: #0284c7; border: none;">
+        📋 サポート報告テキストをコピー
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- Floating Gemini AI Chatbot -->
 <div class="chat-widget">
   <div id="chat-window" class="chat-window">
@@ -861,15 +3358,431 @@
   <button class="chat-toggle-btn" onclick="toggleChat()" title="Gemini AIに質問する">💬</button>
 </div>
 
+<!-- Toast Notification -->
+<div id="toast" class="toast">
+  <span>📋</span> 30秒手順をクリップボードにコピーしました（社内チャットやメモに貼れます）
+</div>
+
 <script>
+  // 詳細マニュアル（ドリルダウン）開閉トグル
+  function toggleDrilldown(el) {
+    const box = el.closest('.drilldown-box');
+    if (!box) return;
+    box.classList.toggle('open');
+    const pill = box.querySelector('.drilldown-toggle-pill');
+    if (pill) {
+      pill.innerText = box.classList.contains('open') ? '▲ 詳細手順を閉じる' : '▼ 📖 詳細マニュアル（テキスト手順）を読む';
+    }
+  }
+
   // Tab Switching
   function switchTab(tabId) {
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
     
     const target = document.getElementById(tabId);
-    if (target) target.classList.add('active');
-    event.currentTarget.classList.add('active');
+    if (target) {
+      target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Update active state in sidebar
+    const navMap = {
+      'tab-rescue': 'nav-item-rescue',
+      'tab-overview': 'nav-item-overview',
+      'tab-reservation': 'nav-item-reservation',
+      'tab-front': 'nav-item-front',
+      'tab-master': 'nav-item-master',
+      'tab-restaurant': 'nav-item-restaurant',
+      'tab-compe': 'nav-item-compe',
+      'tab-member': 'nav-item-member',
+      'tab-closing': 'nav-item-closing',
+      'tab-ai-pack': 'nav-item-ai-pack',
+      'tab-cs-console': 'nav-item-cs'
+    };
+    const navId = navMap[tabId];
+    if (navId) {
+      const nav = document.getElementById(navId);
+      if (nav) nav.classList.add('active');
+    }
+  }
+
+  // 30秒 現場レスキュー: アコーディオン開閉トグル
+  function toggleFaqCard(el) {
+    const card = el.closest('.faq-card');
+    if (!card) return;
+    card.classList.toggle('open');
+    const pill = card.querySelector('.faq-toggle-pill');
+    if (pill) {
+      pill.innerText = card.classList.contains('open') ? '▲ 閉じる' : '▼ 30秒手順';
+    }
+  }
+
+  // 30秒 現場レスキュー: すべて展開 / すべて閉じる
+  function expandAllFaqs(isOpen) {
+    document.querySelectorAll('#faq-cards-list .faq-card').forEach(card => {
+      if (isOpen) {
+        card.classList.add('open');
+      } else {
+        card.classList.remove('open');
+      }
+      const pill = card.querySelector('.faq-toggle-pill');
+      if (pill) {
+        pill.innerText = isOpen ? '▲ 閉じる' : '▼ 30秒手順';
+      }
+    });
+  }
+
+  // 30秒 現場レスキュー: カテゴリ絞り込み（全9カテゴリ対応）
+  function filterFaqCategory(cat, btn) {
+    document.querySelectorAll('#category-filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    const cards = document.querySelectorAll('#faq-cards-list .faq-card');
+    cards.forEach(card => {
+      const cardCat = card.getAttribute('data-category') || '';
+      if (cat === 'all') {
+        card.style.display = 'block';
+      } else if (cardCat === cat || (cat === 'front-settlement' && (cardCat.includes('front') || cardCat.includes('settlement')))) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // 各カテゴリの件数バッジを動的更新
+  function updateCategoryCounts() {
+    const cards = document.querySelectorAll('#faq-cards-list .faq-card');
+    const counts = {
+      all: cards.length,
+      reservation: 0,
+      'front-settlement': 0,
+      master: 0,
+      restaurant: 0,
+      compe: 0,
+      member: 0,
+      closing: 0,
+      system: 0
+    };
+
+    cards.forEach(card => {
+      const cat = card.getAttribute('data-category') || '';
+      if (cat === 'reservation') counts.reservation++;
+      else if (cat === 'front-settlement' || cat === 'front' || cat === 'settlement') counts['front-settlement']++;
+      else if (cat === 'master') counts.master++;
+      else if (cat === 'restaurant') counts.restaurant++;
+      else if (cat === 'compe') counts.compe++;
+      else if (cat === 'member') counts.member++;
+      else if (cat === 'closing') counts.closing++;
+      else if (cat === 'system') counts.system++;
+    });
+
+    for (const [key, count] of Object.entries(counts)) {
+      const el = document.getElementById('count-' + key);
+      if (el) el.innerText = count;
+    }
+
+    const sideBadge = document.getElementById('sidebar-rescue-badge');
+    if (sideBadge) sideBadge.innerText = `お困りごと${cards.length}選`;
+  }
+
+  // --- マスター室：進行・遅延計算シミュレーター ---
+  function calcMasterProgress() {
+    const course = document.getElementById('sim-master-course').value;
+    const startTimeStr = document.getElementById('sim-master-time').value;
+    const delayMin = parseInt(document.getElementById('sim-master-delay').value, 10);
+
+    const [h, m] = startTimeStr.split(':').map(Number);
+    let startMin = h * 60 + m;
+
+    // 前半標準 2時間15分 (135分) + 遅延分
+    let turnMin = startMin + 135 + delayMin;
+    let turnH = Math.floor(turnMin / 60) % 24;
+    let turnM = turnMin % 60;
+    let turnStr = `${String(turnH).padStart(2, '0')}:${String(turnM).padStart(2, '0')}`;
+
+    // 昼休憩計算（遅延が大きい場合は40分に圧縮、通常は45分〜50分）
+    let breakMin = delayMin >= 30 ? 40 : (delayMin >= 15 ? 45 : 50);
+    let nextStartMin = turnMin + breakMin;
+    let nextH = Math.floor(nextStartMin / 60) % 24;
+    let nextM = nextStartMin % 60;
+    let nextStartStr = `${String(nextH).padStart(2, '0')}:${String(nextM).padStart(2, '0')}`;
+
+    document.getElementById('master-res-turn').innerText = turnStr;
+    document.getElementById('master-res-break').innerText = `${breakMin}分`;
+    document.getElementById('master-res-start').innerText = nextStartStr;
+
+    const alertBox = document.getElementById('master-res-alert');
+    if (delayMin === 0) {
+      alertBox.style.background = '#f0fdf4';
+      alertBox.style.color = '#15803d';
+      alertBox.style.border = '1px solid #bbf7d0';
+      alertBox.innerHTML = `✅ <strong>順調な進行です。</strong> 後半スタートは ${course === 'OUT' ? 'IN' : 'OUT'} ${nextStartStr} 予定。レストランへの特段のアラートは不要です。`;
+    } else if (delayMin === 15) {
+      alertBox.style.background = '#fffbeb';
+      alertBox.style.color = '#b45309';
+      alertBox.style.border = '1px solid #fde68a';
+      alertBox.innerHTML = `⚠️ <strong>+15分遅延注意:</strong> 昼休憩を45分に調整。レストラン厨房へ「${turnStr} ホールアウト着、配膳準備」を内線連絡してください。`;
+    } else {
+      alertBox.style.background = '#fef2f2';
+      alertBox.style.color = '#b91c1c';
+      alertBox.style.border = '1px solid #fecaca';
+      alertBox.innerHTML = `🚨 <strong>+30分 重大停滞警告:</strong> 昼休憩を最短40分に圧縮。レストラン厨房へ優先提供を緊急要請し、後半スタート枠のスライド調整を実行してください。`;
+    }
+
+    document.getElementById('sim-master-result').style.display = 'block';
+  }
+
+  // --- レストラン：伝票分割・差額計算シミュレーター ---
+  function calcRestBill() {
+    const plan = document.getElementById('sim-rest-plan').value;
+    const dishDiff = parseInt(document.getElementById('sim-rest-dish').value, 10);
+    const drink = parseInt(document.getElementById('sim-rest-drink').value, 10);
+
+    const packIncluded = plan === 'pack' ? 1100 : 0;
+    const totalExtra = (plan === 'pack' ? dishDiff : (1100 + dishDiff)) + drink;
+
+    document.getElementById('rest-res-pack').innerText = `¥${packIncluded.toLocaleString()}`;
+    document.getElementById('rest-res-diff').innerText = `¥${dishDiff.toLocaleString()}`;
+    document.getElementById('rest-res-total').innerText = `¥${totalExtra.toLocaleString()}`;
+
+    const note = document.getElementById('rest-res-note');
+    if (totalExtra === 0) {
+      note.style.background = '#f0fdf4';
+      note.style.color = '#15803d';
+      note.innerHTML = `✅ <strong>差額なし。</strong> フロント自動精算機での追加飲食請求は発生しません。`;
+    } else {
+      note.style.background = '#fffbeb';
+      note.style.color = '#b45309';
+      note.innerHTML = `💳 <strong>追加精算あり:</strong> 料理差額 ¥${dishDiff.toLocaleString()} ＋ 飲料 ¥${drink.toLocaleString()} ＝ <strong>計 ¥${totalExtra.toLocaleString()}</strong> が夕方フロント精算機に即座に合算されます。`;
+    }
+  }
+
+  // --- コンペ：新ペリア隠しホール抽選シミュレーター ---
+  function drawHiddenHoles() {
+    // 1〜9の中から6ホール、10〜18の中から6ホールをランダム抽選
+    function shuffleArray(arr) {
+      return arr.sort(() => Math.random() - 0.5);
+    }
+    const outPool = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const inPool = [10, 11, 12, 13, 14, 15, 16, 17, 18];
+
+    const outHidden = shuffleArray(outPool).slice(0, 6).sort((a,b) => a - b);
+    const inHidden = shuffleArray(inPool).slice(0, 6).sort((a,b) => a - b);
+
+    document.getElementById('compe-out-holes').innerText = `Hole ${outHidden.join(', ')} (パー24)`;
+    document.getElementById('compe-in-holes').innerText = `Hole ${inHidden.join(', ')} (パー24)`;
+
+    showToast('🎲 新ペリア隠しホール（合計12ホール）を再抽選しました！');
+  }
+
+  // --- 会員管理：名義書換必要書類チェッカー ---
+  function checkMemberDoc() {
+    const type = document.getElementById('sim-member-type').value;
+    const title = document.getElementById('member-doc-title');
+    const body = document.getElementById('member-doc-body');
+
+    if (type === 'third') {
+      title.innerText = '📋 個人正会員・第三者譲渡の手続き要件';
+      body.innerHTML = `
+        <b>【必要提出書類】:</b><br>
+        ・名義書換申請書（譲渡人・譲受人双方の実印捺印）<br>
+        ・会員証券原本（裏書捺印）<br>
+        ・印鑑証明書（発行後3か月以内、両名分）<br>
+        ・譲受人の住民票・顔写真2枚・推薦会員2名の署名捺印<br>
+        <b>【システム登録手順】:</b><br>
+        理事会承認日以降に新会員番号を発行し、旧会員を「譲渡退会」としてステータス同期。
+      `;
+    } else if (type === 'corp') {
+      title.innerText = '🏢 法人会員・記名者変更の手続き要件';
+      body.innerHTML = `
+        <b>【必要提出書類】:</b><br>
+        ・法人記名者変更届（法人実印捺印）<br>
+        ・法人の履歴事項全部証明書（3か月以内）及び印鑑証明書<br>
+        ・新記名者の在籍証明書（社員証コピーまたは健康保険証）及び住民票・写真<br>
+        <b>【システム登録手順】:</b><br>
+        旧記名者の「未精算ツケ・売掛金」を全額入金消込した後、同一法人コードのまま記名者氏名を更新。
+      `;
+    } else {
+      title.innerText = '👨‍👩‍👧 相続・生前贈与（直系親族継承）の手続き要件';
+      body.innerHTML = `
+        <b>【必要提出書類】:</b><br>
+        ・相続名義書換申請書（相続人全員の同意書または遺産分割協議書）<br>
+        ・被相続人・相続人の続柄を証明する戸籍謄本全部事項証明<br>
+        ・会員証券原本及び印鑑証明書<br>
+        <b>【システム登録手順】:</b><br>
+        名義書換料（親族間減額規定を適用）の入金確認後、預託金据置期間を引き継いで新証券発行。
+      `;
+    }
+  }
+
+  // --- 経理・日締め：ゴルフ場利用税 免税判定チェッカー ---
+  function checkTaxExemption() {
+    const age = parseInt(document.getElementById('sim-tax-age').value, 10) || 0;
+    const cert = document.getElementById('sim-tax-cert').value;
+
+    const statusEl = document.getElementById('tax-res-status');
+    const amountEl = document.getElementById('tax-res-amount');
+    const docEl = document.getElementById('tax-res-doc');
+    const noteEl = document.getElementById('tax-res-note');
+
+    if (age >= 70) {
+      statusEl.innerText = '【非課税】全額免除';
+      statusEl.style.color = '#15803d';
+      amountEl.innerText = '-¥1,200';
+      docEl.innerText = '運転免許証 / マイナンバーカード';
+      noteEl.style.background = '#f0fdf4';
+      noteEl.style.color = '#15803d';
+      noteEl.innerHTML = `✅ <strong>70歳以上高齢者非課税:</strong> 利用税 1,200円が全額免除。精算画面で「利用税非課税」にチェックし、免許証番号下4桁を入力してください。`;
+    } else if (age < 18 && age > 0) {
+      statusEl.innerText = '【非課税】全額免除';
+      statusEl.style.color = '#15803d';
+      amountEl.innerText = '-¥1,200';
+      docEl.innerText = '健康保険証 / 学生証';
+      noteEl.style.background = '#f0fdf4';
+      noteEl.style.color = '#15803d';
+      noteEl.innerHTML = `✅ <strong>18歳未満ジュニア非課税:</strong> 生年月日証明により利用税 1,200円が全額免除されます。`;
+    } else if (cert === 'handicap') {
+      statusEl.innerText = '【非課税】全額免除';
+      statusEl.style.color = '#15803d';
+      amountEl.innerText = '-¥1,200';
+      docEl.innerText = '身体障害者手帳 / 療育手帳 原本';
+      noteEl.style.background = '#f0fdf4';
+      noteEl.style.color = '#15803d';
+      noteEl.innerHTML = `✅ <strong>障害者免税:</strong> 手帳原本の提示により利用税全額非課税。手帳番号を端末に控えます。`;
+    } else if (cert === 'athlete') {
+      statusEl.innerText = '【非課税】公式競技特例';
+      statusEl.style.color = '#2563eb';
+      amountEl.innerText = '-¥1,200';
+      docEl.innerText = '県ゴルフ連盟等の選手証明書';
+      noteEl.style.background = '#eff6ff';
+      noteEl.style.color = '#1e3a8a';
+      noteEl.innerHTML = `✅ <strong>国スポ等競技選手非課税:</strong> 都道府県発行の事前証明書が必須です。`;
+    } else {
+      statusEl.innerText = '【課税】通常課税';
+      statusEl.style.color = 'var(--text-main)';
+      amountEl.innerText = '¥0 (控除なし)';
+      docEl.innerText = '証明書不要';
+      noteEl.style.background = '#f8fafc';
+      noteEl.style.color = 'var(--text-muted)';
+      noteEl.innerHTML = `ℹ️ <strong>通常課税:</strong> 18歳以上70歳未満の一般ゴルファーは、ゴルフ場利用税（1,200円）が通常通り課税されます。`;
+    }
+  }
+
+  // --- サポート連絡メモモーダル操作 ---
+  function openSupportMemoModal() {
+    document.getElementById('support-memo-modal').classList.add('active');
+  }
+
+  function closeSupportMemoModal() {
+    document.getElementById('support-memo-modal').classList.remove('active');
+  }
+
+  function copySupportMemo() {
+    const course = document.getElementById('memo-course').value || '津カントリー倶楽部';
+    const staff = document.getElementById('memo-staff').value || '担当者未記入';
+    const screen = document.getElementById('memo-screen').value;
+    const priority = document.getElementById('memo-priority').value;
+    const desc = document.getElementById('memo-desc').value || '（症状詳細未記入）';
+    const now = new Date().toLocaleString('ja-JP');
+
+    const text = `【TSH SwingClub サポート問合せ連絡メモ】
+■ ゴルフ場名: ${course}
+■ 担当者: ${staff}
+■ 発生日時: ${now}
+■ 対象画面: ${screen}
+■ 緊急度: ${priority}
+■ 症状・エラー内容:
+${desc}
+----------------------------------------
+※本メモはSwingClub実践マニュアルポータルから自動生成されました。`;
+
+    navigator.clipboard.writeText(text).then(() => {
+      closeSupportMemoModal();
+      showToast('📋 サポート連絡メモをコピーしました！TSHサポートへのメールや電話の控えにお使いください。');
+    }).catch(() => {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      closeSupportMemoModal();
+      showToast('📋 サポート連絡メモをコピーしました！TSHサポートへのメールや電話の控えにお使いください。');
+    });
+  }
+
+  // クリップボードコピー ＆ トースト通知
+  function copyWorkaround(caseId) {
+    const list = document.getElementById('workaround-' + caseId);
+    if (!list) return;
+    
+    let text = "【SwingClub 現場の30秒安全回避手順】\n";
+    const items = list.querySelectorAll('li');
+    items.forEach((item, idx) => {
+      text += `${idx + 1}. ${item.innerText}\n`;
+    });
+
+    navigator.clipboard.writeText(text).then(() => {
+      showToast('📋 30秒手順をクリップボードにコピーしました（社内チャットやメモに貼れます）');
+    }).catch(() => {
+      // Fallback
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      showToast('📋 30秒手順をクリップボードにコピーしました（社内チャットやメモに貼れます）');
+    });
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    if (!toast) return;
+    if (msg) {
+      toast.innerHTML = `<span>📋</span> ${msg}`;
+    } else {
+      toast.innerHTML = `<span>📋</span> 30秒手順をクリップボードにコピーしました（社内チャットやメモに貼れます）`;
+    }
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3200);
+  }
+
+  // トップバー検索窓連動（インクリメンタル検索 ＆ ヒット時自動展開）
+  function filterContent() {
+    const query = document.getElementById('global-search').value.trim().toLowerCase();
+    
+    // 文字が入力されたら、自動的に「30秒 現場レスキュー」タブへ切り替え
+    if (query.length > 0) {
+      const rescueTab = document.getElementById('tab-rescue');
+      if (rescueTab && !rescueTab.classList.contains('active')) {
+        switchTab('tab-rescue');
+      }
+    }
+
+    const cards = document.querySelectorAll('#faq-cards-list .faq-card');
+    let matchCount = 0;
+
+    cards.forEach(card => {
+      const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+      const text = card.innerText.toLowerCase();
+
+      if (!query || keywords.includes(query) || text.includes(query)) {
+        card.style.display = 'block';
+        if (query) {
+          card.classList.add('open');
+          const pill = card.querySelector('.faq-toggle-pill');
+          if (pill) pill.innerText = '▲ 閉じる';
+        }
+        matchCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
   }
 
   // Simulator Logic
@@ -987,21 +3900,430 @@
     container.scrollTop = container.scrollHeight;
   }
 
+  // AI相談室のレスポンス（現場スタッフ向け・プロフェッショナル回答）
   function respondFromAi(query) {
     setTimeout(() => {
-      let reply = "SwingClubの仕様・現場ルールについてお答えします。";
-      if (query.includes('同伴者') || query.includes('未定')) {
-        reply = "【同伴者未定の正解】\n同伴者の名前が決まっていない時は「空欄」のままで登録してください！代表者の名前をコピペすると、当日のフロント受付と精算が大パニックになります。";
-      } else if (query.includes('半角カナ') || query.includes('検索')) {
-        reply = "【半角カナ検索の作法】\n氏名カナ欄に「半角カタカナ」で入力してEnterを押すと、会員マスタから会員番号・電話番号・資格・HDCPが自動でセットされます。";
-      } else if (query.includes('資組一括') || query.includes('コピー') || query.includes('危険')) {
-        reply = "【資組一括コピーの危険性】\n会員様の割引資格がゲスト全員にコピーされ、ビジターが会員料金で誤精算される売上損失事故が発生します。資格一括コピーは触らないのが鉄則です！";
+      let reply = "";
+      const q = query.toLowerCase();
+
+      if (q.includes('満枠') || q.includes('ねじ込み') || q.includes('枠増やし') || q.includes('vip')) {
+        reply = "【予約枠・満枠時の安全なご案内】\n" +
+                "🛡️ システム制限の理由：コースの所要時間（2h15m）とカート運行間隔の安全上限です。無理に追加するとコース全体が大渋滞し、外部予約との二重予約（ダブルブッキング）を招きます。\n\n" +
+                "✅ 現場での回避手順（30秒）：\n" +
+                "1. 前後の枠から「3人組（または2人組）」を探す\n" +
+                "2. 既存枠の幹事様へ組み合わせ（ジョイント）または前後7分のスライド調整をご提案する\n" +
+                "3. またはスルー枠・午後スタート枠へご誘導ください。";
+      } else if (q.includes('同伴者') && (q.includes('コピー') || q.includes('料金') || q.includes('ビジター'))) {
+        reply = "【同伴者コピー時の料金確認】\n" +
+                "🛡️ 仕様の理由：文字をコピーすると前の行の資格コードがそのまま引き継がれます。お名前だけでなく資格マスタの再指定が必要です。\n\n" +
+                "✅ 現場での回避手順（15秒）：\n" +
+                "該当者の行で [F4]（会員検索）または資格欄をクリックし、半角カナで頭3文字を入力してEnterを押してください。一瞬で正しいメンバー料金に再計算されます。";
+      } else if (q.includes('同伴者') && q.includes('未定')) {
+        reply = "【同伴者のお名前が未定の時】\n" +
+                "同伴者の名前が決まっていない時は「空欄」のままで登録してください！代表者のお名前を複製すると、当日のフロント画面に同じ名前が並び混乱します。空欄のまま登録すれば、当日チェックイン時に正確にお名前を確定できます。";
+      } else if (q.includes('半角カナ') || q.includes('全角') || q.includes('名寄せ') || q.includes('f8')) {
+        reply = "【半角カナ・会員検索の手順】\n" +
+                "🛡️ 仕様の理由：同姓同名の別人の売掛金や成績データとの誤合体を防ぎ、個人情報を厳格に守るため半角カナ照合が義務付けられています。\n\n" +
+                "✅ 現場での回避手順（10秒）：\n" +
+                "氏名欄のスペースを消し、[F8] キーで一発半角変換するか、検索窓で「半角カナ3文字＋Enter」で一覧から該当会員様を選択してください。";
+      } else if (q.includes('雨') || q.includes('順延') || q.includes('時間ずらし') || q.includes('スライド') || q.includes('遅れ')) {
+        reply = "【天候悪化・スタート時間変更】\n" +
+                "🛡️ 仕様の理由：カートナビ運行データやレストラン厨房と直結しているため、一括スライドはカート同士の追突や昼食会場のパンクを招きます。\n\n" +
+                "✅ 現場での回避手順（30秒）：\n" +
+                "マスター室画面を「タイムテーブル（枠移動）モード」にし、直近の組から順番にマウスドラッグで空き枠へ移動させてください。10組動かしても30秒程度で安全に完了します。";
+      } else if (q.includes('領収書') || q.includes('宛名') || q.includes('会社名') || q.includes('再発行')) {
+        reply = "【領収書の宛名変更・再発行】\n" +
+                "🛡️ 法的理由：日締め完了後の売上データを直接上書きすることは、電子帳簿保存法（JIIMA要件）上禁止されています。\n\n" +
+                "✅ 現場での回避手順（30秒）：\n" +
+                "昨日のデータは直接触らず、[フロント精算] → [過去履歴照会] から該当伝票を呼び出し、「再発行（宛名変更）」ボタンで会社名を入力して発行してください（正規の監査文言が自動印字されます）。";
+      } else if (q.includes('精算取消') || q.includes('取消') || q.includes('割引券') || q.includes('出し忘れ') || q.includes('赤伝')) {
+        reply = "【精算後の割引券出し忘れ対応】\n" +
+                "🛡️ 仕様の理由：クレジット決済はすでにカード会社で売上確定しているため、画面の数字だけ直してもカード請求額は変わりません。\n\n" +
+                "✅ 現場での回避手順（30秒）：\n" +
+                "フロント画面で「精算取消（赤伝）」を実行して端末でカード取消を通し、割引券を適用した上で再度チェックアウト決済を行ってください。これでカード会社と1円単位で一致します。";
+      } else if (q.includes('日締め') || q.includes('売上修正') || q.includes('db') || q.includes('データベース') || q.includes('勘定科目')) {
+        reply = "【日締め後の勘定科目誤りの修正】\n" +
+                "🛡️ 会計上の理由：締め済みの売上データは税務申告データとロックされているため、直接変更はできません。\n\n" +
+                "✅ 現場での回避手順（30秒）：\n" +
+                "昨日のデータは触らず、本日の日付で「振替伝票（マイナス売上とプラス売上）」を起票し、摘要欄に「※〇月〇日科目コード誤りの振替」と入力してください。月次累計で1円単位で完璧に合致します。";
+      } else if (q.includes('棄権') || q.includes('コンペ') || q.includes('新ペリア') || q.includes('nr') || q.includes('順位')) {
+        reply = "【コンペ集計後の途中棄権対応】\n" +
+                "🛡️ 競技規則上の理由：参加者から単純削除すると新ペリアの隠しホールが再抽選され、他の方全員の順位がひっくり返ってしまいます。\n\n" +
+                "✅ 現場での回避手順（40秒）：\n" +
+                "削除せず、スコア入力を「途中棄権（NR）」ステータスにし、コンペ集計画面で「賞対象外」にチェックを入れてください。隠しホールを崩さずに順位だけ綺麗に繰り上がります。";
+      } else if (q.includes('名変') || q.includes('名義変更') || q.includes('過去日') || q.includes('遡及') || q.includes('返金')) {
+        reply = "【会員権名変遅延に伴う差額返金】\n" +
+                "🛡️ 法的理由：ゴルフ会員権は法的な財産権のため、過去日へ遡って登録することはできません。\n\n" +
+                "✅ 現場での回避手順（30秒）：\n" +
+                "会員登録は「本日付（正規の登録日）」で行い、先月プレー分の差額は「今月のフロント精算で預り金相殺（または振込返金伝票）」を起票して摘要欄に理由を明記してください。監査上も完璧に通ります。";
+      } else if (q.includes('excel') || q.includes('エクセル') || q.includes('コピペ') || q.includes('csv') || q.includes('一括')) {
+        reply = "【Excel名簿の一括取込】\n" +
+                "🛡️ システム保護の理由：画面への直接コピペは文字数オーバーや不正文字で自動精算機やカートナビ連携が停止する恐れがあります。\n\n" +
+                "✅ 現場での回避手順（2分）：\n" +
+                "手元のExcelで名前列に =TRIM(A1) をかけて余分な空白を除去し、SwingClubの「標準CSV取込テンプレート」に貼り付けてインポートしてください。100名が3秒で一括登録されます。";
+      } else if (q.includes('資組一括') || q.includes('危険')) {
+        reply = "【資組一括コピーの注意点】\n会員様の割引資格が同伴ゲスト全員にコピーされ、ビジターが会員料金で誤精算される売上損失事故が発生します。資格一括コピーは触らず、当日フロントで確定させるのが現場の鉄則です。";
       } else {
-        reply = `ご質問「${query}」について：SwingClub-CLOUDの現場実践ナレッジに基づき、安全な操作手順をご案内します。詳細は各モジュールマニュアルをご覧ください。`;
+        reply = `ご質問「${query}」について：SwingClub-CLOUDの現場実践ナレッジに基づき、安全な操作手順をご案内します。左メニューの「🧯 30秒 現場レスキュー」から該当のお困りごとを選択していただくと、安全な回避手順が即座に確認できます。`;
       }
       appendMessage(reply, 'bot');
     }, 400);
   }
+
+  // ==========================================
+  // CS Console: AI FAQ Factory Logic
+  // ==========================================
+  let currentGeneratedFaq = null;
+
+  const CS_SAMPLES = {
+    ota: {
+      category: 'reservation',
+      memo: 'じゃらんゴルフから予約が入ったが、SwingClubの予約画面でスタート時間が7分後ろにズレて登録されているとフロントから連絡。勝手に手動で前へドラッグして戻してもいいか？',
+      title: '【OTA予約連携の枠ズレ】「じゃらん・楽天の予約が画面上で数分ズレて落ちてきた！」',
+      badgeText: '⚠️ 手動ドラッグ移動は禁止（二重予約の恐れ）',
+      badgeClass: 'badge-limit',
+      situation: 'じゃらんや楽天GORAから取り込まれた予約枠の時間が、現場の想定枠から1組分ズレて登録されている。フロントで直そうとドラッグして移動させようとしている。',
+      reason: 'OTA連携インターフェースは時間枠の一致IDで空枠在庫を双方向同期しています。SwingClub側で手動移動させると連携IDの不整合が起き、OTA側でその枠が「空枠」と誤認識されて二重予約（ダブルブッキング）を招きます。',
+      steps: [
+        'SwingClub画面で手動移動せず、まず<strong>OTA側の管理画面（じゃらん/楽天管理画面）の予約時間</strong>を確認する。',
+        'コースの枠管理テーブルで「連携専用ブロック枠」のインターバル設定（7分・8分）にズレがないか確認する。',
+        '時間を変えたい場合は、<strong>OTA側で予約変更してもらうか、マスター室の「当日運行スライド（枠移動ではなく進行順序変更）」</strong>で吸収するのが現場の安全鉄則です。',
+        '※絶対に予約枠自体のドラッグ強制移動を行わないでください。'
+      ],
+      keywords: 'OTA じゃらん 楽天GORA 連携 枠ズレ 取込時間差 ダブルブッキング ブロック枠 同期'
+    },
+    pos: {
+      category: 'front-settlement',
+      memo: '自動精算機でゲストがICホルダーをかざして精算中にレシート用紙切れで機械が詰まった。画面はエラー停止し、SwingClubのフロント画面では未精算のまま残っているが、客のクレジットカード売上は通ってしまっているらしい。どう処理すればいいか？',
+      title: '【自動精算機の紙詰まりと二重決済防止】「レシート詰まりで機械停止、客のカード売上は成立している！」',
+      badgeText: '🛡️ 再決済は絶対禁止（クレジット二重請求事故）',
+      badgeClass: 'badge-limit',
+      situation: '自動精算機でチェックアウト決済中にレシート紙詰まりが発生。精算機はエラー停止し、SwingClubの画面上は「未精算」のまま。客は「カード会社の決済通知がスマホに来た」と言っている。',
+      reason: '精算機端末がクレジットCATへ通信完了した直後、印刷エラーでSwingClubへの完了応答電文が途切れた状態です。フロント端末で再度チェックアウト決済を通すと、カード会社へ2重請求（オーソリ重複）となり重大な金銭トラブルになります。',
+      steps: [
+        '慌ててフロント端末で「再精算」を通さず、<strong>カード端末（CAT）の「直前売上集計照会」</strong>を出力して売上承認番号を確認する。',
+        '精算機の紙詰まりを解消し、機械をリブート（再起動）して「オフライン完了電文の再送」を待つ（自動でSwingClub側も精算完了に更新されます）。',
+        '急ぐ場合は、フロント画面で<strong>決済種別を「クレジット手動照合（承認番号入力）」として精算完了</strong>させ、お客様へはフロントの手書き領収書（または手動再印刷）をお渡しください。'
+      ],
+      keywords: '自動精算機 紙詰まり レシート エラー停止 クレジット二重決済 承認番号 ICホルダー 売上未反映'
+    },
+    locker: {
+      category: 'front-settlement',
+      memo: 'フロントでチェックイン処理時、ICロッカーキーが読み取りエラーで「カード番号不正」と表示される。別のロッカー番号を手動で強制入力して渡していいか？',
+      title: '【ICロッカーキー読み取り不良】「チェックイン時にICキーがエラーになる！別ロッカーを手動割当したい」',
+      badgeText: '💡 鍵マスタの健全性を保つ安全手順',
+      badgeClass: 'badge-safe',
+      situation: '朝のチェックイン時、ICロッカーキーをリーダーにかざすと「未登録タグ／通信エラー」となり、画面が進まない。急いでいるので手元の空きロッカー番号を直接入力して渡したい。',
+      reason: 'ICロッカーキーは、鍵番号とRFIDチップ固有ID（UID）が1対1で暗号化ペアリングされています。画面で番号だけ手動入力して物理キーを渡すと、脱衣所のロッカー扉が開かない、または他人のロッカーが開いてしまう防犯上の重大事故になります。',
+      steps: [
+        'その不良キーは「予備トレイ」に除外する（絶対に手動で番号だけ書き換えて渡さない）。',
+        'フロント画面の [チェックイン] で<strong>「ICキー再割当」ボタンを押し、別の正常なICキーをリーダーにかざす</strong>。',
+        'SwingClubが新しいキーのチップIDと空きロッカー番号を自動ペアリングし、3秒で安全にチェックインが完了します。',
+        '不良キーは後ほどマスター室のICチェッカーでチップ破損を確認してください。'
+      ],
+      keywords: 'ICロッカーキー ロッカー番号 RFID 通信エラー 手動割当 チェックイン 防犯 鍵マスタ'
+    },
+    thunder: {
+      category: 'front-settlement',
+      memo: '突然の雷雨で前半9ホール終了時点でクローズ決定。18ホールの正規料金でチェックインしているが、ハーフ料金への減額とゴルフ場利用税・振興基金の精算はどう処理すべきか？',
+      title: '【雷雨・荒天ハーフ中断の精算】「9ホールでプレー中断決定！利用税や昼食代の計算ルールはどうする？」',
+      badgeText: '⚖️ 税法・利用約款準拠の正規手順',
+      badgeClass: 'badge-legal',
+      situation: '突然の雷雲接近により、マスター室判断で午前中で営業クローズ（ハーフ終了）。全組が一斉にフロント精算へ押し寄せてきた。利用税やカートフィの減額処理をどうすればいいか。',
+      reason: 'ゴルフ場利用税（地方税）は都道府県条例により「ハーフ（9H以下）での利用税非課税・または半額減額措置」が定められている場合があり、勝手な値引きは脱税または過徴収の監査指摘対象となります。またレストランで飲食した代金は利用税対象外です。',
+      steps: [
+        'フロント画面で [一括処理] → <strong>「荒天ハーフクローズ料金一括適用」</strong>を実行する（全組の基本プレー代・利用税が約款規定のハーフ料金に自動減額されます）。',
+        '各組の精算画面を開き、<strong>レストラン昼食代・売店利用分が正しく加算されているか</strong>確認する。',
+        '自動精算機を「荒天時ハーフモード」に切り替え、案内アナウンスを入れてお客様を自動精算機へ誘導してフロントの大混雑を防ぎます。'
+      ],
+      keywords: '雷雨 荒天 ハーフ中断 利用税 振興基金 クローズ 減額精算 一括処理 約款'
+    }
+  };
+
+  function loadCsSample(sampleKey) {
+    const sample = CS_SAMPLES[sampleKey];
+    if (!sample) return;
+
+    document.getElementById('cs-input-category').value = sample.category;
+    document.getElementById('cs-input-memo').value = sample.memo;
+
+    const status = document.getElementById('cs-ai-status');
+    status.innerText = 'サンプル入力済';
+    status.style.background = '#ede9fe';
+    status.style.color = '#6d28d9';
+  }
+
+  function generateFaqFromAi() {
+    const memo = document.getElementById('cs-input-memo').value.trim();
+    if (!memo) {
+      alert('⚠️ 受電メモまたは現場からの質問内容を入力してください。\n（上のクイックサンプルボタンを押すと簡単に入力できます）');
+      return;
+    }
+
+    const category = document.getElementById('cs-input-category').value;
+    const status = document.getElementById('cs-ai-status');
+    const previewArea = document.getElementById('cs-preview-area');
+    const actions = document.getElementById('cs-publish-actions');
+
+    status.innerText = 'Gemini AI 構造化中...';
+    status.style.background = '#fef3c7';
+    status.style.color = '#92400e';
+
+    previewArea.innerHTML = `
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:30px;">
+        <div style="font-size:32px; margin-bottom:12px;">⚡</div>
+        <div style="font-weight:700; color:#4c1d95; font-size:14px;">Gemini 2.5 Flashが現場受電メモを解析中...</div>
+        <div style="font-size:12px; color:var(--text-muted); margin-top:4px;">「安全制限理由」「30秒回避手順」「タグ」を構造化しています</div>
+      </div>
+    `;
+
+    setTimeout(() => {
+      let faqData = null;
+
+      if (memo.includes('じゃらん') || memo.includes('OTA') || memo.includes('枠ズレ')) {
+        faqData = CS_SAMPLES.ota;
+      } else if (memo.includes('精算機') || memo.includes('レシート') || memo.includes('紙詰まり') || memo.includes('二重')) {
+        faqData = CS_SAMPLES.pos;
+      } else if (memo.includes('ロッカー') || memo.includes('IC') || memo.includes('キー')) {
+        faqData = CS_SAMPLES.locker;
+      } else if (memo.includes('雷') || memo.includes('ハーフ') || memo.includes('荒天') || memo.includes('利用税')) {
+        faqData = CS_SAMPLES.thunder;
+      } else {
+        faqData = {
+          category: category,
+          memo: memo,
+          title: `【現場受電相談】「${memo.slice(0, 36)}...」`,
+          badgeText: '🛡️ Gemini AI 構造化ナレッジ',
+          badgeClass: 'badge-safe',
+          situation: memo,
+          reason: '現場でのデータ破損、他システム連携（精算機・カートナビ・OTA）との不整合、および売上・税務上の監査リスクを防止するための基本保護仕様です。',
+          steps: [
+            '直前の画面データを直接強制上書きせず、現在のトランザクション状態を確認する。',
+            '正規の取消伝票起票、または該当マスタの一時再指定を行い、データの整合性を担保する。',
+            '不明な点がある場合は、SwingClub公式マニュアルの該当業務手順に沿って処理を完結させてください。'
+          ],
+          keywords: `受電相談 ${category} 例外対応 安全手順`
+        };
+      }
+
+      currentGeneratedFaq = faqData;
+
+      let stepsHtml = '';
+      faqData.steps.forEach(st => {
+        stepsHtml += `<li>${st}</li>`;
+      });
+
+      previewArea.innerHTML = `
+        <div style="text-align: left; width: 100%;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px solid #ede9fe; padding-bottom: 8px;">
+            <div>
+              <span style="font-size: 11px; font-weight: 700; background: #7c3aed; color: #fff; padding: 2px 6px; border-radius: 4px; margin-right: 6px;">AI構造化完了</span>
+              <strong style="font-size: 14px; color: #1e1b4b;">${faqData.title}</strong>
+            </div>
+            <span class="faq-badge ${faqData.badgeClass}">${faqData.badgeText}</span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12.5px;">
+            <div style="background: #fff7ed; padding: 10px 12px; border-radius: 6px; border-left: 3px solid #ea580c;">
+              <strong style="color: #c2410c; display: block; margin-bottom: 2px;">❓ こんな時どうする？:</strong>
+              <span style="color: #7c2d12;">${faqData.situation}</span>
+            </div>
+
+            <div style="background: #f8fafc; padding: 10px 12px; border-radius: 6px; border-left: 3px solid #64748b;">
+              <strong style="color: #475569; display: block; margin-bottom: 2px;">🛡️ なぜ制限されているのか（安全理由）:</strong>
+              <span style="color: #334155;">${faqData.reason}</span>
+            </div>
+
+            <div style="background: #f0fdf4; padding: 10px 12px; border-radius: 6px; border-left: 3px solid #16a34a;">
+              <strong style="color: #15803d; display: block; margin-bottom: 4px;">✅ 現場で今すぐできる安全な回避手順（30秒）:</strong>
+              <ol style="margin: 0; padding-left: 18px; color: #166534; line-height: 1.5;">
+                ${stepsHtml}
+              </ol>
+            </div>
+
+            <div style="font-size: 11px; color: var(--text-muted); display: flex; align-items: center; gap: 4px; margin-top: 4px;">
+              <span>🏷️ 抽出タグ:</span>
+              <code style="background:#f1f5f9; padding:2px 6px; border-radius:4px;">${faqData.keywords}</code>
+            </div>
+          </div>
+        </div>
+      `;
+
+      status.innerText = '構造化完了';
+      status.style.background = '#dcfce7';
+      status.style.color = '#15803d';
+
+      actions.style.display = 'flex';
+    }, 450);
+  }
+
+  function resetCsPreview() {
+    currentGeneratedFaq = null;
+    document.getElementById('cs-input-memo').value = '';
+    const status = document.getElementById('cs-ai-status');
+    status.innerText = '待機中';
+    status.style.background = '#ede9fe';
+    status.style.color = '#6d28d9';
+
+    const previewArea = document.getElementById('cs-preview-area');
+    previewArea.innerHTML = `
+      <div style="font-size: 36px; margin-bottom: 8px;">🪄</div>
+      <div style="font-weight: 700; font-size: 14px; color: #4c1d95; margin-bottom: 4px;">受電メモを入力して自動生成を実行してください</div>
+      <div style="font-size: 12px; max-width: 320px; line-height: 1.5;">Geminiが「現場の困りごと」「安全理由」「30秒安全手順」を自動抽出してここにプレビュー表示します。</div>
+    `;
+
+    document.getElementById('cs-publish-actions').style.display = 'none';
+  }
+
+  function publishFaqToRescue() {
+    if (!currentGeneratedFaq) return;
+
+    const list = document.getElementById('faq-cards-list');
+    if (!list) return;
+
+    const uniqueId = 'case-custom-' + Date.now();
+    const faq = currentGeneratedFaq;
+
+    let stepsHtml = '';
+    faq.steps.forEach(st => {
+      stepsHtml += `<li>${st}</li>`;
+    });
+
+    const card = document.createElement('div');
+    card.className = 'faq-card highlight-new open';
+    card.id = uniqueId;
+    card.setAttribute('data-category', faq.category);
+    card.setAttribute('data-keywords', faq.keywords + ' ' + faq.title + ' ' + faq.situation);
+
+    card.innerHTML = `
+      <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+        <div class="faq-title-area">
+          <span class="faq-case-no" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);">NEW</span>
+          <span class="faq-title">${faq.title}</span>
+        </div>
+        <div class="faq-header-right">
+          <span style="font-size: 10.5px; font-weight: 700; background: #ede9fe; color: #6d28d9; padding: 2px 8px; border-radius: 9999px; border: 1px solid #c4b5fd;">
+            🪄 CS受電・AI自動追加
+          </span>
+          <span class="faq-badge ${faq.badgeClass}">${faq.badgeText}</span>
+          <span class="faq-toggle-pill">▲ 閉じる</span>
+        </div>
+      </div>
+      <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+        <span class="situation-summary-badge">❓ こんな時</span>
+        <span class="situation-summary-text">${faq.situation}</span>
+      </div>
+      <div class="faq-collapsible-body">
+        <div class="reason-box">
+          <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+          <div class="reason-text">${faq.reason}</div>
+        </div>
+        <div class="solution-box">
+          <div class="box-header-solution">
+            <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+            <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('${uniqueId}')">📋 手順をコピー</button>
+          </div>
+          <ol class="solution-steps" id="workaround-${uniqueId}">
+            ${stepsHtml}
+          </ol>
+        </div>
+      </div>
+    `;
+
+    list.insertBefore(card, list.firstChild);
+    saveCustomFaqToStorage(faq);
+    updateCategoryCounts();
+
+    switchTab('tab-rescue');
+
+    setTimeout(() => {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
+
+    showToast('🎉 現場レスキューFAQへ公式追加・即時同期されました！');
+  }
+
+  function saveCustomFaqToStorage(faq) {
+    try {
+      let saved = JSON.parse(localStorage.getItem('swingclub_custom_faqs') || '[]');
+      saved.unshift(faq);
+      if (saved.length > 20) saved = saved.slice(0, 20);
+      localStorage.setItem('swingclub_custom_faqs', JSON.stringify(saved));
+    } catch(e) {
+      console.warn('LocalStorage save failed:', e);
+    }
+  }
+
+  function initSavedFaqs() {
+    try {
+      const saved = JSON.parse(localStorage.getItem('swingclub_custom_faqs') || '[]');
+      if (saved.length === 0) {
+        updateCategoryCounts();
+        return;
+      }
+
+      const list = document.getElementById('faq-cards-list');
+      if (!list) return;
+
+      saved.forEach((faq, idx) => {
+        const uniqueId = 'case-stored-' + idx;
+        let stepsHtml = '';
+        faq.steps.forEach(st => {
+          stepsHtml += `<li>${st}</li>`;
+        });
+
+        const card = document.createElement('div');
+        card.className = 'faq-card';
+        card.id = uniqueId;
+        card.setAttribute('data-category', faq.category);
+        card.setAttribute('data-keywords', faq.keywords + ' ' + faq.title + ' ' + faq.situation);
+
+        card.innerHTML = `
+          <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+            <div class="faq-title-area">
+              <span class="faq-case-no" style="background: #6d28d9;">ADD</span>
+              <span class="faq-title">${faq.title}</span>
+            </div>
+            <div class="faq-header-right">
+              <span style="font-size: 10.5px; font-weight: 700; background: #ede9fe; color: #6d28d9; padding: 2px 8px; border-radius: 9999px;">
+                🪄 CS同期FAQ
+              </span>
+              <span class="faq-badge ${faq.badgeClass}">${faq.badgeText}</span>
+              <span class="faq-toggle-pill">▼ 30秒手順</span>
+            </div>
+          </div>
+          <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+            <span class="situation-summary-badge">❓ こんな時</span>
+            <span class="situation-summary-text">${faq.situation}</span>
+          </div>
+          <div class="faq-collapsible-body">
+            <div class="reason-box">
+              <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+              <div class="reason-text">${faq.reason}</div>
+            </div>
+            <div class="solution-box">
+              <div class="box-header-solution">
+                <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('${uniqueId}')">📋 手順をコピー</button>
+              </div>
+              <ol class="solution-steps" id="workaround-${uniqueId}">
+                ${stepsHtml}
+              </ol>
+            </div>
+          </div>
+        `;
+        list.insertBefore(card, list.firstChild);
+      });
+      updateCategoryCounts();
+    } catch(e) {
+      console.warn('LocalStorage load failed:', e);
+    }
+  }
+
+  // 初期化実行
+  window.addEventListener('DOMContentLoaded', () => {
+    initSavedFaqs();
+  });
 </script>
 
 </body>
