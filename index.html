@@ -4268,6 +4268,86 @@ Style & Quality:
 
           <div style="padding: 24px 30px;">
 
+            <!-- Section 0: The VSL Video Player (Cinema Style) -->
+            <div style="background: #020617; border: 2px solid #0284c7; border-radius: 12px; padding: 20px; margin-bottom: 24px; box-shadow: 0 8px 30px rgba(2, 6, 23, 0.35); color: #f8fafc;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="background: #ef4444; color: #fff; font-size: 10px; font-weight: 900; padding: 2px 8px; border-radius: 4px; letter-spacing: 0.05em; display: flex; align-items: center; gap: 4px;">
+                    <span style="width: 6px; height: 6px; background: #fff; border-radius: 50%; display: inline-block;"></span> LIVE DEMO
+                  </span>
+                  <strong style="font-size: 14px; color: #38bdf8;">【実録3分】しおり社長が語る『30秒現場レスキュー』実演解説</strong>
+                </div>
+                <div style="font-size: 11px; color: #94a3b8;">
+                  語り手: 津カントリー倶楽部 代表取締役 小島しおり
+                </div>
+              </div>
+
+              <!-- 16:9 Video Canvas -->
+              <div id="vsl-video-container" style="position: relative; width: 100%; aspect-ratio: 16/9; background: #0f172a; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; border: 1px solid #1e293b;">
+                <!-- Default Poster / Thumbnail View -->
+                <div id="vsl-poster-view" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15,23,42,0.75) 0%, rgba(15,23,42,0.92) 100%), url('assets/challenged_tournament_poster.png') center/cover; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; cursor: pointer;" onclick="playVslVideo()">
+                  <div style="background: rgba(2,6,23,0.85); border: 1px solid rgba(56,189,248,0.4); padding: 5px 16px; border-radius: 9999px; font-size: 11.5px; color: #38bdf8; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.05em;">
+                    津カントリー倶楽部 DX推進室 公式プレゼンテーション
+                  </div>
+                  <h3 style="font-size: 22px; font-weight: 900; color: #ffffff; margin: 0 0 8px 0; line-height: 1.3; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">
+                    人は、分厚いマニュアルを読まない。
+                  </h3>
+                  <p style="font-size: 13px; color: #cbd5e1; margin: 0 0 20px 0; max-width: 520px; line-height: 1.5;">
+                    朝7時のフロント停止パニックをゼロにする「30秒逆引き」と「AI命綱」の全貌を3分で実演
+                  </p>
+                  
+                  <!-- Pulsing Play Button -->
+                  <div style="display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%); color: #ffffff; padding: 12px 28px; border-radius: 9999px; font-size: 14px; font-weight: 900; box-shadow: 0 4px 20px rgba(245, 158, 11, 0.5); cursor: pointer;">
+                    <span style="font-size: 18px;">▶</span> 実演解説動画を再生する（3分20秒）
+                  </div>
+                </div>
+
+                <!-- Interactive VSL Demo Player (Active when clicked) -->
+                <div id="vsl-player-active" style="display: none; width: 100%; height: 100%; position: relative; background: #020617; flex-direction: column; justify-content: space-between; padding: 24px; box-sizing: border-box;">
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span id="vsl-scene-badge" style="background: #0284c7; color: #fff; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 4px;">
+                      第1幕: 現場の痛みの直撃
+                    </span>
+                    <span id="vsl-time-display" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #94a3b8;">
+                      00:15 / 03:20
+                    </span>
+                  </div>
+
+                  <!-- Center Text / Voice Visualizer -->
+                  <div style="text-align: center; padding: 10px 20px;">
+                    <div style="font-size: 11px; color: #38bdf8; font-weight: 700; margin-bottom: 6px;">🎙️ 小島しおり 代表取締役（津カントリー倶楽部）音声解説</div>
+                    <div id="vsl-caption-text" style="font-size: 16px; font-weight: 800; color: #ffffff; line-height: 1.6; max-width: 620px; margin: 0 auto; text-shadow: 0 2px 6px rgba(0,0,0,0.8);">
+                      「朝7時のフロントで急な同伴者追加エラー。20人ものお客様の前で新人が青ざめる…そんな胃の痛む光景を、あと何回繰り返しますか？」
+                    </div>
+                  </div>
+
+                  <!-- Bottom Controls & Progress -->
+                  <div>
+                    <div style="width: 100%; height: 5px; background: #334155; border-radius: 3px; overflow: hidden; margin-bottom: 10px;">
+                      <div id="vsl-progress-bar" style="width: 20%; height: 100%; background: linear-gradient(90deg, #38bdf8, #f59e0b); transition: width 0.3s linear;"></div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                      <div style="display: flex; gap: 8px;">
+                        <button onclick="prevVslScene()" style="background: #1e293b; border: 1px solid #475569; color: #f8fafc; font-size: 11px; padding: 4px 10px; border-radius: 4px; cursor: pointer;">◀ 前の幕</button>
+                        <button onclick="nextVslScene()" style="background: #1e293b; border: 1px solid #475569; color: #f8fafc; font-size: 11px; padding: 4px 10px; border-radius: 4px; cursor: pointer;">次の幕 ▶</button>
+                      </div>
+                      <button onclick="stopVslVideo()" style="background: transparent; border: none; color: #94a3b8; font-size: 11px; cursor: pointer;">✕ 閉じる</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DRM Direct Action Toolbar under Video -->
+              <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 12px; margin-top: 14px; align-items: center;">
+                <button onclick="switchTab('tab-rescue')" class="btn" style="background: linear-gradient(135deg, #15803d 0%, #16a34a 100%); color: #ffffff; border: none; font-size: 13px; font-weight: 900; padding: 12px 18px; border-radius: 8px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);">
+                  <span>🧯</span> 実際の「30秒レスキュー」画面を今すぐ触ってみる
+                </button>
+                <a href="tel:059-253-6605" style="background: rgba(255,255,255,0.08); border: 1px solid #475569; color: #f8fafc; font-size: 12px; font-weight: 700; padding: 11px 16px; border-radius: 8px; text-decoration: none; display: flex; justify-content: center; align-items: center; gap: 6px; text-align: center;">
+                  <span>📞</span> 現場ホットライン: 059-253-6605
+                </a>
+              </div>
+            </div>
+
             <!-- Section 1: The Pain (Emotional Storytelling from the Trenches) -->
             <div style="background: #fff1f2; border: 1.5px solid #fecdd3; border-radius: 10px; padding: 18px 22px; margin-bottom: 22px;">
               <div style="font-weight: 900; font-size: 15px; color: #9f1239; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
@@ -6442,6 +6522,109 @@ ${desc}
       testImg2.src = 'assets/infographic_proposal.png';
     };
     testImg.src = 'assets/notebooklm_official_infographic.png';
+  }
+
+  // --- 🎥 VSL（Video Sales Letter）プレイヤー制御 ---
+  const vslScenes = [
+    {
+      badge: "第1幕: 現場の痛みの直撃",
+      time: "00:00 / 03:20",
+      progress: 20,
+      caption: "「全国のゴルフ場支配人、フロント責任者の皆様。朝7時のフロントで急な同伴者追加エラー。20人ものお客様の前で新人が青ざめて固まる…そんな胃の痛む悪夢を、あと何回繰り返しますか？」"
+    },
+    {
+      badge: "第2幕: 机上の空論への告発",
+      time: "00:35 / 03:20",
+      progress: 40,
+      caption: "「人は、分厚いマニュアルを読まないのです。電話が回らず派遣を増やしても、業務を覚えた頃に辞めてしまう…教育コストが流出し、年間360万円もの費用がドブに捨てられているのが現場の真実です。」"
+    },
+    {
+      badge: "第3幕: 津カントリーの実演解決",
+      time: "01:10 / 03:20",
+      progress: 60,
+      caption: "「そこで津カントリー倶楽部が開発したのが『30秒現場レスキュー』です。スマホで『同伴者コピー』と引くだけで、安全な手順が15秒で表示。現場スタッフの伊藤も『電話なしで乗り切れる』と太鼓判を押しています。」"
+    },
+    {
+      badge: "第4幕: 経営陣への確定ROI",
+      time: "02:00 / 03:20",
+      progress: 80,
+      caption: "「電話受付の派遣1名増員（年360万円）を即時回避し、知見を永久資産化。さらに外販レベニューシェアで年間最大1,344万円の純利を還元。守りと攻めで年間約1,704万円の純プラス効果をもたらします。」"
+    },
+    {
+      badge: "第5幕: 断れないオファー ＆ 行動喚起",
+      time: "02:45 / 03:20",
+      progress: 100,
+      caption: "「全国先行限定50コース、月額わずか4,800円（初期費用¥0）。合わなければいつでも解約可能。今すぐ画面下のボタンから実機デモをご体感ください。現場スタッフに本物の武器を届けましょう。」"
+    }
+  ];
+
+  let currentVslSceneIdx = 0;
+  let vslTimer = null;
+
+  function playVslVideo() {
+    const poster = document.getElementById('vsl-poster-view');
+    const player = document.getElementById('vsl-player-active');
+    if (poster) poster.style.display = 'none';
+    if (player) {
+      player.style.display = 'flex';
+      renderVslScene(0);
+      startVslAutoPlay();
+    }
+  }
+
+  function renderVslScene(idx) {
+    currentVslSceneIdx = idx;
+    const scene = vslScenes[idx];
+    if (!scene) return;
+
+    const badge = document.getElementById('vsl-scene-badge');
+    const time = document.getElementById('vsl-time-display');
+    const caption = document.getElementById('vsl-caption-text');
+    const bar = document.getElementById('vsl-progress-bar');
+
+    if (badge) badge.textContent = scene.badge;
+    if (time) time.textContent = scene.time;
+    if (caption) {
+      caption.style.opacity = 0;
+      setTimeout(() => {
+        caption.textContent = scene.caption;
+        caption.style.opacity = 1;
+      }, 150);
+    }
+    if (bar) bar.style.width = scene.progress + '%';
+  }
+
+  function startVslAutoPlay() {
+    clearInterval(vslTimer);
+    vslTimer = setInterval(() => {
+      if (currentVslSceneIdx < vslScenes.length - 1) {
+        renderVslScene(currentVslSceneIdx + 1);
+      } else {
+        clearInterval(vslTimer);
+      }
+    }, 7000); // 7秒ごとに自動で次の幕へ
+  }
+
+  function nextVslScene() {
+    clearInterval(vslTimer);
+    if (currentVslSceneIdx < vslScenes.length - 1) {
+      renderVslScene(currentVslSceneIdx + 1);
+    }
+  }
+
+  function prevVslScene() {
+    clearInterval(vslTimer);
+    if (currentVslSceneIdx > 0) {
+      renderVslScene(currentVslSceneIdx - 1);
+    }
+  }
+
+  function stopVslVideo() {
+    clearInterval(vslTimer);
+    const poster = document.getElementById('vsl-poster-view');
+    const player = document.getElementById('vsl-player-active');
+    if (player) player.style.display = 'none';
+    if (poster) poster.style.display = 'flex';
   }
 
   // 初期化実行
