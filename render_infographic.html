@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>SwingClub-CLOUD 事業概要インフォグラフィック</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background: #090e1a;
+    color: #f8fafc;
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    overflow: hidden;
+    position: relative;
+    padding: 36px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  /* 背景グローオーブ */
+  .bg-orb-1 {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 91, 172, 0.28) 0%, rgba(0, 91, 172, 0) 70%);
+    top: -200px;
+    left: -150px;
+    filter: blur(60px);
+    z-index: 0;
+  }
+  .bg-orb-2 {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, rgba(16, 185, 129, 0) 70%);
+    bottom: -200px;
+    right: -150px;
+    filter: blur(60px);
+    z-index: 0;
+  }
+  .bg-orb-3 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0) 70%);
+    top: 300px;
+    right: 300px;
+    filter: blur(60px);
+    z-index: 0;
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+  }
+  /* ヘッダー */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 18px;
+  }
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .badge-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .tag {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    letter-spacing: 0.05em;
+  }
+  .tag-tsh { background: #005bac; color: #ffffff; }
+  .tag-sub { background: rgba(255,255,255,0.08); color: #94a3b8; border: 1px solid rgba(255,255,255,0.18); }
+  .tag-live { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); display: flex; align-items: center; gap: 6px; }
+  .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 8px #10b981; }
+  .main-title {
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .sub-title {
+    font-size: 15.5px;
+    color: #94a3b8;
+    font-weight: 500;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 12.5px;
+    color: #64748b;
+    line-height: 1.6;
+  }
+  .header-right strong { color: #f8fafc; }
+
+  /* 4大ブロックグリッド */
+  .grid-content {
+    display: grid;
+    grid-template-columns: 1fr 1.08fr;
+    grid-template-rows: 1fr 1.05fr;
+    gap: 20px;
+    flex: 1;
+    margin: 18px 0;
+  }
+  .card {
+    background: rgba(22, 30, 49, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 22px 24px;
+    backdrop-filter: blur(14px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-glow-red { border-left: 5px solid #ef4444; }
+  .card-glow-blue { border-left: 5px solid #0284c7; }
+  .card-glow-purple { border-left: 5px solid #8b5cf6; }
+  .card-glow-green { border-left: 5px solid #10b981; }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 6px;
+  }
+
+  /* ブロック1: ペイン */
+  .pain-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .pain-item {
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .pain-icon { font-size: 18px; color: #ef4444; flex-shrink: 0; line-height: 1.2; }
+  .pain-text { font-size: 13px; line-height: 1.45; color: #fca5a5; }
+  .pain-text strong { color: #ffffff; font-weight: 700; }
+
+  /* ブロック2: 3本柱ソリューション */
+  .sol-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .sol-box {
+    background: rgba(2, 132, 199, 0.08);
+    border: 1px solid rgba(2, 132, 199, 0.25);
+    border-radius: 10px;
+    padding: 12px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .sol-icon { font-size: 26px; margin-bottom: 4px; }
+  .sol-name { font-size: 13.5px; font-weight: 800; color: #38bdf8; margin-bottom: 4px; }
+  .sol-desc { font-size: 11px; color: #94a3b8; line-height: 1.4; }
+  .sol-tag {
+    font-size: 10px;
+    font-weight: 700;
+    background: rgba(56, 189, 248, 0.2);
+    color: #38bdf8;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 6px;
+    align-self: center;
+  }
+
+  /* ブロック3: Flywheel */
+  .flywheel-steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .step-node {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 10px;
+    padding: 10px 8px;
+    text-align: center;
+    flex: 1;
+  }
+  .step-num { font-size: 9.5px; font-weight: 800; color: #a78bfa; text-transform: uppercase; }
+  .step-label { font-size: 12.5px; font-weight: 700; color: #ffffff; margin: 2px 0; }
+  .step-sub { font-size: 10px; color: #94a3b8; line-height: 1.3; }
+  .arrow { font-size: 16px; color: #a78bfa; font-weight: 800; }
+  .flywheel-banner {
+    background: linear-gradient(90deg, rgba(139, 92, 246, 0.25) 0%, rgba(2, 132, 199, 0.25) 100%);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    border-radius: 8px;
+    padding: 8px 14px;
+    text-align: center;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-top: 10px;
+  }
+  .flywheel-banner span { color: #facc15; font-size: 13.5px; font-weight: 800; }
+
+  /* ブロック4: プライシング＆レベニューシェア */
+  .pricing-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .pricing-box {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 10px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .pricing-box.featured {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(2, 132, 199, 0.2) 100%);
+    border: 2px solid #10b981;
+  }
+  .price-tier { font-size: 10px; font-weight: 800; color: #6ee7b7; text-transform: uppercase; }
+  .price-num { font-size: 22px; font-weight: 900; font-family: 'JetBrains Mono', monospace; color: #ffffff; margin: 3px 0; }
+  .price-num span { font-size: 11px; font-weight: 500; color: #94a3b8; }
+  .price-note { font-size: 10px; color: #a7f3d0; font-weight: 600; }
+
+  .rev-share-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .rev-item { text-align: center; }
+  .rev-label { font-size: 10.5px; color: #94a3b8; }
+  .rev-val { font-size: 15px; font-weight: 800; color: #facc15; font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
+  .rev-badge { font-size: 10px; color: #34d399; font-weight: 700; background: rgba(16, 185, 129, 0.2); padding: 2px 8px; border-radius: 4px; }
+
+  /* フッター */
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 12px;
+    font-size: 12px;
+    color: #64748b;
+  }
+  .footer-powered {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-powered strong { color: #f8fafc; }
+</style>
+</head>
+<body>
+
+<div class="bg-orb-1"></div>
+<div class="bg-orb-2"></div>
+<div class="bg-orb-3"></div>
+
+<div class="container">
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="badge-row">
+        <span class="tag tag-tsh">TSH 公式提携提案</span>
+        <span class="tag tag-sub">2026.09 正式版 v2.5.0</span>
+        <span class="tag tag-live"><span class="live-dot"></span> 現場稼働中 SSOT</span>
+      </div>
+      <h1 class="main-title">
+        <span>⛳</span> SwingClub-CLOUD 次世代利用者ポータル ＆ 現場サポートDX
+      </h1>
+      <p class="sub-title">
+        「人はマニュアルを読まない」前提に立ち、受電ゼロと持続的ストック収益化を両立させる自律進化アーキテクチャ
+      </p>
+    </div>
+    <div class="header-right">
+      <div><strong>発行元:</strong> 津カントリー倶楽部 DX推進室</div>
+      <div><strong>提案先:</strong> 東京システムハウス株式会社（TSH）北村部長 宛</div>
+      <div><strong>担当:</strong> 長田 賢一郎 ＆ Agy</div>
+    </div>
+  </header>
+
+  <!-- 4 Big Blocks -->
+  <div class="grid-content">
+    
+    <!-- Block 1: The Problem -->
+    <div class="card card-glow-red">
+      <div class="card-header">
+        <div class="card-title" style="color: #f87171;">
+          <span>🚨</span> 01. 現場のペイン（なぜ電話が鳴り止まないのか？）
+        </div>
+        <span class="card-badge" style="background: rgba(239, 68, 68, 0.2); color: #f87171;">深刻な構造的課題</span>
+      </div>
+      <div class="pain-list">
+        <div class="pain-item">
+          <div class="pain-icon">❌</div>
+          <div class="pain-text">
+            <strong>人は分厚いマニュアルを読まない:</strong> 緊急時にPDFやExcelは絶対に開かれない。
+          </div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">💥</div>
+          <div class="pain-text">
+            <strong>突発例外でフロント停止:</strong> 満枠追加・同伴者コピー・割引券取消でゴルファーが殺到。
+          </div>
+        </div>
+        <div class="pain-item">
+          <div class="pain-icon">🛑</div>
+          <div class="pain-text">
+            <strong>開発SE（林さん）の手が止まる:</strong> 同じ質問が全国から連日殺到し開発工数が年間数千時間圧迫。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 2: The Solution -->
+    <div class="card card-glow-blue">
+      <div class="card-header">
+        <div class="card-title" style="color: #38bdf8;">
+          <span>💡</span> 02. 利用者目線の3本柱 ＆ AI標準装備
+        </div>
+        <span class="card-badge" style="background: rgba(2, 132, 199, 0.2); color: #38bdf8;">現場第一のUX革新</span>
+      </div>
+      <div class="sol-grid">
+        <div class="sol-box">
+          <div class="sol-icon">🧯</div>
+          <div class="sol-name">30秒 現場レスキュー</div>
+          <div class="sol-desc">お困りごと16選。「安全理由」と「30秒回避手順」を即提示。</div>
+          <span class="sol-tag">ワンクリック解決</span>
+        </div>
+        <div class="sol-box">
+          <div class="sol-icon">📖</div>
+          <div class="sol-name">7大業務マニュアル</div>
+          <div class="sol-desc">予約〜日締め。動く実機シミュレーター6基で体感。</div>
+          <span class="sol-tag">業務サイクル直結</span>
+        </div>
+        <div class="sol-box" style="border-color: #a78bfa;">
+          <div class="sol-icon">🧠</div>
+          <div class="sol-name" style="color: #a78bfa;">Gemini AI相談室</div>
+          <div class="sol-desc">全画面ビルトイン。現場の疑問にAIが即答。</div>
+          <span class="sol-tag" style="background: rgba(167, 139, 250, 0.2); color: #c4b5fd;">全コース標準装備</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 3: The Flywheel -->
+    <div class="card card-glow-purple">
+      <div class="card-header">
+        <div class="card-title" style="color: #c084fc;">
+          <span>⚙️</span> 03. 自律進化Flywheel（好循環エコシステム）
+        </div>
+        <span class="card-badge" style="background: rgba(139, 92, 246, 0.2); color: #c084fc;">勝手に賢くなる仕組み</span>
+      </div>
+      <div class="flywheel-steps">
+        <div class="step-node">
+          <div class="step-num">STEP 1</div>
+          <div class="step-label">現場トラブル</div>
+          <div class="step-sub">突発例外の発生</div>
+        </div>
+        <span class="arrow">➔</span>
+        <div class="step-node">
+          <div class="step-num">STEP 2</div>
+          <div class="step-label">CS受電</div>
+          <div class="step-sub">サポートへメモ</div>
+        </div>
+        <span class="arrow">➔</span>
+        <div class="step-node" style="border-color: #38bdf8;">
+          <div class="step-num" style="color: #38bdf8;">STEP 3</div>
+          <div class="step-label" style="color: #38bdf8;">AI構造化</div>
+          <div class="step-sub">AI FAQ Factory</div>
+        </div>
+        <span class="arrow">➔</span>
+        <div class="step-node" style="border-color: #34d399;">
+          <div class="step-num" style="color: #34d399;">STEP 4</div>
+          <div class="step-label" style="color: #34d399;">即時同期</div>
+          <div class="step-sub">全国コース一括</div>
+        </div>
+      </div>
+      <div class="flywheel-banner">
+        🔄 <span>電話を1回受けるたびに、全国のマニュアルが勝手に賢くなり受電が激減！</span>
+      </div>
+    </div>
+
+    <!-- Block 4: Tiered Pricing & Revenue Share -->
+    <div class="card card-glow-green">
+      <div class="card-header">
+        <div class="card-title" style="color: #4ade80;">
+          <span>📈</span> 04. 階層型プライシング ＆ TSHノーリスク分配
+        </div>
+        <span class="card-badge" style="background: rgba(16, 185, 129, 0.2); color: #4ade80;">即決のプライシングラダー</span>
+      </div>
+      
+      <div class="pricing-row">
+        <div class="pricing-box featured">
+          <div class="price-tier">先行限定 50コース</div>
+          <div class="price-num">¥4,800 <span>/月</span></div>
+          <div class="price-note">初期モニター特別枠</div>
+        </div>
+        <div class="pricing-box">
+          <div class="price-tier">51〜100コース</div>
+          <div class="price-num">¥10,000 <span>/月</span></div>
+          <div class="price-note">普及スタンダード</div>
+        </div>
+        <div class="pricing-box">
+          <div class="price-tier">101コース以降</div>
+          <div class="price-num">¥15,000 <span>/月</span></div>
+          <div class="price-note">公式定価（全200枠）</div>
+        </div>
+      </div>
+
+      <div class="rev-share-box">
+        <div class="rev-item">
+          <div class="rev-label">TSH様 投資リスク</div>
+          <div class="rev-val" style="color: #34d399;">完全 ¥0 円</div>
+        </div>
+        <div class="rev-item">
+          <div class="rev-label">レベニューシェア分配</div>
+          <div class="rev-val">50% : 50%</div>
+        </div>
+        <div class="rev-item">
+          <div class="rev-label">TSH様 年間純利ストック（全200時）</div>
+          <div class="rev-val" style="color: #38bdf8;">¥13,440,000 /年</div>
+        </div>
+        <span class="rev-badge">粗利100%の不労所得</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div>
+      Copyright &copy; 2026 Tokyo System House Co., Ltd. All rights reserved.
+    </div>
+    <div class="footer-powered">
+      <span>⚡ Powered by <strong>osAKen.ai</strong> &amp; <strong style="color: #38bdf8;">Agy</strong></span>
+      <span>|</span>
+      <span>SwingClub-CLOUD 次世代利用者ポータル 正式版</span>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
