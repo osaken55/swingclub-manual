@@ -1219,7 +1219,7 @@
       </div>
       <a class="nav-item nav-rescue" id="nav-item-rescue" onclick="switchTab('tab-rescue')">
         <span>🧯 30秒 現場レスキュー</span>
-        <span class="nav-rescue-badge" id="sidebar-rescue-badge">お困りごと15選</span>
+        <span class="nav-rescue-badge" id="sidebar-rescue-badge">お困りごと16選</span>
       </a>
 
       <div class="nav-group-title">全体・導入</div>
@@ -1317,10 +1317,7 @@
 
         <!-- Extended Filter Bar -->
         <div class="filter-bar" id="category-filter-bar">
-          <button class="filter-btn active" data-cat="all" onclick="filterFaqCategory('all', this)">
-            すべて <span class="cat-count" id="count-all">15</span>
-          </button>
-          <button class="filter-btn" data-cat="reservation" onclick="filterFaqCategory('reservation', this)">
+          <button class="filter-btn active" data-cat="reservation" onclick="filterFaqCategory('reservation', this)">
             📅 予約・枠管理 <span class="cat-count" id="count-reservation">3</span>
           </button>
           <button class="filter-btn" data-cat="front-settlement" onclick="filterFaqCategory('front-settlement', this)">
@@ -1343,6 +1340,12 @@
           </button>
           <button class="filter-btn" data-cat="system" onclick="filterFaqCategory('system', this)">
             ⚙️ システム・連携 <span class="cat-count" id="count-system">2</span>
+          </button>
+          <button class="filter-btn" data-cat="other" onclick="filterFaqCategory('other', this)">
+            📁 その他・突発例外 <span class="cat-count" id="count-other">1</span>
+          </button>
+          <button class="filter-btn" data-cat="all" onclick="filterFaqCategory('all', this)" style="margin-left: auto; background: #f1f5f9; border-color: #cbd5e1;">
+            🔍 すべて表示 <span class="cat-count" id="count-all">16</span>
           </button>
         </div>
 
@@ -1874,6 +1877,42 @@
                   <li><strong>[全組ハーフ打切り（9ホール終了扱い）]</strong> を選択して実行確定。</li>
                   <li>システムが全組のステータスを一括で「ハーフプレー」「キャディフィー半額」「利用税軽減」へ自動置換。</li>
                   <li>自動精算機と有人フロントが <strong>瞬時にハーフ金額に同期</strong> され、お客様は待たずに精算退場いただけます。</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <!-- Case 16: 停電・光回線障害時の緊急手書き伝票運用 -->
+          <div class="faq-card" data-category="other" data-keywords="停電 回線切断 オフライン ネットワーク 障害 手書き伝票 CAT端末 インプリンタ 遡及入力 非常時">
+            <div class="faq-clickable-header" onclick="toggleFaqCard(this)">
+              <div class="faq-title-area">
+                <span class="faq-case-no">CASE 16</span>
+                <span class="faq-title">【停電・回線切断】「急な雷や通信障害でSwingClubが開かない！紙の手書き運用はどうする？」</span>
+              </div>
+              <div class="faq-header-right">
+                <span class="faq-badge badge-limit">⚠️ BCP非常時手順</span>
+                <span class="faq-toggle-pill">▼ 30秒手順</span>
+              </div>
+            </div>
+            <div class="faq-situation-summary" onclick="toggleFaqCard(this)">
+              <span class="situation-summary-badge">❓ こんな時</span>
+              <span class="situation-summary-text">「落雷やルーター障害で基幹ネットワークが切断。SwingClub画面が開かず、お客様のチェックインや夕方精算が止まりそう。」</span>
+            </div>
+            <div class="faq-collapsible-body">
+              <div class="reason-box">
+                <div class="reason-header"><span>🛡️</span> なぜシステムで制限されているのか（安全・トラブル防止の理由）</div>
+                <div class="reason-text">ゴルフ場は山間部に多く、光回線の瞬断や落雷停電が起こり得ます。画面が開かない状態で慌ててPCの電源ボタンを連打したり強制終了すると、ローカルキャッシュや印刷スプールが破損する恐れがあります。</div>
+              </div>
+              <div class="solution-box">
+                <div class="box-header-solution">
+                  <div class="box-title-solution"><span>✅</span> 現場で今すぐできる安全な回避手順（30秒）</div>
+                  <button class="copy-btn" onclick="event.stopPropagation(); copyWorkaround('case16')">📋 手順をコピー</button>
+                </div>
+                <ol class="solution-steps" id="workaround-case16">
+                  <li>フロントカウンター下の<strong>「非常時・緊急手書き伝票バインダー」</strong>を取り出す。</li>
+                  <li>ロッカー番号・お客様氏名・スタートコースを手書き伝票に記録し、お客様へ仮ロッカーキーをお渡しする。</li>
+                  <li>クレジット精算はCAT端末の<strong>「オフライン売上（電話承認または手動オーソリ）」</strong>に切り替えて対応。</li>
+                  <li>回線復旧後、SwingClubの<strong>「緊急オフライン売上一括登録」</strong>画面から手書き伝票を順番に遡及入力すれば、売上台帳と1円単位で正常復旧します。</li>
                 </ol>
               </div>
             </div>
@@ -3185,6 +3224,7 @@
                 <option value="member">👤 06. 会員管理・名簿・年会費</option>
                 <option value="closing">📊 07. 経理・売上日報締め</option>
                 <option value="system">⚙️ 08. マスタ設定・外部システム連携</option>
+                <option value="other">📁 09. その他・突発例外・未分類</option>
               </select>
             </div>
 
@@ -3443,7 +3483,8 @@
       compe: 0,
       member: 0,
       closing: 0,
-      system: 0
+      system: 0,
+      other: 0
     };
 
     cards.forEach(card => {
@@ -3456,6 +3497,7 @@
       else if (cat === 'member') counts.member++;
       else if (cat === 'closing') counts.closing++;
       else if (cat === 'system') counts.system++;
+      else if (cat === 'other') counts.other++;
     });
 
     for (const [key, count] of Object.entries(counts)) {
@@ -4303,6 +4345,11 @@ ${desc}
   // 初期化実行
   window.addEventListener('DOMContentLoaded', () => {
     initSavedFaqs();
+    // 30秒レスキューの初期選択を「予約・枠管理」に設定（カードが縦長に圧倒されるのを防止）
+    const resBtn = document.querySelector('#category-filter-bar [data-cat="reservation"]');
+    if (resBtn) {
+      filterFaqCategory('reservation', resBtn);
+    }
   });
 </script>
 
