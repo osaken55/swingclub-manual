@@ -63,3 +63,9 @@
 - **クリア方針**:
   - CS専用画面「AI FAQ Factory」を使えば、現場スタッフやTSHオペレーターがコードを書かずにブラウザ上で新着FAQを自律追加可能。
   - 定期的な公式改修は GitHub リポジトリ（`osaken55/swingclub-manual`）へコミットするだけで、全配信先へ即座に自動デプロイ。
+
+---
+
+**SwingClub-CLOUD 実践ポータル v2.5.0 Stable**  
+*Copyright &copy; 2026 Tokyo System House Co., Ltd. All rights reserved.*  
+*Powered by osAKen.ai &amp; Agy*
