@@ -1262,6 +1262,15 @@
     </div>
   </header>
 
+  <!-- NURO-Style System Status Alert Bar (無用な問い合わせ・障害疑念を秒殺) -->
+  <div style="background: #064e3b; border-bottom: 1px solid #10b981; color: #ecfdf5; font-size: 12px; padding: 7px 16px; text-align: center; display: flex; justify-content: center; align-items: center; gap: 8px; font-weight: 700; flex-wrap: wrap;">
+    <span style="display: inline-flex; align-items: center; gap: 5px; background: rgba(16, 185, 129, 0.25); border: 1px solid #34d399; padding: 2px 8px; border-radius: 9999px; color: #6ee7b7; font-size: 11px;">
+      <span style="width: 7px; height: 7px; background: #34d399; border-radius: 50%; box-shadow: 0 0 6px #34d399;"></span> 全系統 正常稼働中
+    </span>
+    <span>全国SwingClubクラウド基盤: <strong>障害・遅延ゼロ</strong></span>
+    <span style="color: #a7f3d0; font-size: 11px;">（※ 現場の操作エラーや例外は下記レスキューで15秒解決）</span>
+  </div>
+
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-glow"></div>
@@ -1301,25 +1310,39 @@
 
       <!-- 16:9 VSL Theater Player -->
       <div class="vsl-theater">
-        <div class="vsl-topbar">
+        <div class="vsl-topbar" style="background: #110707; border-bottom: 1px solid rgba(225, 29, 72, 0.4);">
           <div style="display: flex; align-items: center; gap: 10px;">
-            <span class="vsl-live-pill"><span class="vsl-live-dot"></span> VSL LIVE EXCLUSIVE</span>
-            <span style="color: #cbd5e1; font-weight: 700;">【3分20秒】現場の胃痛をゼロにする津カントリー倶楽部の実演解説</span>
+            <span class="vsl-live-pill" style="background: rgba(225,29,72,0.25); border-color: #e11d48; color: #ff809b;">
+              <span class="vsl-live-dot"></span> 🔴 REC 07:15:23 [現場業務記録]
+            </span>
+            <span style="color: #ffffff; font-weight: 800; font-size: 13px;">
+              【現場緊急録画】土曜朝7:15、満枠フロントで新人が固まった瞬間の記録
+            </span>
           </div>
-          <span style="color: #94a3b8;">解説: 代表取締役 小島しおり</span>
+          <span style="color: #fca5a5; font-weight: 700; font-size: 11.5px;">解説: 小島しおり（津カントリー倶楽部 代表取締役）</span>
         </div>
 
         <div class="vsl-video-box" id="vsl-container">
-          <!-- Poster / Cover View -->
-          <div class="vsl-poster" id="vsl-poster" onclick="startVslPlayer()">
-            <div class="vsl-play-btn">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <!-- Poster / Cover View: Dramatic Distress Hook -->
+          <div class="vsl-poster" id="vsl-poster" onclick="startVslPlayer()" style="background: radial-gradient(circle at center, rgba(15, 23, 42, 0.7) 0%, rgba(5, 11, 20, 0.95) 100%);">
+            
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(225, 29, 72, 0.2); border: 1.5px solid #e11d48; color: #fecdd3; padding: 4px 14px; border-radius: 9999px; font-size: 12px; font-weight: 800; margin-bottom: 16px; box-shadow: 0 0 15px rgba(225, 29, 72, 0.4);">
+              <span>⚠️</span> 閲覧注意：全国のゴルフ場支配人が胃を痛める「現場の悲鳴」
             </div>
-            <div style="font-family: var(--font-mincho); font-size: 22px; font-weight: 900; color: #ffffff; margin-bottom: 6px;">
-              「現場スタッフに、今すぐ使える本物の武器を。」
+
+            <div class="vsl-play-btn" style="background: linear-gradient(135deg, #e11d48 0%, #f59e0b 100%); box-shadow: 0 0 40px rgba(225, 29, 72, 0.8);">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#ffffff"/></svg>
             </div>
-            <div style="font-size: 13.5px; color: #fde68a; font-weight: 600;">
-              クリックして3分実演動画を再生（音声・テロップ字幕連動）
+
+            <div style="font-family: var(--font-mincho); font-size: clamp(20px, 3.2vw, 26px); font-weight: 900; color: #ffffff; margin-bottom: 8px; text-shadow: 0 2px 10px rgba(0,0,0,0.9);">
+              「20人のゴルファーの前で、新人が青ざめてフリーズした。」
+            </div>
+            <div style="font-size: 13.5px; color: #fef08a; font-weight: 700; max-width: 580px; line-height: 1.6; margin-bottom: 12px;">
+              満枠エラー × 鳴り止まないサポート電話 × 埃をかぶる500Pマニュアル。<br>
+              絶望の朝を、わずか15秒で救った「津カントリー倶楽部の奇跡的実話」とは？
+            </div>
+            <div style="background: rgba(255,255,255,0.1); border: 1px dashed rgba(251,191,36,0.6); padding: 5px 16px; border-radius: 6px; font-size: 12px; color: #fde68a;">
+              ▶ タップして実演映像を再生（音声・テロップ字幕連動 / 3分20秒）
             </div>
           </div>
 
@@ -1360,6 +1383,34 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Distress Case Shorts Selector (思わず見入ってしまう現場の修羅場4選) -->
+      <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(251, 191, 36, 0.4); border-radius: 14px; padding: 18px 22px; max-width: 920px; margin: -20px auto 38px; text-align: left; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+          <div style="font-size: 13.5px; font-weight: 800; color: #fde047; display: flex; align-items: center; gap: 6px;">
+            <span>🎬</span> 【支配人が思わず見入る】現場がリアルに困っている修羅場ショート（実録4選）
+          </div>
+          <span style="font-size: 11px; color: #94a3b8; font-weight: 600;">気になるケースをタップして即時シミュレート ▽</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+          <button onclick="playSpecificDistress(0)" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(239,68,68,0.3); border-radius: 8px; padding: 10px 12px; text-align: left; cursor: pointer; color: #ffffff; transition: all 0.2s;" onmouseover="this.style.borderColor='#f87171'" onmouseout="this.style.borderColor='rgba(239,68,68,0.3)'">
+            <div style="font-size: 10.5px; color: #f87171; font-weight: 800; margin-bottom: 3px;">CASE 01（土曜朝7:15）</div>
+            <div style="font-size: 12px; font-weight: 700; line-height: 1.4;">満枠で急な同伴者追加エラー！後ろから客の舌打ち</div>
+          </button>
+          <button onclick="playSpecificDistress(1)" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(245,158,11,0.3); border-radius: 8px; padding: 10px 12px; text-align: left; cursor: pointer; color: #ffffff; transition: all 0.2s;" onmouseover="this.style.borderColor='#fbbf24'" onmouseout="this.style.borderColor='rgba(245,158,11,0.3)'">
+            <div style="font-size: 10.5px; color: #fbbf24; font-weight: 800; margin-bottom: 3px;">CASE 02（精算ピーク）</div>
+            <div style="font-size: 12px; font-weight: 700; line-height: 1.4;">割引券の適用ミスでレジ停止、やり直しパニック</div>
+          </button>
+          <button onclick="playSpecificDistress(2)" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(56,189,248,0.3); border-radius: 8px; padding: 10px 12px; text-align: left; cursor: pointer; color: #ffffff; transition: all 0.2s;" onmouseover="this.style.borderColor='#38bdf8'" onmouseout="this.style.borderColor='rgba(56,189,248,0.3)'">
+            <div style="font-size: 10.5px; color: #38bdf8; font-weight: 800; margin-bottom: 3px;">CASE 03（フロント）</div>
+            <div style="font-size: 12px; font-weight: 700; line-height: 1.4;">ロッカー番号二重発券！脱衣所でお客様が鉢合わせ</div>
+          </button>
+          <button onclick="playSpecificDistress(3)" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(168,85,247,0.3); border-radius: 8px; padding: 10px 12px; text-align: left; cursor: pointer; color: #ffffff; transition: all 0.2s;" onmouseover="this.style.borderColor='#c084fc'" onmouseout="this.style.borderColor='rgba(168,85,247,0.3)'">
+            <div style="font-size: 10.5px; color: #c084fc; font-weight: 800; margin-bottom: 3px;">CASE 04（悪天候）</div>
+            <div style="font-size: 12px; font-weight: 700; line-height: 1.4;">ゲリラ雷雨でハーフ打切り！返金精算の怒号</div>
+          </button>
         </div>
       </div>
 
@@ -1911,44 +1962,44 @@
     // VSL Player Scenario Data
     const vslScenes = [
       {
-        badge: "第1幕: 現場の痛みの直撃",
+        badge: "第1幕: 🚨【現場緊急録画】朝7:15 フロント停止の瞬間",
         time: "00:15 / 03:20",
         progress: 20,
-        icon: "⛳️",
-        title: "土曜朝7:15 津カントリー倶楽部フロント",
-        caption: "「全国のゴルフ場支配人、そしてフロント責任者の皆様、こんにちは。津カントリー倶楽部の小島しおりです。突然ですが、土曜朝7時、満枠のフロントで急な同伴者追加や割引取消エラーが起き、20人のゴルファーの前で新人が青ざめて固まる——そんな胃の痛む光景を、あと何回繰り返しますか？」"
+        icon: "🚨",
+        title: "「満枠エラーで新人が青ざめてフリーズ…20人の冷たい視線」",
+        caption: "「全国のゴルフ場支配人、そしてフロント責任者の皆様……この光景に、見覚えはありませんか？ 土曜朝7時15分、スタート枠は満杯。突然の同伴者追加エラーで新人が青ざめて固まり、20人のゴルファーの冷たい視線が突き刺さる……。胃がキリキリと痛むこの悲劇を、皆様のゴルフ場ではあと何回繰り返しますか？」"
       },
       {
-        badge: "第2幕: 机上の空論への告発",
+        badge: "第2幕: 📚❌【絶望の連鎖】埃をかぶるマニュアルと繋がらない電話",
         time: "00:45 / 03:20",
         progress: 40,
-        icon: "📚",
-        title: "埃をかぶる分厚いマニュアルの限界",
-        caption: "「人は、分厚いマニュアルを読まないのです。電話が回らず派遣を増やしても、業務を覚えた頃に辞めてしまう…教育コストが流出し、年間360万円もの費用がドブに捨てられているのが現場の偽らざる真実です。」"
+        icon: "📞",
+        title: "「500Pのバインダーは誰も読まない。派遣360万のドブ捨て」",
+        caption: "「『マニュアルを読め』と言っても、お客様を目の前でお待たせしている1分1秒を争う緊迫時に、500ページのファイルを開くスタッフはいません。人は、分厚いマニュアルを読まないのです。かといってサポート電話も繋がらない。派遣を増やしても仕事を覚えた頃に辞めてしまう…教育費が流出し、年間360万円もの費用がドブに捨てられているのが現場の偽らざる真実です。」"
       },
       {
-        badge: "第3幕: 津カントリーの実演解決",
+        badge: "第3幕: 🧯✨【15秒の救済】スマホを取り出した瞬間、列が流れた！",
         time: "01:25 / 03:20",
         progress: 60,
-        icon: "🧯",
-        title: "スマホで15秒逆引き実演デモ",
-        caption: "「そこで津カントリー倶楽部が開発したのが『30秒現場レスキュー』です。スマホで『同伴者コピー』と引くだけで、安全な手順が15秒で表示。ゴルフマーケティングのプロであり北村氏のアドバイザーを務める伊藤氏も実機を検証し、『これなら現場が電話なしで自立できる』と絶賛しています。」"
+        icon: "📱",
+        title: "「津カントリー実戦実録：伊藤氏も『現場が電話なしで自立できる』と絶賛」",
+        caption: "「その絶望を打ち破るために、津カントリー倶楽部が開発したのが『30秒現場レスキュー』です。新人がポケットからスマホを取り出し『同伴者コピー』と検索。わずか15秒で安全な回避手順が表示され、電話もかけずに長蛇の列が笑顔で流れ始めました。ゴルフマーケティングのプロ・伊藤氏も『これなら現場が電話に依存せず自立できる』と太鼓判を押しています。」"
       },
       {
-        badge: "第4幕: 経営陣への確定ROI",
+        badge: "第4幕: 📈💰【経営の勝利】守りの360万削減 ＆ 攻めの1,344万還元",
         time: "02:10 / 03:20",
         progress: 80,
         icon: "📈",
-        title: "年間約1,704万円の純プラス効果",
-        caption: "「電話受付の派遣1名増員（年360万円）を即時回避し、知見を永久資産化。さらに外販レベニューシェアで年間最大1,344万円の純利を還元。守りと攻めで年間約1,704万円の純プラス効果をもたらします。」"
+        title: "「派遣1名増員を完全回避 ＆ 年間約1,704万円の純プラス効果確定」",
+        caption: "「電話受付の派遣1名増員（年360万円）を即時回避し、日々の受電からAIが知見を永久資産化。さらに外販レベニューシェアで年間最大1,344万円の純利を還元。守りと攻めを合わせ、年間約1,704万円の確実な経済インパクトを経営陣にお届けします。」"
       },
       {
-        badge: "第5幕: 断れないオファー ＆ 行動喚起",
+        badge: "第5幕: 🎁🛡️【断れないオファー】全国先行50コース、現場に本物の武器を",
         time: "03:00 / 03:20",
         progress: 100,
-        icon: "🎁",
-        title: "全国先行限定50コース募集開始",
-        caption: "「全国先行限定50コース、月額わずか4,800円（初期費用¥0）。合わなければいつでも解約可能。今すぐ画面下のボタンから実機デモをご体感ください。現場スタッフに本物の武器を届けましょう。」"
+        icon: "🛡️",
+        title: "「先行限定50コース、初期費¥0・月¥4,800・いつでも解約可」",
+        caption: "「全国先行限定50コース、月額わずか4,800円（初期費用¥0）。現場に合わなければいつでも解約可能、リスクはゼロです。今すぐ画面下のボタンから実機デモをご体感ください。現場で汗を流すスタッフに、今すぐ使える本物の武器を届けましょう。」"
       }
     ];
 
@@ -1988,6 +2039,55 @@
           clearInterval(sceneTimer);
         }
       }, 7000);
+    }
+
+    const distressCases = [
+      {
+        badge: "CASE 01: 🚨【土曜朝7:15 満枠エラー】",
+        time: "現場実録シミュレーション",
+        progress: 30,
+        icon: "👥",
+        title: "「満枠なのに急な同伴者追加！20人の前で新人がフリーズ」",
+        caption: "【修羅場】土曜朝7:15、枠は満杯。同伴者を1名足そうとしたら「予約上限枠数超過」エラー。後ろには20人のゴルファーの列……。\n【15秒レスキュー解決】スマホで『満枠追加』を検索 ➔『予備枠コードへの一時スライド登録（安全手順）』が15秒で表示！電話を1本もかけずに列が笑顔で流れ出しました。"
+      },
+      {
+        badge: "CASE 02: 💸【精算ピーク レジ停止】",
+        time: "現場実録シミュレーション",
+        progress: 50,
+        icon: "💳",
+        title: "「割引券の適用ミスでレジ停止、後ろが詰まって怒号」",
+        caption: "【修羅場】夕方の精算ラッシュ。新人がクーポンを二重適用してしまい、取消ボタンがグレーアウト。「早くしてくれ！」とお客様の怒号……。\n【15秒レスキュー解決】スマホで『割引券取消』を検索 ➔『管理権限での即時赤伝マイナス相殺法』を15秒で実行！精算を止めずに安全クリア。"
+      },
+      {
+        badge: "CASE 03: 🔐【ロッカー二重発券パニック】",
+        time: "現場実録シミュレーション",
+        progress: 70,
+        icon: "🚪",
+        title: "「ロッカー二重発券！脱衣所でお客様同士が鉢合わせ」",
+        caption: "【修羅場】朝の混雑時、システムが同じロッカー番号を発券。脱衣所でお客様同士が鉢合わせして激怒クレームに発展寸前……。\n【15秒レスキュー解決】スマホで『ロッカー二重』を検索 ➔『マスターでの空きロッカー強制アサイン ＆ お詫びドリンク券発行手順』が即座にガイダンスされ、誠心誠意の神対応へ昇華！"
+      },
+      {
+        badge: "CASE 04: ⚡️【ゲリラ豪雨・ハーフ打切り】",
+        time: "現場実録シミュレーション",
+        progress: 90,
+        icon: "⛈️",
+        title: "「雷雲接近でハーフ打切り！返金精算の長蛇の列」",
+        caption: "【修羅場】午後2時、突然の雷警報で全組プレー中断・ハーフ打切り決定。40組が一斉にフロントへ殺到し「料金はどうなるんだ！」とパニック……。\n【15秒レスキュー解決】Gemini AI相談室に『ハーフ打切り時の按分精算』と話しかけるだけで、SwingClubでの一括半額割戻しバッチ手順を即答！混乱をゼロに。"
+      }
+    ];
+
+    function playSpecificDistress(idx) {
+      document.getElementById('vsl-poster').style.display = 'none';
+      document.getElementById('vsl-active').style.display = 'flex';
+      const c = distressCases[idx];
+      document.getElementById('vsl-scene-badge').innerText = c.badge;
+      document.getElementById('vsl-timer-text').innerText = c.time;
+      document.getElementById('vsl-visual-icon').innerText = c.icon;
+      document.getElementById('vsl-visual-title').innerText = c.title;
+      document.getElementById('vsl-caption-text').innerText = c.caption;
+      document.getElementById('vsl-progress').style.width = c.progress + '%';
+      clearInterval(sceneTimer);
+      document.getElementById('vsl-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
     function resetAutoPlay() {
