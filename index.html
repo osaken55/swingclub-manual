@@ -3707,43 +3707,45 @@
 
           <!-- Infographic Mode Switcher -->
           <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; margin-bottom: 24px; flex-wrap: wrap; gap: 10px;">
-            <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
               <span style="font-size: 12.5px; font-weight: 700; color: var(--text-main);">🖼️ 概要表示モード:</span>
-              <div style="display: inline-flex; background: #e2e8f0; padding: 2px; border-radius: 8px;">
-                <button id="btn-mode-visual" onclick="setInfographicMode('visual')" style="background: #005bac; color: #ffffff; border: none; font-size: 11.5px; font-weight: 700; padding: 5px 14px; border-radius: 6px; cursor: pointer; transition: all 0.15s ease;">
-                  🖼️ 1枚ビジュアル（NotebookLM版）
+              <div style="display: inline-flex; background: #e2e8f0; padding: 2px; border-radius: 8px; gap: 2px;">
+                <button id="btn-mode-notebooklm" onclick="switchInfographicView('notebooklm')" style="background: #005bac; color: #ffffff; border: none; font-size: 11.5px; font-weight: 700; padding: 6px 14px; border-radius: 6px; cursor: pointer; transition: all 0.15s ease;">
+                  ✨ NotebookLM公式（メイン）
                 </button>
-                <button id="btn-mode-html" onclick="setInfographicMode('html')" style="background: transparent; color: #64748b; border: none; font-size: 11.5px; font-weight: 700; padding: 5px 14px; border-radius: 6px; cursor: pointer; transition: all 0.15s ease;">
+                <button id="btn-mode-agy" onclick="switchInfographicView('agy')" style="background: transparent; color: #64748b; border: none; font-size: 11.5px; font-weight: 700; padding: 6px 14px; border-radius: 6px; cursor: pointer; transition: all 0.15s ease;">
+                  📝 Agy版サマリー（予備）
+                </button>
+                <button id="btn-mode-html" onclick="switchInfographicView('html')" style="background: transparent; color: #64748b; border: none; font-size: 11.5px; font-weight: 700; padding: 6px 14px; border-radius: 6px; cursor: pointer; transition: all 0.15s ease;">
                   📊 HTML詳細構造版
                 </button>
               </div>
             </div>
-            <div style="font-size: 11px; color: #64748b;">
-              ※ NotebookLM Studioで生成した1枚画像をそのまま閲覧・即時差し替え可能
+            <div id="infographic-mode-desc" style="font-size: 11px; color: #64748b;">
+              ※ NotebookLM公式生成の直感ビジュアル（メイン）を表示中（クリックで全画面拡大）
             </div>
           </div>
 
-          <!-- Section: 1枚ビジュアル（NotebookLMインフォグラフィック） -->
+          <!-- Section: 1枚ビジュアル（NotebookLM ＆ Agy版予備） -->
           <div id="infographic-visual-section" style="margin-bottom: 24px;">
             <div style="background: #ffffff; border: 2px dashed #38bdf8; border-radius: 14px; padding: 20px; text-align: center; position: relative; background: #f0f9ff;">
               
               <!-- 登録済み画像表示コンテナ -->
               <div id="infographic-img-container" style="display: none;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; background: #ffffff; padding: 8px 14px; border-radius: 8px; border: 1px solid #bae6fd;">
-                  <span style="font-size: 12px; font-weight: 700; color: #0284c7; display: flex; align-items: center; gap: 6px;">
-                    <span>✨</span> NotebookLM 公式生成 1枚インフォグラフィック
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; background: #ffffff; padding: 8px 14px; border-radius: 8px; border: 1px solid #bae6fd; flex-wrap: wrap; gap: 8px;">
+                  <span id="infographic-badge-title" style="font-size: 12px; font-weight: 700; color: #0284c7; display: flex; align-items: center; gap: 6px;">
+                    <span>✨</span> NotebookLM 公式生成 1枚インフォグラフィック（メイン）
                   </span>
-                  <div style="display: flex; gap: 8px;">
+                  <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                    <button id="btn-toggle-sub" onclick="toggleInfographicSub()" class="btn btn-secondary" style="font-size: 11.5px; padding: 4px 12px; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; font-weight: 700;">
+                      🔄 Agy版（予備）を見る
+                    </button>
                     <button onclick="openImageModal(document.getElementById('infographic-img').src)" class="btn btn-secondary" style="font-size: 11.5px; padding: 4px 12px;">
                       🔍 全画面拡大
                     </button>
-                    <label class="btn btn-secondary" style="font-size: 11.5px; padding: 4px 12px; cursor: pointer;">
-                      📁 画像を差し替える
-                      <input type="file" accept="image/*" style="display: none;" onchange="uploadInfographicLocal(event)">
-                    </label>
                   </div>
                 </div>
-                <img id="infographic-img" src="assets/infographic_proposal.png" alt="NotebookLM 1枚インフォグラフィック" style="max-width: 100%; max-height: 85vh; height: auto; border-radius: 10px; box-shadow: var(--shadow-lg); cursor: zoom-in; object-fit: contain; background: #fff;" onclick="openImageModal(this.src)" onerror="handleInfographicImgError()">
+                <img id="infographic-img" src="assets/notebooklm_official_infographic.png" alt="1枚インフォグラフィック" style="max-width: 100%; max-height: 85vh; height: auto; border-radius: 10px; box-shadow: var(--shadow-lg); cursor: zoom-in; object-fit: contain; background: #fff;" onclick="openImageModal(this.src)" onerror="handleInfographicImgError()">
               </div>
 
               <!-- 未登録時プレースホルダー -->
@@ -5611,35 +5613,66 @@ ${desc}
     }
   }
 
-  // --- 🖼️ NotebookLM 1枚インフォグラフィック制御 ---
-  function setInfographicMode(mode) {
+  // --- 🖼️ NotebookLM ＆ Agy版インフォグラフィック制御 ---
+  let currentInfographicMode = 'notebooklm'; // 'notebooklm' | 'agy' | 'html'
+
+  function switchInfographicView(mode) {
+    currentInfographicMode = mode;
     const visualSec = document.getElementById('infographic-visual-section');
     const htmlSec = document.getElementById('infographic-html-section');
-    const btnVisual = document.getElementById('btn-mode-visual');
+    const btnNl = document.getElementById('btn-mode-notebooklm');
+    const btnAgy = document.getElementById('btn-mode-agy');
     const btnHtml = document.getElementById('btn-mode-html');
+    const desc = document.getElementById('infographic-mode-desc');
+    const badge = document.getElementById('infographic-badge-title');
+    const toggleSub = document.getElementById('btn-toggle-sub');
+    const img = document.getElementById('infographic-img');
 
-    if (mode === 'visual') {
-      if (visualSec) visualSec.style.display = 'block';
-      if (htmlSec) htmlSec.style.display = 'none';
-      if (btnVisual) {
-        btnVisual.style.background = '#005bac';
-        btnVisual.style.color = '#ffffff';
-      }
-      if (btnHtml) {
-        btnHtml.style.background = 'transparent';
-        btnHtml.style.color = '#64748b';
-      }
-    } else {
+    // ボタンのハイライト更新
+    [btnNl, btnAgy, btnHtml].forEach(b => {
+      if (b) { b.style.background = 'transparent'; b.style.color = '#64748b'; }
+    });
+
+    if (mode === 'html') {
       if (visualSec) visualSec.style.display = 'none';
       if (htmlSec) htmlSec.style.display = 'block';
-      if (btnVisual) {
-        btnVisual.style.background = 'transparent';
-        btnVisual.style.color = '#64748b';
+      if (btnHtml) { btnHtml.style.background = '#005bac'; btnHtml.style.color = '#ffffff'; }
+      if (desc) desc.innerText = '※ テキストと表で構成されたHTML詳細構造版を表示中';
+    } else {
+      if (visualSec) visualSec.style.display = 'block';
+      if (htmlSec) htmlSec.style.display = 'none';
+
+      if (mode === 'notebooklm') {
+        if (btnNl) { btnNl.style.background = '#005bac'; btnNl.style.color = '#ffffff'; }
+        if (img) img.src = 'assets/notebooklm_official_infographic.png';
+        if (badge) badge.innerHTML = '<span>✨</span> NotebookLM 公式生成 1枚インフォグラフィック（メイン）';
+        if (toggleSub) toggleSub.innerHTML = '🔄 Agy版（予備）を見る';
+        if (desc) desc.innerText = '※ NotebookLM公式生成の直感ビジュアル（メイン）を表示中（クリックで全画面拡大）';
+      } else if (mode === 'agy') {
+        if (btnAgy) { btnAgy.style.background = '#005bac'; btnAgy.style.color = '#ffffff'; }
+        if (img) img.src = 'assets/infographic_proposal_agy.png';
+        if (badge) badge.innerHTML = '<span>📝</span> Agy版 1枚詳細要約サマリー（予備）';
+        if (toggleSub) toggleSub.innerHTML = '🔄 NotebookLM公式（メイン）に戻す';
+        if (desc) desc.innerText = '※ Agy版の詳細構造サマリー（予備）を表示中（クリックで全画面拡大）';
       }
-      if (btnHtml) {
-        btnHtml.style.background = '#005bac';
-        btnHtml.style.color = '#ffffff';
-      }
+      showInfographicImage(img ? img.src : 'assets/notebooklm_official_infographic.png');
+    }
+  }
+
+  function toggleInfographicSub() {
+    if (currentInfographicMode === 'notebooklm') {
+      switchInfographicView('agy');
+    } else {
+      switchInfographicView('notebooklm');
+    }
+  }
+
+  // 互換用
+  function setInfographicMode(mode) {
+    if (mode === 'visual') {
+      switchInfographicView('notebooklm');
+    } else {
+      switchInfographicView('html');
     }
   }
 
@@ -5673,7 +5706,7 @@ ${desc}
       } catch(err) {
         console.warn('LocalStorage quota exceeded for image:', err);
       }
-      showToast('✨ NotebookLMインフォグラフィック画像を反映しました！');
+      showToast('✨ インフォグラフィック画像を反映しました！');
     };
     reader.readAsDataURL(file);
   }
@@ -5692,24 +5725,26 @@ ${desc}
   }
 
   function initInfographic() {
-    // 保存済み画像があれば読み込み
-    try {
-      const saved = localStorage.getItem('swingclub_infographic_data');
-      if (saved) {
-        showInfographicImage(saved);
-        return;
-      }
-    } catch(e) {}
+    // デフォルトでNotebookLM版を表示
+    switchInfographicView('notebooklm');
 
-    // assets/infographic_proposal.png の存在チェック
+    // 画像の存在チェック
     const testImg = new Image();
     testImg.onload = function() {
-      showInfographicImage('assets/infographic_proposal.png');
+      showInfographicImage('assets/notebooklm_official_infographic.png');
     };
     testImg.onerror = function() {
-      handleInfographicImgError();
+      // フォールバック
+      const testImg2 = new Image();
+      testImg2.onload = function() {
+        showInfographicImage('assets/infographic_proposal.png');
+      };
+      testImg2.onerror = function() {
+        handleInfographicImgError();
+      };
+      testImg2.src = 'assets/infographic_proposal.png';
     };
-    testImg.src = 'assets/infographic_proposal.png';
+    testImg.src = 'assets/notebooklm_official_infographic.png';
   }
 
   // 初期化実行
