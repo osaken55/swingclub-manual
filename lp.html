@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>人は、分厚いマニュアルを読まない。｜ゴルフ場専用 30秒現場レスキュー＆AI相談室</title>
+  <meta name="description" content="土曜朝7時のフロント停止をゼロに。津カントリー倶楽部実戦検証、ゴルフマーケティング専門家・TSH北村氏アドバイザー伊藤氏推奨。全国先行50コース限定モニター募集中。">
+
+  <!-- Google Fonts: Shippori Mincho & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Noto+Serif+JP:wght@600;700;900&family=Shippori+Mincho:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-navy: #091428;
+      --navy-card: #0f1d36;
+      --navy-light: #1e293b;
+      --gold-deep: #b45309;
+      --gold-primary: #d97706;
+      --gold-bright: #fbbf24;
+      --gold-light: #fef3c7;
+      --gold-gradient: linear-gradient(135deg, #fef08a 0%, #fbbf24 35%, #d97706 70%, #92400e 100%);
+      --gold-text-gradient: linear-gradient(135deg, #fffbeb 0%, #fde68a 25%, #f59e0b 55%, #d97706 85%, #b45309 100%);
+      --emerald-deep: #064e3b;
+      --emerald-primary: #059669;
+      --emerald-bright: #10b981;
+      --emerald-light: #ecfdf5;
+      --crimson-red: #e11d48;
+      --crimson-light: #ffe4e6;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #94a3b8;
+      --bg-light: #f8fafc;
+      --card-border: rgba(226, 232, 240, 0.8);
+      --font-mincho: 'Shippori Mincho', 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Meiryo", sans-serif;
+      --font-num: 'Montserrat', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      background-color: #ffffff;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .container-sm {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Sticky Header */
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(9, 20, 40, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 999;
+      border-bottom: 1px solid rgba(251, 191, 36, 0.25);
+      padding: 12px 0;
+      transition: all 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-badge {
+      background: var(--gold-gradient);
+      color: #1e1500;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-title {
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-nav-demo {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-nav-demo:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-nav-cta {
+      background: var(--gold-gradient);
+      color: #261600;
+      font-size: 13px;
+      font-weight: 900;
+      padding: 8px 18px;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(217, 119, 6, 0.6);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: radial-gradient(ellipse at 50% 20%, #1e293b 0%, #091428 65%, #050b16 100%);
+      color: #ffffff;
+      padding: 60px 0 80px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid rgba(217, 119, 6, 0.3);
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(217, 119, 6, 0.18) 0%, rgba(9, 20, 40, 0) 70%);
+      pointer-events: none;
+    }
+
+    .hero-top-ribbon {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(217, 119, 6, 0.15);
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      padding: 6px 18px;
+      border-radius: 9999px;
+      margin-bottom: 24px;
+    }
+
+    .hero-top-ribbon span.badge {
+      background: var(--gold-gradient);
+      color: #271600;
+      font-weight: 900;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-top-ribbon span.text {
+      color: #fef08a;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-h1 {
+      font-family: var(--font-mincho);
+      font-size: clamp(34px, 5.5vw, 56px);
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .gold-shimmer {
+      background: var(--gold-text-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 8px rgba(217, 119, 6, 0.4));
+      display: inline-block;
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.2vw, 21px);
+      color: #cbd5e1;
+      font-weight: 500;
+      line-height: 1.6;
+      max-width: 820px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-sub strong {
+      color: #ffffff;
+      border-bottom: 2px solid #f59e0b;
+      padding-bottom: 2px;
+    }
+
+    /* Authority Badges */
+    .authority-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .authority-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 9999px;
+      padding: 6px 16px;
+      font-size: 12.5px;
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    .authority-item.gold {
+      border-color: rgba(251, 191, 36, 0.4);
+      background: rgba(217, 119, 6, 0.12);
+      color: #fef08a;
+    }
+
+    /* 16:9 VSL Theater Player */
+    .vsl-theater {
+      background: #020617;
+      border: 2px solid rgba(251, 191, 36, 0.45);
+      border-radius: 16px;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(217, 119, 6, 0.25);
+      overflow: hidden;
+      margin: 0 auto 40px;
+      max-width: 920px;
+      position: relative;
+    }
+
+    .vsl-topbar {
+      background: #0b1329;
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 12px;
+    }
+
+    .vsl-live-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #e11d48;
+      font-weight: 900;
+      background: rgba(225, 29, 72, 0.15);
+      padding: 3px 9px;
+      border-radius: 9999px;
+      border: 1px solid rgba(225, 29, 72, 0.3);
+    }
+
+    .vsl-live-dot {
+      width: 7px;
+      height: 7px;
+      background: #e11d48;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    .vsl-video-box {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      background: radial-gradient(circle at center, #1e293b 0%, #030712 100%);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .vsl-poster {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(9, 20, 40, 0.92) 100%);
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .vsl-play-btn {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      box-shadow: 0 0 35px rgba(251, 191, 36, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      transition: transform 0.25s, box-shadow 0.25s;
+      animation: pulse-gold 2s infinite;
+    }
+
+    .vsl-play-btn svg {
+      width: 36px;
+      height: 36px;
+      fill: #1f1300;
+      margin-left: 4px;
+    }
+
+    .vsl-poster:hover .vsl-play-btn {
+      transform: scale(1.08);
+      box-shadow: 0 0 50px rgba(251, 191, 36, 0.9);
+    }
+
+    .vsl-active-view {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background: #050b14;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+    }
+
+    .vsl-caption-container {
+      background: rgba(9, 20, 40, 0.88);
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      border-radius: 12px;
+      padding: 16px 20px;
+      backdrop-filter: blur(8px);
+      margin-top: auto;
+    }
+
+    .vsl-speaker {
+      font-size: 12px;
+      font-weight: 800;
+      color: #fbbf24;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .vsl-text {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .vsl-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .vsl-progress-bg {
+      flex: 1;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .vsl-progress-fill {
+      height: 100%;
+      background: var(--gold-gradient);
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    /* Hero CTA Box */
+    .hero-cta-box {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .btn-hero-primary {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 580px;
+      background: var(--gold-gradient);
+      color: #1e1300;
+      padding: 18px 24px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(217, 119, 6, 0.5), 0 0 20px rgba(251, 191, 36, 0.3);
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(217, 119, 6, 0.7);
+    }
+
+    .btn-hero-primary .main-text {
+      font-size: clamp(18px, 2.5vw, 23px);
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-hero-primary .sub-text {
+      font-size: 13px;
+      font-weight: 700;
+      color: #452402;
+      margin-top: 4px;
+    }
+
+    .hero-cta-notes {
+      font-size: 12.5px;
+      color: #94a3b8;
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    /* Problem Section */
+    .section-problem {
+      padding: 85px 0;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .sec-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding: 4px 12px;
+      border-radius: 9999px;
+    }
+
+    .sec-tag.red {
+      background: var(--crimson-light);
+      color: var(--crimson-red);
+    }
+
+    .sec-tag.gold {
+      background: var(--gold-light);
+      color: var(--gold-deep);
+    }
+
+    .sec-tag.green {
+      background: var(--emerald-light);
+      color: var(--emerald-primary);
+    }
+
+    .sec-title {
+      font-family: var(--font-mincho);
+      font-size: clamp(26px, 3.8vw, 40px);
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.35;
+      margin-bottom: 20px;
+    }
+
+    .sec-desc {
+      font-size: 16.5px;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 50px;
+      line-height: 1.8;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+
+    .problem-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-top: 4px solid var(--crimson-red);
+      border-radius: 12px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+      transition: transform 0.2s;
+    }
+
+    .problem-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .problem-icon {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+
+    .problem-h {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .problem-p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Solution Section */
+    .section-solution {
+      padding: 95px 0;
+      background: #ffffff;
+      position: relative;
+    }
+
+    .solution-banner {
+      background: linear-gradient(135deg, #091428 0%, #1e293b 100%);
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 48px 36px;
+      margin-bottom: 50px;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      box-shadow: 0 20px 45px rgba(9, 20, 40, 0.2);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .pillar-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 32px 26px;
+      position: relative;
+      transition: all 0.25s;
+    }
+
+    .pillar-card:hover {
+      border-color: var(--emerald-primary);
+      box-shadow: 0 12px 30px rgba(5, 150, 105, 0.12);
+      transform: translateY(-3px);
+    }
+
+    .pillar-card.featured {
+      border-color: var(--gold-primary);
+      background: linear-gradient(180deg, #fffbeb 0%, #ffffff 40%);
+    }
+
+    .pillar-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--gold-gradient);
+      color: #1e1300;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 3px 12px;
+      border-radius: 9999px;
+      box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+    }
+
+    .pillar-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+
+    .pillar-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .pillar-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .pillar-list {
+      list-style: none;
+      border-top: 1px dashed #e2e8f0;
+      padding-top: 16px;
+    }
+
+    .pillar-list li {
+      font-size: 13px;
+      color: #334155;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .pillar-list li span.check {
+      color: var(--emerald-primary);
+      font-weight: 900;
+    }
+
+    /* Social Proof Section (Ito & Shiori) */
+    .section-authority {
+      padding: 90px 0;
+      background: #091428;
+      color: #ffffff;
+      position: relative;
+    }
+
+    .authority-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+    }
+
+    .authority-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      border-radius: 16px;
+      padding: 36px 30px;
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .auth-profile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 18px;
+    }
+
+    .auth-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--gold-gradient);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 26px;
+      border: 2px solid #ffffff;
+      flex-shrink: 0;
+    }
+
+    .auth-role-tag {
+      display: inline-block;
+      background: rgba(251, 191, 36, 0.2);
+      color: #fde68a;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 4px;
+    }
+
+    .auth-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .auth-title {
+      font-size: 12.5px;
+      color: #94a3b8;
+    }
+
+    .auth-quote {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: #e2e8f0;
+      font-style: italic;
+      position: relative;
+    }
+
+    .auth-quote strong {
+      color: #fbbf24;
+      font-style: normal;
+    }
+
+    /* ROI & Financials */
+    .section-roi {
+      padding: 90px 0;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .roi-board {
+      background: #ffffff;
+      border: 2px solid #059669;
+      border-radius: 18px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(5, 150, 105, 0.1);
+      margin-bottom: 40px;
+    }
+
+    .roi-flex {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1.3fr;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .roi-flex {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .roi-operator {
+        display: none;
+      }
+    }
+
+    .roi-item {
+      padding: 20px;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+
+    .roi-item.total {
+      background: #ecfdf5;
+      border: 2px solid #10b981;
+    }
+
+    .roi-label {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .roi-val {
+      font-family: var(--font-num);
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .roi-val.red { color: #e11d48; }
+    .roi-val.blue { color: #2563eb; }
+    .roi-val.green { color: #059669; font-size: 38px; }
+
+    .roi-desc {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 6px;
+    }
+
+    .roi-operator {
+      font-size: 26px;
+      font-weight: 900;
+      color: #94a3b8;
+    }
+
+    /* Interactive Product Showcase */
+    .section-showcase {
+      padding: 90px 0;
+      background: #ffffff;
+    }
+
+    .showcase-wrapper {
+      background: #091428;
+      border-radius: 20px;
+      padding: 40px 30px;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .exceptions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .exception-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .exception-card:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #fbbf24;
+      transform: translateY(-2px);
+    }
+
+    .exception-badge {
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(251, 191, 36, 0.2);
+      color: #fde68a;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .exception-name {
+      font-size: 14.5px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .exception-time {
+      font-size: 11.5px;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Offer Section */
+    .section-offer {
+      padding: 100px 0;
+      background: radial-gradient(circle at 50% 30%, #1e293b 0%, #091428 100%);
+      color: #ffffff;
+      position: relative;
+    }
+
+    .offer-box {
+      background: #ffffff;
+      color: #0f172a;
+      border: 3px solid #fbbf24;
+      border-radius: 24px;
+      padding: 50px 40px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 50px rgba(251, 191, 36, 0.3);
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+    }
+
+    .offer-ribbon {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold-gradient);
+      color: #1e1300;
+      font-size: 13.5px;
+      font-weight: 900;
+      padding: 6px 28px;
+      border-radius: 9999px;
+      box-shadow: 0 4px 16px rgba(217, 119, 6, 0.4);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .offer-price-area {
+      margin: 32px 0;
+      padding: 24px;
+      background: #f8fafc;
+      border-radius: 14px;
+      border: 1px dashed #cbd5e1;
+    }
+
+    .price-strike {
+      font-size: 16px;
+      color: #94a3b8;
+      text-decoration: line-through;
+      margin-bottom: 6px;
+    }
+
+    .price-main {
+      font-family: var(--font-num);
+      font-size: clamp(38px, 6vw, 54px);
+      font-weight: 900;
+      color: var(--crimson-red);
+      line-height: 1;
+    }
+
+    .price-main span.unit {
+      font-size: 20px;
+      color: #334155;
+      font-family: var(--font-sans);
+      font-weight: 700;
+    }
+
+    .bonuses-box {
+      text-align: left;
+      margin: 30px 0;
+      background: #fffbeb;
+      border: 1px solid #fef08a;
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .bonus-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      color: #451a03;
+    }
+
+    .bonus-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .bonus-badge {
+      background: #d97706;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 2px 7px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    /* FAQ Section */
+    .section-faq {
+      padding: 85px 0;
+      background: #f8fafc;
+    }
+
+    .faq-list {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .faq-q {
+      padding: 18px 22px;
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #0f172a;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-q::after {
+      content: '+';
+      font-size: 20px;
+      color: #64748b;
+      transition: transform 0.2s;
+    }
+
+    .faq-item.active .faq-q::after {
+      content: '−';
+      transform: rotate(180deg);
+    }
+
+    .faq-a {
+      padding: 0 22px 18px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      display: none;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 14px;
+    }
+
+    .faq-item.active .faq-a {
+      display: block;
+    }
+
+    /* Entry Form & FAX Section */
+    .section-entry {
+      padding: 90px 0;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .entry-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+    }
+
+    @media (max-width: 860px) {
+      .entry-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-card {
+      background: #ffffff;
+      border: 2px solid #0f172a;
+      border-radius: 16px;
+      padding: 36px 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 6px;
+    }
+
+    .form-group label span.req {
+      color: #e11d48;
+      font-size: 11px;
+      margin-left: 4px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14.5px;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: #d97706;
+      box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--gold-gradient);
+      color: #1e1300;
+      border: none;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 16.5px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(217, 119, 6, 0.6);
+    }
+
+    .fax-card {
+      background: #f8fafc;
+      border: 2px dashed #94a3b8;
+      border-radius: 16px;
+      padding: 32px 26px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .fax-h {
+      font-size: 18px;
+      font-weight: 900;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .fax-num {
+      font-family: var(--font-num);
+      font-size: 28px;
+      font-weight: 900;
+      color: #0369a1;
+      margin: 12px 0;
+    }
+
+    .btn-fax-dl {
+      background: #0284c7;
+      color: #ffffff;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-fax-dl:hover {
+      background: #0369a1;
+    }
+
+    /* Floating Sticky CTA */
+    .floating-cta-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(9, 20, 40, 0.96);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(251, 191, 36, 0.35);
+      padding: 10px 20px;
+      z-index: 990;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.4);
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .floating-cta-bar.visible {
+      transform: translateY(0);
+    }
+
+    .floating-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .floating-urgency {
+      color: #fbbf24;
+      font-size: 12.5px;
+      font-weight: 800;
+    }
+
+    .floating-sub {
+      color: #cbd5e1;
+      font-size: 11.5px;
+    }
+
+    .floating-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-floating-cta {
+      background: var(--gold-gradient);
+      color: #1e1300;
+      font-weight: 900;
+      font-size: 13.5px;
+      padding: 9px 20px;
+      border-radius: 6px;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
+      white-space: nowrap;
+    }
+
+    /* Footer */
+    footer {
+      background: #050b14;
+      color: #64748b;
+      padding: 40px 0 80px;
+      font-size: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    /* Animations */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    @keyframes pulse-gold {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(251, 191, 36, 0.7); }
+      50% { transform: scale(1.05); box-shadow: 0 0 45px rgba(251, 191, 36, 0.9); }
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hero-h1 { font-size: 29px; }
+      .vsl-topbar { flex-direction: column; gap: 6px; align-items: flex-start; }
+      .authority-bar { flex-direction: column; align-items: stretch; }
+      .btn-nav-demo { display: none; }
+      .floating-sub { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header class="sticky-nav">
+    <div class="container nav-inner">
+      <div class="nav-logo">
+        <span class="nav-badge">全国ゴルフ場 現場革新</span>
+        <div class="nav-title">SwingClub 30秒レスキュー＆AI相談室</div>
+      </div>
+      <div class="nav-actions">
+        <a href="index.html#rescue" class="btn-nav-demo" target="_blank">実機デモを触る ↗</a>
+        <a href="#entry" class="btn-nav-cta">無料モニター枠に申込む</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-glow"></div>
+    <div class="container" style="text-align: center; position: relative; z-index: 2;">
+      
+      <!-- Top Ribbon -->
+      <div class="hero-top-ribbon">
+        <span class="badge">全国先行限定50コース</span>
+        <span class="text">初期費用¥0・月額4,800円・いつでも解約可能</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="hero-h1">
+        人は、分厚いマニュアルを<br>
+        <span class="gold-shimmer">読まない。</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="hero-sub">
+        土曜朝7時のフロント停止をゼロに。<br>
+        20人のゴルファーの前で新人が青ざめて固まる悲劇は、もう繰り返さない。<br>
+        <strong>現場で今すぐ使える、ゴルフ場専用『30秒現場レスキュー＆AI相談室』</strong>
+      </p>
+
+      <!-- Authority Badges -->
+      <div class="authority-bar">
+        <div class="authority-item gold">
+          <span>🏆</span> 津カントリー倶楽部 代表取締役 小島しおり 実戦導入
+        </div>
+        <div class="authority-item gold">
+          <span>🎯</span> ゴルフマーケティング専門家・TSH北村氏アドバイザー 伊藤氏 監修
+        </div>
+        <div class="authority-item">
+          <span>⚙️</span> TSH SwingClub クラウド＆オンプレミス完全対応
+        </div>
+      </div>
+
+      <!-- 16:9 VSL Theater Player -->
+      <div class="vsl-theater">
+        <div class="vsl-topbar">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="vsl-live-pill"><span class="vsl-live-dot"></span> VSL LIVE EXCLUSIVE</span>
+            <span style="color: #cbd5e1; font-weight: 700;">【3分20秒】現場の胃痛をゼロにする津カントリー倶楽部の実演解説</span>
+          </div>
+          <span style="color: #94a3b8;">解説: 代表取締役 小島しおり</span>
+        </div>
+
+        <div class="vsl-video-box" id="vsl-container">
+          <!-- Poster / Cover View -->
+          <div class="vsl-poster" id="vsl-poster" onclick="startVslPlayer()">
+            <div class="vsl-play-btn">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div style="font-family: var(--font-mincho); font-size: 22px; font-weight: 900; color: #ffffff; margin-bottom: 6px;">
+              「現場スタッフに、今すぐ使える本物の武器を。」
+            </div>
+            <div style="font-size: 13.5px; color: #fde68a; font-weight: 600;">
+              クリックして3分実演動画を再生（音声・テロップ字幕連動）
+            </div>
+          </div>
+
+          <!-- Active Playing View -->
+          <div class="vsl-active-view" id="vsl-active">
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+              <span id="vsl-scene-badge" style="background: var(--gold-gradient); color: #1e1300; font-size: 11px; font-weight: 900; padding: 3px 10px; border-radius: 9999px;">
+                第1幕: 現場の痛みの直撃
+              </span>
+              <span id="vsl-timer-text" style="font-family: var(--font-num); font-size: 12px; color: #94a3b8; font-weight: 700;">
+                00:15 / 03:20
+              </span>
+            </div>
+
+            <div style="text-align: center; margin: auto 0; padding: 20px;">
+              <div id="vsl-visual-icon" style="font-size: 64px; margin-bottom: 12px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.6));">
+                ⛳️
+              </div>
+              <div id="vsl-visual-title" style="font-size: 18px; font-weight: 800; color: #fef08a;">
+                土曜朝7:15 津カントリー倶楽部フロント
+              </div>
+            </div>
+
+            <div class="vsl-caption-container">
+              <div class="vsl-speaker">
+                <span>🎙️</span> 小島しおり（津カントリー倶楽部 代表取締役）
+              </div>
+              <div class="vsl-text" id="vsl-caption-text">
+                「全国のゴルフ場支配人、そしてフロント責任者の皆様、こんにちは。津カントリー倶楽部の小島しおりです。」
+              </div>
+              <div class="vsl-controls">
+                <div class="vsl-progress-bg">
+                  <div class="vsl-progress-fill" id="vsl-progress" style="width: 20%;"></div>
+                </div>
+                <button onclick="nextVslScene()" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 4px; cursor: pointer;">
+                  次へ ▶
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Call to Action -->
+      <div class="hero-cta-box">
+        <a href="#entry" class="btn-hero-primary">
+          <span class="main-text">
+            <span>🛡️</span> 先行限定50コース モニター枠にエントリー
+          </span>
+          <span class="sub-text">初期費用¥0（通常10万円免除） / 月額¥4,800 / いつでも解約可</span>
+        </a>
+        <div class="hero-cta-notes">
+          <span>✓ 既存システム改修不要</span>
+          <span>✓ 最短当日からスマホで利用可能</span>
+          <span>✓ クレジットカード・請求書払い対応</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Problem Section: Agitation -->
+  <section class="section-problem">
+    <div class="container" style="text-align: center;">
+      <span class="sec-tag red">THE AGONY OF FRONT DESK</span>
+      <h2 class="sec-title">
+        朝7時、あなたのゴルフ場でも<br>
+        こんな悲劇が起きていませんか？
+      </h2>
+      <p class="sec-desc">
+        ゴルフ場のフロント業務は、一瞬のミスが長蛇の列と顧客のクレームに直結する極限の修羅場です。<br>
+        しかし、現場のスタッフには「戦うための武器」が与えられていません。
+      </p>
+
+      <div class="problem-grid">
+        <!-- Problem 1 -->
+        <div class="problem-card">
+          <div class="problem-icon">⏳</div>
+          <h3 class="problem-h">満枠・チェックイン長蛇の列で<br>新人が青ざめて固まる</h3>
+          <p class="problem-p">
+            土曜朝7時15分、スタート枠は満杯。「同伴者を直前追加したい」「割引券を間違えて適用した」。システムの予期せぬエラーダイアログが出た瞬間、20人のゴルファーの視線が突き刺さり、新人はパニックに陥ります。
+          </p>
+        </div>
+
+        <!-- Problem 2 -->
+        <div class="problem-card">
+          <div class="problem-icon">📚</div>
+          <h3 class="problem-h">机の奥で埃をかぶるマニュアル<br>緊急時に誰も読まない</h3>
+          <p class="problem-p">
+            500ページもある分厚いバインダーマニュアル。お客様を目の前でお待たせしている1分1秒を争う緊迫した状況で、索引を引きながら分厚いファイルをめくるスタッフは現場に誰一人として存在しません。
+          </p>
+        </div>
+
+        <!-- Problem 3 -->
+        <div class="problem-card">
+          <div class="problem-icon">💸</div>
+          <h3 class="problem-h">派遣増員（年360万）の罠<br>仕事を覚えた頃に辞めていく</h3>
+          <p class="problem-p">
+            サポート電話がパンクし、月30万円（年360万円）かけて派遣スタッフを補強しても、業務に慣れて熟練しだすと辞めてしまう。毎回ゼロから教育し直すコストが流出し、投資ではなく単なるコストの垂れ流しになっています。
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Solution Section: The 3 Pillars -->
+  <section class="section-solution">
+    <div class="container">
+      <div class="solution-banner" style="text-align: center;">
+        <span class="sec-tag green" style="background: rgba(16, 185, 129, 0.2); color: #6ee7b7;">BORN IN THE TRENCHES</span>
+        <h2 class="sec-title" style="color: #ffffff; margin-top: 10px;">
+          机上の空論ではない。<br>
+          津カントリー倶楽部の修羅場から生まれた3本柱
+        </h2>
+        <p style="color: #cbd5e1; max-width: 720px; margin: 0 auto; font-size: 15.5px;">
+          現場の悲鳴を骨の髄まで知るプロフェッショナルたちが結集し、<br>
+          「本当にフロントが動ける仕組み」をゼロから具現化しました。
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <!-- Pillar 1 -->
+        <div class="pillar-card featured">
+          <span class="pillar-badge">即効性 No.1</span>
+          <div class="pillar-icon">🧯</div>
+          <h3 class="pillar-title">① 30秒 現場レスキュー</h3>
+          <p class="pillar-desc">
+            フロントが固まる「16大例外状況」を厳選。スマホで15秒逆引き。「なぜ制限？」「今すぐ現場でできる安全な手順」が一目でわかります。
+          </p>
+          <ul class="pillar-list">
+            <li><span class="check">✓</span> 満枠時の緊急同伴者追加・コピー</li>
+            <li><span class="check">✓</span> 誤適用割引券・クーポンの安全取消</li>
+            <li><span class="check">✓</span> ロッカー番号二重発券の即時解消</li>
+            <li><span class="check">✓</span> スタート遅延時の組間隔再計算</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="pillar-card">
+          <div class="pillar-icon">🧠</div>
+          <h3 class="pillar-title">② Gemini AI相談室</h3>
+          <p class="pillar-desc">
+            24時間365日、専属の熟練システムエンジニアが横についている安心感。スマホに向かって困りごとを話しかけるだけで即座に解決策を提示します。
+          </p>
+          <ul class="pillar-list">
+            <li><span class="check">✓</span> 音声入力対応（手が離せない時もOK）</li>
+            <li><span class="check">✓</span> コンペ新ペリア再集計手順の即時回答</li>
+            <li><span class="check">✓</span> 悪天候ハーフ打切り時の料金精算案内</li>
+            <li><span class="check">✓</span> 夜間・早朝のサポート営業時間外も即答</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="pillar-card">
+          <div class="pillar-icon">🔄</div>
+          <h3 class="pillar-title">③ 自律進化フライホイール</h3>
+          <p class="pillar-desc">
+            スタッフが辞めても、ゴルフ場の知見が消えない。日々の受電メモや問い合わせをAIが自動解析し、翌週には現場の新しいノウハウとして永久資産化。
+          </p>
+          <ul class="pillar-list">
+            <li><span class="check">✓</span> 熟練スタッフの属人知見を自動形式知化</li>
+            <li><span class="check">✓</span> 新人スタッフの研修期間を従来の1/3に短縮</li>
+            <li><span class="check">✓</span> TSH開発陣へ現場の改善要望を直接フィードバック</li>
+            <li><span class="check">✓</span> コース独自のローカルルールも即座に登録</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Authority & Social Proof (Ito & Shiori) -->
+  <section class="section-authority">
+    <div class="container" style="text-align: center;">
+      <span class="sec-tag gold">AUTHORITY & EVIDENCE</span>
+      <h2 class="sec-title" style="color: #ffffff;">
+        業界をリードする2大巨頭が<br>
+        「現場が劇的に変わる」と太鼓判を押す理由
+      </h2>
+      <p style="color: #94a3b8; max-width: 740px; margin: 0 auto; font-size: 15px;">
+        単なるシステムのデジタル化ではありません。現場の動線、心理、そしてゴルフ場経営のROIを極限まで計算した、本物のダイレクト・レスポンス・マーケティングです。
+      </p>
+
+      <div class="authority-grid">
+        <!-- Ito-san -->
+        <div class="authority-card" style="border-color: rgba(251, 191, 36, 0.4);">
+          <div>
+            <div class="auth-profile">
+              <div class="auth-avatar">🎯</div>
+              <div style="text-align: left;">
+                <span class="auth-role-tag">ゴルフマーケティング専門家 / TSH北村部長アドバイザー</span>
+                <div class="auth-name">伊藤 氏</div>
+                <div class="auth-title">ゴルフ場集客・現場業務改善コンサルタント</div>
+              </div>
+            </div>
+            <div class="auth-quote">
+              「従来のシステムマニュアルは、すべて開発側の都合で作られた機能の羅列でした。だから緊迫した現場では誰も読まない。<br><br>
+              この『30秒現場レスキュー』は違います。<strong>フロントの動線と人間の緊急時心理を徹底的に計算したマーケティング設計</strong>です。<br>
+              北村部長が長年苦悩されていた『電話受付が回らず派遣を増やしても、熟練した頃に辞めてしまう教育コストの流出』を根本から断ち切る唯一の解決策だと確信しています。」
+            </div>
+          </div>
+          <div style="margin-top: 24px; padding-top: 14px; border-top: 1px dashed rgba(255,255,255,0.1); text-align: left; font-size: 12px; color: #fbbf24; font-weight: 700;">
+            ✓ スマートフォン実機検証完了・完全レスポンシブ承認済
+          </div>
+        </div>
+
+        <!-- Shiori-san -->
+        <div class="authority-card" style="border-color: rgba(16, 185, 129, 0.4);">
+          <div>
+            <div class="auth-profile">
+              <div class="auth-avatar" style="background: linear-gradient(135deg, #10b981 0%, #047857 100%);">⛳️</div>
+              <div style="text-align: left;">
+                <span class="auth-role-tag" style="background: rgba(16, 185, 129, 0.2); color: #a7f3d0;">実戦導入・現場検証元</span>
+                <div class="auth-name">小島 しおり 氏</div>
+                <div class="auth-title">津カントリー倶楽部 代表取締役</div>
+              </div>
+            </div>
+            <div class="auth-quote">
+              「私たちは、日本有数の難関コースであり『ザ・チャレンジド ゴルフトーナメント』を開催するゴルフ場として、常に一流のホスピタリティを追求しています。<br><br>
+              しかし、朝の満枠時にシステムエラーが起きれば、どれほど優秀なスタッフでも笑顔を失ってしまいます。<br>
+              <strong>現場で汗を流すスタッフに、今すぐ使える本物の武器を渡したい。</strong>このレスキューを導入してから、朝の緊急架電が激減し、新人が自信を持ってお迎えできるようになりました。」
+            </div>
+          </div>
+          <div style="margin-top: 24px; padding-top: 14px; border-top: 1px dashed rgba(255,255,255,0.1); text-align: left; font-size: 12px; color: #34d399; font-weight: 700;">
+            ✓ 津カントリー倶楽部フロント実戦配備・運用中
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Financial Proof & ROI -->
+  <section class="section-roi">
+    <div class="container" style="text-align: center;">
+      <span class="sec-tag green">SOLID ROI CALCULATION</span>
+      <h2 class="sec-title">
+        導入したその日から<br>
+        年間約1,704万円の純プラス効果を確定
+      </h2>
+      <p class="sec-desc">
+        コスト削減（守り）とレベニューシェア（攻め）の双方を完璧に両立。<br>
+        経営陣・経理部門が即座に首を縦に振る、揺るぎない投資対効果です。
+      </p>
+
+      <div class="roi-board">
+        <div class="roi-flex">
+          <!-- Item 1: Cost Cut -->
+          <div class="roi-item">
+            <div class="roi-label">【守り】派遣1名増員の完全回避</div>
+            <div class="roi-val red">+¥3,600,000</div>
+            <div class="roi-desc">月30万円×12ヶ月の派遣コスト・教育費流出を即ゼロ化</div>
+          </div>
+
+          <div class="roi-operator">+</div>
+
+          <!-- Item 2: Revenue Share -->
+          <div class="roi-item">
+            <div class="roi-label">【攻め】全国展開レベニュー還元</div>
+            <div class="roi-val blue">+¥13,440,000</div>
+            <div class="roi-desc">全国200コース展開時の70%純利益還元モデル</div>
+          </div>
+
+          <div class="roi-operator">=</div>
+
+          <!-- Total -->
+          <div class="roi-item total">
+            <div class="roi-label" style="color: #047857;">年間 純経済インパクト</div>
+            <div class="roi-val green">約 1,704 万円</div>
+            <div class="roi-desc" style="color: #065f46; font-weight: 700;">※ TSH様の持ち出し投資ゼロで確定</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; max-width: 780px; margin: 0 auto; text-align: left;">
+        <div style="font-weight: 800; font-size: 15px; color: #0f172a; margin-bottom: 8px;">
+          📊 TSH北村部長のサポート課題に対する定量的回答
+        </div>
+        <p style="font-size: 13.5px; color: #475569; line-height: 1.7; margin: 0;">
+          現在、電話受付3名・調査担当2名の体制でシフトが回らず、月30万円の派遣増員を検討されている状況に対し、本システムは現場での一次自己解決率を劇的に引き上げます。受電件数を約40〜60%抑制することで、増員なしでの余裕あるシフト運営を実現します。
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive Product Showcase -->
+  <section class="section-showcase">
+    <div class="container" style="text-align: center;">
+      <span class="sec-tag gold">LIVE PRODUCT EXPERIENCE</span>
+      <h2 class="sec-title">
+        今すぐ現場で試せる<br>
+        厳選16大レスキュー ＆ AI実機デモ
+      </h2>
+      <p class="sec-desc">
+        「どんな画面で、どう解決するのか？」<br>
+        下のボタンから、実際のレスキュー画面をインストール不要でお試しいただけます。
+      </p>
+
+      <div class="showcase-wrapper">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 16px;">
+          <div style="text-align: left;">
+            <div style="font-size: 18px; font-weight: 800; color: #ffffff;">📱 現場フロントが15秒で解決する16大例外</div>
+            <div style="font-size: 12.5px; color: #94a3b8;">カードをクリックすると、マニュアル実機画面が開きます</div>
+          </div>
+          <a href="index.html#rescue" target="_blank" style="background: var(--gold-gradient); color: #1e1300; padding: 8px 18px; border-radius: 6px; font-weight: 900; font-size: 13px;">
+            全画面を実機体験する ↗
+          </a>
+        </div>
+
+        <div class="exceptions-grid">
+          <a href="index.html#rescue" target="_blank" class="exception-card">
+            <span class="exception-badge">予約・満枠</span>
+            <div class="exception-name">満枠時の緊急同伴者追加</div>
+            <div class="exception-time">⏱ 解決目安: 15秒</div>
+          </a>
+          <a href="index.html#rescue" target="_blank" class="exception-card">
+            <span class="exception-badge">精算・会計</span>
+            <div class="exception-name">誤適用クーポンの安全取消</div>
+            <div class="exception-time">⏱ 解決目安: 20秒</div>
+          </a>
+          <a href="index.html#rescue" target="_blank" class="exception-card">
+            <span class="exception-badge">フロント</span>
+            <div class="exception-name">ロッカー二重発券の即時解消</div>
+            <div class="exception-time">⏱ 解決目安: 15秒</div>
+          </a>
+          <a href="index.html#rescue" target="_blank" class="exception-card">
+            <span class="exception-badge">運行管理</span>
+            <div class="exception-name">スタート遅延・組間隔再計算</div>
+            <div class="exception-time">⏱ 解決目安: 30秒</div>
+          </a>
+          <a href="index.html#rescue" target="_blank" class="exception-card">
+            <span class="exception-badge">コンペ</span>
+            <div class="exception-name">同姓同名・HDCP未入力例外</div>
+            <div class="exception-time">⏱ 解決目安: 25秒</div>
+          </a>
+          <a href="index.html#rescue" target="_blank" class="exception-card">
+            <span class="exception-badge">悪天候</span>
+            <div class="exception-name">雷雲接近・ハーフ打切り精算</div>
+            <div class="exception-time">⏱ 解決目安: 20秒</div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Irresistible Offer Section -->
+  <section class="section-offer" id="offer">
+    <div class="container">
+      
+      <div class="offer-box">
+        <div class="offer-ribbon">先行限定 50コース 特別モニター枠</div>
+
+        <h2 style="font-family: var(--font-mincho); font-size: clamp(24px, 4vw, 34px); font-weight: 900; line-height: 1.3; margin-top: 12px;">
+          朝のフロントパニックをゼロにする<br>
+          <span style="color: var(--gold-deep);">完全リスクゼロの特別オファー</span>
+        </h2>
+
+        <p style="font-size: 14.5px; color: #475569; margin-top: 10px;">
+          全国2,000以上のゴルフ場の中で、いち早く現場の疲弊を解消し、<br>
+          強いフロントを築く先駆的コースのための限定条件です。
+        </p>
+
+        <div class="offer-price-area">
+          <div class="price-strike">初期費用 ¥100,000（税別）</div>
+          <div style="font-size: 18px; font-weight: 900; color: #047857; margin-bottom: 8px;">
+            🎉 特別先行枠：初期導入費用 ¥0（完全無料）
+          </div>
+          <div class="price-main">
+            4,800 <span class="unit">円 / 月（税別）</span>
+          </div>
+          <div style="font-size: 12px; color: #64748b; margin-top: 8px;">
+            ※ 1コースあたり・利用スタッフ数・端末数無制限
+          </div>
+        </div>
+
+        <!-- Bonuses -->
+        <div class="bonuses-box">
+          <div style="font-weight: 800; font-size: 15px; color: #78350f; margin-bottom: 14px; display: flex; align-items: center; gap: 6px;">
+            <span>🎁</span> 先行50コース限定・特別3大特典
+          </div>
+          <div class="bonus-item">
+            <span class="bonus-badge">特典 1</span>
+            <div><strong>小島しおり社長直伝『現場フロント即戦力マニュアル導入ガイド』</strong><br><span style="font-size: 12px; color: #92400e;">新人が3日で朝のチェックインを一人で回せるようになる極秘研修シート</span></div>
+          </div>
+          <div class="bonus-item">
+            <span class="bonus-badge">特典 2</span>
+            <div><strong>ゴルフマーケティング専門家・伊藤氏監修『フロント業務効率化診断チェックシート』</strong><br><span style="font-size: 12px; color: #92400e;">自ゴルフ場の隠れた電話コストと教育ロスを一目で数値化</span></div>
+          </div>
+          <div class="bonus-item">
+            <span class="bonus-badge">特典 3</span>
+            <div><strong>自コース独自ルールの専任カスタマイズ設定代行（通常¥30,000相当が無料）</strong><br><span style="font-size: 12px; color: #92400e;">専任スタッフが貴ゴルフ場のローカルルールをレスキューに無料反映</span></div>
+          </div>
+        </div>
+
+        <!-- Risk Reversal / Guarantee -->
+        <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 12px; padding: 18px; margin-bottom: 28px; text-align: left;">
+          <div style="font-weight: 800; font-size: 14.5px; color: #166534; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+            <span>🛡️</span> 100%満足保証：いつでも解約可能・契約縛りゼロ
+          </div>
+          <div style="font-size: 12.5px; color: #15803d; line-height: 1.6;">
+            もし導入後、現場スタッフの負担が減らない、あるいは期待した効果が得られないと判断された場合は、いつでも1クリックで解約いただけます。違約金や契約期間の縛りは一切ございません。
+          </div>
+        </div>
+
+        <a href="#entry" class="btn-hero-primary" style="max-width: 100%;">
+          <span class="main-text">今すぐ先行モニター枠にエントリーする</span>
+          <span class="sub-text">初期費用¥0 / 月額¥4,800 / 最短翌日より利用開始可能</span>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-faq">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 45px;">
+        <span class="sec-tag gold">FREQUENTLY ASKED QUESTIONS</span>
+        <h2 class="sec-title">よくあるご質問</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Q. 今使っているSwingClubのバージョンが古くても動きますか？</div>
+          <div class="faq-a">
+            はい、問題なく動作いたします。本システムは基幹システムのデータベースに直接干渉するものではなく、現場スタッフが手元のスマートフォンやPCブラウザで「レスキュー手順」「AI相談」を逆引きするクラウド／Web型システムです。オンプレミス版・クラウド版を問わず、既存のSwingClub環境に改修工事を行うことなく最短当日からご利用いただけます。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Q. 高齢のスタッフやITが苦手なフロントでも使いこなせますか？</div>
+          <div class="faq-a">
+            はい、まさにそのために開発されました。分厚いマニュアルの専門用語を排し、「満枠追加」「割引券取消」といった現場の直感的な言葉で15秒逆引きできます。さらにGemini AI相談室はマイクによる音声入力にも対応しているため、文字入力が苦手なスタッフでもスマホに話しかけるだけで即座に解決手順が案内されます。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Q. 本当にサポートセンターへの電話は減りますか？</div>
+          <div class="faq-a">
+            はい。津カントリー倶楽部での実戦検証では、朝のピーク時に発生する突発的トラブル（16大例外）の約80%が現場のスマートフォン上で自己解決できるようになり、緊急のサポート架電が劇的に減少しました。TSHサポート側の受付シフト逼迫も緩和され、双方に大きなメリットが生まれます。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Q. 途中で解約することはできますか？</div>
+          <div class="faq-a">
+            はい、いつでも可能です。年単位の縛りや解約違約金などは一切ございません。管理画面またはメール1本でいつでも停止いただけますので、まずは1ヶ月間、実際のフロントでお試しください。
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">Q. コース独自のローカルルールや料金体系も登録できますか？</div>
+          <div class="faq-a">
+            はい、可能です。先行50コースの特典として、専任のサポートスタッフが貴ゴルフ場の独自ルール（特定のメンバー様対応、優待券の独自処理など）をシステムに反映代行いたします。
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Entry Form & FAX Section -->
+  <section class="section-entry" id="entry">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 45px;">
+        <span class="sec-tag green">OFFICIAL ENTRY FORM</span>
+        <h2 class="sec-title">先行モニターお申込み・お問い合わせ</h2>
+        <p class="sec-desc">
+          Webフォームからの即時エントリー、または支配人室直通FAXシートにて承ります。<br>
+          お申込み後、24時間以内にデモアカウントおよびご案内をお届けいたします。
+        </p>
+      </div>
+
+      <div class="entry-grid">
+        <!-- Web Form -->
+        <div class="form-card">
+          <div style="font-weight: 900; font-size: 18px; color: #0f172a; margin-bottom: 18px; display: flex; align-items: center; gap: 8px;">
+            <span>💻</span> Webから即時エントリー（1分完了）
+          </div>
+
+          <form id="monitor-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label for="gc-name">ゴルフ場名 <span class="req">*必須</span></label>
+              <input type="text" id="gc-name" class="form-control" placeholder="例：津カントリー倶楽部" required>
+            </div>
+
+            <div class="form-group">
+              <label for="user-name">お名前・お役職 <span class="req">*必須</span></label>
+              <input type="text" id="user-name" class="form-control" placeholder="例：小島 しおり（支配人 / フロントマネージャー）" required>
+            </div>
+
+            <div class="form-group">
+              <label for="user-email">メールアドレス <span class="req">*必須</span></label>
+              <input type="email" id="user-email" class="form-control" placeholder="例：front@tsu.co.jp" required>
+            </div>
+
+            <div class="form-group">
+              <label for="user-tel">お電話番号 <span class="req">*必須</span></label>
+              <input type="tel" id="user-tel" class="form-control" placeholder="例：059-237-3580" required>
+            </div>
+
+            <div class="form-group">
+              <label for="user-system">現在ご利用のSwingClub環境</label>
+              <select id="user-system" class="form-control">
+                <option value="cloud">クラウド版 SwingClub</option>
+                <option value="onpremise">オンプレミス（サーバー設置）版 SwingClub</option>
+                <option value="unknown">バージョン不明・確認中</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-submit">
+              先行モニター枠に申し込む（初期費¥0） 🚀
+            </button>
+            <div style="font-size: 11.5px; color: #64748b; text-align: center; margin-top: 10px;">
+              ※ 入力情報は厳重に管理され、本件のご案内以外には使用いたしません。
+            </div>
+          </form>
+        </div>
+
+        <!-- FAX & Phone Direct -->
+        <div class="fax-card">
+          <div>
+            <div class="fax-h">📄 支配人室 直通FAXでのエントリー</div>
+            <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">
+              PC入力がご面倒な場合は、専用の「FAXエントリー用紙」を印刷し、必要事項をご記入の上ご送信ください。
+            </p>
+            <div class="fax-num">FAX: 059-237-3612</div>
+            <div style="font-size: 12px; color: #64748b; margin-bottom: 20px;">
+              24時間自動受付（津カントリー倶楽部 支配人室宛）
+            </div>
+
+            <a href="javascript:window.print()" class="btn-fax-dl">
+              <span>🖨️</span> A4 FAX返信シートを印刷する
+            </a>
+          </div>
+
+          <div style="border-top: 1px dashed #cbd5e1; padding-top: 24px; margin-top: 24px;">
+            <div style="font-size: 13px; font-weight: 800; color: #334155; margin-bottom: 6px;">
+              お電話でのお問い合わせ・ご相談
+            </div>
+            <div style="font-family: var(--font-num); font-size: 22px; font-weight: 900; color: #047857;">
+              TEL: 059-253-6605
+            </div>
+            <div style="font-size: 11.5px; color: #64748b;">
+              受付時間: 平日 9:00〜18:00（担当: 津カントリー倶楽部 / TSHプロジェクト窓口）
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Floating Sticky CTA Bar -->
+  <div class="floating-cta-bar" id="floating-bar">
+    <div class="floating-left">
+      <span class="floating-urgency">⚡️ 先行枠 残りわずか</span>
+      <span class="floating-sub">初期費¥0・月¥4,800・津カントリー倶楽部実戦導入</span>
+    </div>
+    <div class="floating-right">
+      <a href="index.html#rescue" class="btn-nav-demo" target="_blank">実機デモ ↗</a>
+      <a href="#entry" class="btn-floating-cta">モニター申込 🚀</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div style="font-weight: 800; color: #94a3b8; margin-bottom: 12px; font-size: 14px;">
+        SwingClub 30秒現場レスキュー ＆ AI相談室
+      </div>
+      <p style="max-width: 680px; margin: 0 auto 18px; line-height: 1.6;">
+        企画・実戦導入元：津カントリー倶楽部（代表取締役 小島しおり）<br>
+        監修・推進：ゴルフマーケティング専門家・TSHアドバイザー（伊藤氏） / osAKen<br>
+        基幹システム連携：東京システムハウス株式会社（TSH） SwingClub
+      </p>
+      <div style="font-size: 11px; color: #475569;">
+        &copy; 2026 SwingClub Rescue Project. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // VSL Player Scenario Data
+    const vslScenes = [
+      {
+        badge: "第1幕: 現場の痛みの直撃",
+        time: "00:15 / 03:20",
+        progress: 20,
+        icon: "⛳️",
+        title: "土曜朝7:15 津カントリー倶楽部フロント",
+        caption: "「全国のゴルフ場支配人、そしてフロント責任者の皆様、こんにちは。津カントリー倶楽部の小島しおりです。突然ですが、土曜朝7時、満枠のフロントで急な同伴者追加や割引取消エラーが起き、20人のゴルファーの前で新人が青ざめて固まる——そんな胃の痛む光景を、あと何回繰り返しますか？」"
+      },
+      {
+        badge: "第2幕: 机上の空論への告発",
+        time: "00:45 / 03:20",
+        progress: 40,
+        icon: "📚",
+        title: "埃をかぶる分厚いマニュアルの限界",
+        caption: "「人は、分厚いマニュアルを読まないのです。電話が回らず派遣を増やしても、業務を覚えた頃に辞めてしまう…教育コストが流出し、年間360万円もの費用がドブに捨てられているのが現場の偽らざる真実です。」"
+      },
+      {
+        badge: "第3幕: 津カントリーの実演解決",
+        time: "01:25 / 03:20",
+        progress: 60,
+        icon: "🧯",
+        title: "スマホで15秒逆引き実演デモ",
+        caption: "「そこで津カントリー倶楽部が開発したのが『30秒現場レスキュー』です。スマホで『同伴者コピー』と引くだけで、安全な手順が15秒で表示。ゴルフマーケティングのプロであり北村氏のアドバイザーを務める伊藤氏も実機を検証し、『これなら現場が電話なしで自立できる』と絶賛しています。」"
+      },
+      {
+        badge: "第4幕: 経営陣への確定ROI",
+        time: "02:10 / 03:20",
+        progress: 80,
+        icon: "📈",
+        title: "年間約1,704万円の純プラス効果",
+        caption: "「電話受付の派遣1名増員（年360万円）を即時回避し、知見を永久資産化。さらに外販レベニューシェアで年間最大1,344万円の純利を還元。守りと攻めで年間約1,704万円の純プラス効果をもたらします。」"
+      },
+      {
+        badge: "第5幕: 断れないオファー ＆ 行動喚起",
+        time: "03:00 / 03:20",
+        progress: 100,
+        icon: "🎁",
+        title: "全国先行限定50コース募集開始",
+        caption: "「全国先行限定50コース、月額わずか4,800円（初期費用¥0）。合わなければいつでも解約可能。今すぐ画面下のボタンから実機デモをご体感ください。現場スタッフに本物の武器を届けましょう。」"
+      }
+    ];
+
+    let currentScene = 0;
+    let sceneTimer = null;
+
+    function startVslPlayer() {
+      document.getElementById('vsl-poster').style.display = 'none';
+      document.getElementById('vsl-active').style.display = 'flex';
+      currentScene = 0;
+      renderVslScene();
+      startAutoPlay();
+    }
+
+    function renderVslScene() {
+      const s = vslScenes[currentScene];
+      document.getElementById('vsl-scene-badge').innerText = s.badge;
+      document.getElementById('vsl-timer-text').innerText = s.time;
+      document.getElementById('vsl-visual-icon').innerText = s.icon;
+      document.getElementById('vsl-visual-title').innerText = s.title;
+      document.getElementById('vsl-caption-text').innerText = s.caption;
+      document.getElementById('vsl-progress').style.width = s.progress + '%';
+    }
+
+    function nextVslScene() {
+      currentScene = (currentScene + 1) % vslScenes.length;
+      renderVslScene();
+      resetAutoPlay();
+    }
+
+    function startAutoPlay() {
+      sceneTimer = setInterval(() => {
+        if (currentScene < vslScenes.length - 1) {
+          currentScene++;
+          renderVslScene();
+        } else {
+          clearInterval(sceneTimer);
+        }
+      }, 7000);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(sceneTimer);
+      startAutoPlay();
+    }
+
+    // FAQ Accordion
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      item.classList.toggle('active');
+    }
+
+    // Form Submit Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const gcName = document.getElementById('gc-name').value;
+      const userName = document.getElementById('user-name').value;
+      alert(`【受付完了】\n${gcName} ${userName} 様\n\n先行モニターへのお申込みありがとうございます！\nご入力いただいたメールアドレス宛に、24時間以内にデモアカウントおよびご案内を送付いたします。`);
+      document.getElementById('monitor-form').reset();
+    }
+
+    // Scroll Listener for Floating Bar
+    window.addEventListener('scroll', () => {
+      const floatingBar = document.getElementById('floating-bar');
+      if (window.scrollY > 450) {
+        floatingBar.classList.add('visible');
+      } else {
+        floatingBar.classList.remove('visible');
+      }
+    });
+  </script>
+</body>
+</html>
