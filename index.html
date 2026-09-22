@@ -1907,6 +1907,10 @@
         <span>📊 事業概要インフォグラフィック</span>
         <span class="nav-badge" id="badge-proposal-lock" style="background: #e0f2fe; color: #0284c7; font-weight: 700;">🔒</span>
       </a>
+      <a class="nav-item" id="nav-item-flyer" onclick="openLockedTab('tab-flyer')">
+        <span>📄 販促チラシ（A4印刷対応）</span>
+        <span class="nav-badge" id="badge-flyer-lock" style="background: #e0f2fe; color: #0284c7; font-weight: 700;">🔒</span>
+      </a>
       <a class="nav-item" id="nav-item-quote-base" onclick="openLockedTab('tab-quote-base')">
         <span>📑 御見積書（基本サブスク）</span>
         <span class="nav-badge" id="badge-quote-base-lock" style="background: #e0f2fe; color: #0284c7; font-weight: 700;">🔒</span>
@@ -4141,6 +4145,267 @@
         </div>
       </div>
 
+      <!-- TAB: 📄 販促チラシ（A4印刷対応・TSH公式風） -->
+      <div id="tab-flyer" class="tab-content">
+        <!-- Action Toolbar -->
+        <div style="max-width: 860px; margin: 0 auto 16px auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="background: #005bac; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 9999px;">TSH公式チラシ仕様</span>
+            <span style="font-size: 13px; font-weight: 700; color: #0f172a;">A4販促チラシ（全国200コース支配人・フロント向け）</span>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button onclick="toggleChatGptPromptBox()" class="btn" style="background: #f1f5f9; border: 1px solid #cbd5e1; font-size: 12px; font-weight: 600; padding: 6px 12px; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+              <span>🤖</span> ChatGPT用プロンプトを表示
+            </button>
+            <button onclick="window.print()" class="btn btn-primary" style="background: #005bac; border: none; font-size: 12px; font-weight: 700; padding: 6px 16px; cursor: pointer;">
+              🖨️ A4印刷・PDF保存
+            </button>
+            <button onclick="lockGate()" class="btn btn-secondary" style="font-size: 12px; padding: 6px 12px; cursor: pointer;">
+              🔒 再ロック
+            </button>
+          </div>
+        </div>
+
+        <!-- ChatGPT Prompt Collapsible Box -->
+        <div id="chatgpt-prompt-box" style="display: none; max-width: 860px; margin: 0 auto 20px auto; background: #f8fafc; border: 1.5px dashed #0284c7; border-radius: 12px; padding: 18px 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <div style="font-weight: 800; font-size: 13.5px; color: #0369a1; display: flex; align-items: center; gap: 6px;">
+              <span>🤖</span> ChatGPT (Image2 / DALL-E 3) 投入用プロンプト（高精度チラシ画像生成用）
+            </div>
+            <button onclick="copyChatGptPrompt()" style="background: #0284c7; color: #fff; border: none; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 6px; cursor: pointer;">
+              📋 プロンプトをコピー
+            </button>
+          </div>
+          <div style="font-size: 12px; color: #475569; line-height: 1.6; margin-bottom: 8px;">
+            ChatGPTのチャット欄に以下の英語プロンプトをそのまま貼り付けると、TSH公式チラシのトンマナ（SMS送信サービスやRMOパンフレット）を踏襲した美麗なA4縦型チラシ画像が一発生成されます。
+          </div>
+          <textarea id="chatgpt-prompt-text" readonly style="width: 100%; height: 110px; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; background: #ffffff; color: #0f172a; resize: vertical;">A professional A4 corporate business flyer (infographic poster) for a Japanese golf course cloud system solution called "SwingClub-CLOUD 30秒現場レスキュー & AI相談室".
+Design Style & Layout:
+- Format: Vertical A4 portrait layout, crisp graphic design, clean modern corporate style matching Tokyo System House (TSH) branding.
+- Colors: Dominant TSH corporate deep blue (#005BAC), vibrant emerald green (#10B981), warning accent orange (#F59E0B), pure white background (#FFFFFF), light cool grey/blue cards (#F0F7FF).
+- Hierarchy & Sections from Top to Bottom:
+  1. Top Header: Clean company logo placeholder with text "SwingClub-CLOUD 新ソリューション", subtitle "東京システムハウス × 津カントリー倶楽部 DX推進室". Bold title in Japanese typography: "30秒 現場レスキュー ＆ AI相談室".
+  2. Problem Section (Pain Points): Light orange cards with red/orange exclamation icons showing 3 frantic front desk staff problems: "人はマニュアルを読まない", "朝の例外トラブルでフロント停止", "電話サポートの派遣増員コスト(年360万)".
+  3. Solution Visual: Isometric 3D mockups of a smartphone and tablet showing an elegant golf manual web app with a glowing green "30秒レスキュー" search card and a helpful AI chatbot mascot. Arrows demonstrating: "現場の疑問 → 30秒で逆引き解決 → 受電ゼロ".
+  4. 3 Big Benefits Section (3 large rectangular cards in a row):
+     - Card 01 (Blue): "削減01 電話対応時間" -> 1日1.5時間削減 (年54万円削減)
+     - Card 02 (Green Highlight): "削減02 派遣増員コスト" -> 派遣1名増員を回避 (年360万円削減!)
+     - Card 03 (Gold): "削減03 熟練離職の損失" -> ナレッジ永久資産化 (プライスレス!)
+  5. Bold Callout Banner: "年間 400万円超 のコスト削減 ＆ 現場ストレス激減！"
+  6. Special Offer Box: "先行限定50コース モニター特別枠: 月額 4,800円 / コース (初期費0円)".
+  7. Footer: Clean corporate footer with contact info "東京システムハウス株式会社", Tokyo Head Office (Gotanda JP Building), 365 days telephone support badge.
+Quality: 8k resolution, ultra-clean vector layout, professional typography, crisp infographics, no distortion, polished B2B SaaS advertisement brochure.</textarea>
+        </div>
+
+        <!-- Printable A4 Flyer Canvas -->
+        <div class="tsh-flyer-canvas" style="max-width: 860px; margin: 0 auto; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); overflow: hidden; font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;">
+          
+          <!-- Flyer Header: TSH Blue Banner -->
+          <div style="background: linear-gradient(135deg, #004098 0%, #005bac 100%); color: #ffffff; padding: 24px 28px 20px 28px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <div style="background: #ffffff; color: #004098; font-size: 11px; font-weight: 900; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.05em;">
+                  TOKYO SYSTEM HOUSE
+                </div>
+                <span style="font-size: 13px; font-weight: 700; color: #bae6fd; letter-spacing: 0.03em;">
+                  SwingClub-CLOUD 新ソリューション
+                </span>
+              </div>
+              <div style="font-size: 11px; color: #e0f2fe; background: rgba(255,255,255,0.15); padding: 3px 10px; border-radius: 9999px;">
+                共同開発: 津カントリー倶楽部 DX推進室
+              </div>
+            </div>
+
+            <div style="font-size: 13px; font-weight: 700; color: #7dd3fc; margin-bottom: 4px; letter-spacing: 0.05em;">
+              ゴルフ場特化型 現場サポート ＆ 自律進化ポータル
+            </div>
+            <h1 style="font-size: 28px; font-weight: 900; margin: 0 0 10px 0; color: #ffffff; line-height: 1.25; letter-spacing: -0.01em;">
+              30秒 現場レスキュー ＆ AI相談室
+            </h1>
+            <div style="background: rgba(0,0,0,0.25); border-left: 4px solid #38bdf8; padding: 8px 14px; border-radius: 0 6px 6px 0; font-size: 13px; color: #f0f9ff; font-weight: 600; line-height: 1.5;">
+              「人はマニュアルを読まない」前提に立ち、朝のフロント停止と電話サポート逼迫をゼロにする次世代現場ポータル
+            </div>
+          </div>
+
+          <div style="padding: 24px 28px;">
+
+            <!-- Section 1: Pain Points (TSH-SMS.pdf style) -->
+            <div style="background: #fff7ed; border: 1.5px solid #ffedd5; border-radius: 10px; padding: 16px 20px; margin-bottom: 22px;">
+              <div style="font-weight: 800; font-size: 15px; color: #c2410c; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span>⚡</span> プレー当日のこんな困りごと・現場パニックを解決します！
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+                <div style="background: #ffffff; border: 1px solid #fed7aa; border-radius: 8px; padding: 12px; font-size: 12px; color: #9a3412; line-height: 1.6;">
+                  <strong style="display: block; font-size: 13px; color: #ea580c; margin-bottom: 4px;">❌ フロント停止パニック</strong>
+                  満枠で1人追加したい、同伴者資格をコピーしたい…朝の混雑時にフロントが止まり、長蛇の列が発生！
+                </div>
+                <div style="background: #ffffff; border: 1px solid #fed7aa; border-radius: 8px; padding: 12px; font-size: 12px; color: #9a3412; line-height: 1.6;">
+                  <strong style="display: block; font-size: 13px; color: #ea580c; margin-bottom: 4px;">❌ マニュアルを読まない</strong>
+                  分厚いExcelやPDFマニュアルは現場で開かれない。「どこに書いてあるか不明」で即座に電話してしまう！
+                </div>
+                <div style="background: #ffffff; border: 1px solid #fed7aa; border-radius: 8px; padding: 12px; font-size: 12px; color: #9a3412; line-height: 1.6;">
+                  <strong style="display: block; font-size: 13px; color: #ea580c; margin-bottom: 4px;">❌ 派遣増員・熟練離職</strong>
+                  電話が回らず派遣を計画するも「熟練すると辞めてしまい、投資ではなく単なるコスト流出」に（北村部長のリアルペイン）。
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2: Solution Overview -->
+            <div style="background: #f0f7ff; border: 1.5px solid #bae6fd; border-radius: 10px; padding: 16px 20px; margin-bottom: 22px;">
+              <div style="font-weight: 800; font-size: 15px; color: #0369a1; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span>💡</span> SwingClub 30秒現場レスキュー ＆ AI相談室 とは？
+                </div>
+                <span style="font-size: 11px; font-weight: 700; color: #0284c7; background: #e0f2fe; padding: 2px 8px; border-radius: 4px;">全コースAI標準装備</span>
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+                <div style="background: #ffffff; border: 1px solid #e0f2fe; border-radius: 8px; padding: 14px; text-align: center;">
+                  <div style="font-size: 26px; margin-bottom: 6px;">🧯</div>
+                  <strong style="font-size: 13px; color: #005bac; display: block; margin-bottom: 6px;">① 30秒 現場レスキュー</strong>
+                  <p style="font-size: 11.5px; color: #475569; margin: 0; line-height: 1.6; text-align: left;">
+                    よくある例外16選から「なぜ制限されているか」「今すぐ現場でできる安全な回避策」を15秒で逆引き。
+                  </p>
+                </div>
+                <div style="background: #ffffff; border: 1px solid #e0f2fe; border-radius: 8px; padding: 14px; text-align: center;">
+                  <div style="font-size: 26px; margin-bottom: 6px;">🧠</div>
+                  <strong style="font-size: 13px; color: #6d28d9; display: block; margin-bottom: 6px;">② Gemini AI相談室</strong>
+                  <p style="font-size: 11.5px; color: #475569; margin: 0; line-height: 1.6; text-align: left;">
+                    「遅延計算」「新ペリア算出」など現場の疑問を自由な言葉で相談可能。全機能に標準ビルトイン！
+                  </p>
+                </div>
+                <div style="background: #ffffff; border: 1px solid #e0f2fe; border-radius: 8px; padding: 14px; text-align: center;">
+                  <div style="font-size: 26px; margin-bottom: 6px;">🪄</div>
+                  <strong style="font-size: 13px; color: #15803d; display: block; margin-bottom: 6px;">③ 自律進化Flywheel</strong>
+                  <p style="font-size: 11.5px; color: #475569; margin: 0; line-height: 1.6; text-align: left;">
+                    電話を1本受けるたびに全国のマニュアルが勝手に賢くなり、同じ問い合わせが右肩下がりにゼロ化！
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3: 3 Major Reductions (TSH-SMS.pdf exact layout) -->
+            <div style="margin-bottom: 22px;">
+              <div style="font-weight: 800; font-size: 15px; color: #0f172a; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <span>📊</span> 導入メリット 3つの削減（年間試算）
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 12px;">
+                <!-- Card 01 -->
+                <div style="border: 2px solid #005bac; border-radius: 10px; overflow: hidden; background: #ffffff;">
+                  <div style="background: #005bac; color: #ffffff; font-size: 12px; font-weight: 800; text-align: center; padding: 6px;">
+                    削減 01：電話対応時間
+                  </div>
+                  <div style="padding: 14px; text-align: center;">
+                    <div style="font-size: 12px; color: #64748b; margin-bottom: 4px;">電話応対時間を</div>
+                    <div style="font-size: 18px; font-weight: 900; color: #0f172a; margin-bottom: 6px;">1日 1.5時間 削減</div>
+                    <div style="font-size: 11px; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 8px; line-height: 1.5;">
+                      約4.5万円 / 月の削減<br>
+                      <strong>年間 約54万円</strong> の人件費奪還
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 02 (Highlight) -->
+                <div style="border: 2px solid #16a34a; border-radius: 10px; overflow: hidden; background: #f0fdf4;">
+                  <div style="background: #16a34a; color: #ffffff; font-size: 12px; font-weight: 800; text-align: center; padding: 6px;">
+                    削減 02：派遣増員コスト【確定ROI】
+                  </div>
+                  <div style="padding: 14px; text-align: center;">
+                    <div style="font-size: 12px; color: #166534; margin-bottom: 4px;">派遣1名の増員計画を</div>
+                    <div style="font-size: 18px; font-weight: 900; color: #15803d; margin-bottom: 6px;">即時 完全回避！</div>
+                    <div style="font-size: 11px; color: #14532d; border-top: 1px dashed #86efac; padding-top: 8px; line-height: 1.5;">
+                      月30万円のコスト増を阻止<br>
+                      <strong style="color: #15803d; font-size: 13px;">年間 360万円</strong> の純削減！
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card 03 -->
+                <div style="border: 2px solid #d97706; border-radius: 10px; overflow: hidden; background: #ffffff;">
+                  <div style="background: #d97706; color: #ffffff; font-size: 12px; font-weight: 800; text-align: center; padding: 6px;">
+                    削減 03：熟練離職の損失【ナレッジ資産化】
+                  </div>
+                  <div style="padding: 14px; text-align: center;">
+                    <div style="font-size: 12px; color: #92400e; margin-bottom: 4px;">スタッフが辞めても</div>
+                    <div style="font-size: 18px; font-weight: 900; color: #b45309; margin-bottom: 6px;">知見が永久蓄積</div>
+                    <div style="font-size: 11px; color: #78350f; border-top: 1px dashed #fcd34d; padding-top: 8px; line-height: 1.5;">
+                      教育コストのリセット流出ゼロ<br>
+                      <strong>プライスレス（無形資産化）</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Total Banner -->
+              <div style="background: linear-gradient(135deg, #15803d 0%, #16a34a 100%); color: #ffffff; text-align: center; padding: 12px; border-radius: 8px; font-size: 15px; font-weight: 900; letter-spacing: 0.03em; box-shadow: 0 2px 8px rgba(22, 163, 74, 0.25);">
+                🎉 守りの削減（年360万）＋工数削減で、年間400万円以上のコスト改善 ＆ 現場ストレス激減！
+              </div>
+            </div>
+
+            <!-- Section 4: Recommended Points & Special Pricing Offer -->
+            <div style="display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; margin-bottom: 20px;">
+              <!-- Left: Recommended Points -->
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;">
+                <div style="font-weight: 800; font-size: 13.5px; color: #005bac; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                  <span>🌟</span> ここが違う！おすすめポイント
+                </div>
+                <ul style="padding-left: 18px; margin: 0; font-size: 11.5px; color: #334155; line-height: 1.8;">
+                  <li><strong>基幹システムの種類を問わず即日稼働</strong>（ブラウザ起動・工事不要）</li>
+                  <li><strong>全画面に最新Gemini AIを標準装備</strong>（追加費用ゼロ）</li>
+                  <li><strong>津カントリー倶楽部での実稼働・現場検証済み</strong>（伊藤さん承認）</li>
+                  <li><strong>スマートフォン・タブレット完全対応</strong>（マスター室・コース上でも快適）</li>
+                  <li><strong>安心のサポート体制</strong>（TSHサポートデスク 365日連携）</li>
+                </ul>
+              </div>
+
+              <!-- Right: Special Pricing Offer -->
+              <div style="background: linear-gradient(135deg, #fefce8 0%, #fffbeb 100%); border: 2px solid #facc15; border-radius: 10px; padding: 16px; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                  <div style="display: inline-block; background: #eab308; color: #ffffff; font-size: 10.5px; font-weight: 900; padding: 2px 10px; border-radius: 9999px; margin-bottom: 6px;">
+                    先行限定50コース モニター特別枠
+                  </div>
+                  <div style="font-size: 12px; color: #854d0e; font-weight: 700;">月額利用料（初期費用 ¥0）</div>
+                  <div style="font-size: 26px; font-weight: 900; color: #005bac; margin: 4px 0; font-family: 'JetBrains Mono', monospace;">
+                    ¥4,800 <span style="font-size: 13px; font-weight: 600; color: #64748b;">/ 月</span>
+                  </div>
+                  <div style="font-size: 10.5px; color: #a16207;">
+                    通常公式プレミアム定価 ¥15,000 ➔ <strong>68% OFF</strong>
+                  </div>
+                </div>
+                <div style="background: #ffffff; border: 1px dashed #fde047; border-radius: 6px; padding: 6px; font-size: 10.5px; color: #713f12; margin-top: 8px;">
+                  先着50コース到達次第、通常価格へ移行となります
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 5: Footer (TSH Corporate Style) -->
+            <div style="border-top: 2px solid #005bac; padding-top: 16px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px; font-size: 10.5px; color: #475569;">
+              <div>
+                <div style="font-size: 13px; font-weight: 900; color: #004098; margin-bottom: 3px;">
+                  東京システムハウス株式会社
+                </div>
+                <div style="color: #64748b; margin-bottom: 6px;">付加価値を創造する戦略的ITパートナー</div>
+                <div style="line-height: 1.5;">
+                  <strong>東京本社:</strong> 東京都品川区西五反田8-4-13 五反田JPビルディング 6F TEL: 03-3493-7386<br>
+                  <strong>TSH関西:</strong> 兵庫県神戸市中央区北長狭通4-9-26 西北神ビル 9F TEL: 078-325-1461<br>
+                  <strong>TSH九州:</strong> 福岡県福岡市博多区博多駅東3-11-15 友喜ビル 5F TEL: 092-292-7360<br>
+                  <strong>共同展開:</strong> 津カントリー倶楽部 DX推進室（三重県津市片田長谷町）
+                </div>
+              </div>
+              <div style="text-align: right;">
+                <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 6px 12px; font-size: 11px; color: #166534; font-weight: 700; margin-bottom: 6px; display: inline-block;">
+                  🛡️ 365日 電話サポート体制完備
+                </div>
+                <div style="color: #94a3b8; font-size: 9.5px;">
+                  ISO9001 / ISO27001 認証取得<br>
+                  &copy; 2026 Tokyo System House Co., Ltd. &amp; osAKen.ai
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       <!-- TAB: 📑 御見積書（基本サブスクリプション） -->
       <div id="tab-quote-base" class="tab-content">
         <div class="doc-page">
@@ -4825,7 +5090,7 @@
   function switchTab(tabId) {
     closeMobileSidebar();
 
-    const lockedTabs = ['tab-proposal', 'tab-quote-base', 'tab-quote-opt'];
+    const lockedTabs = ['tab-proposal', 'tab-flyer', 'tab-quote-base', 'tab-quote-opt'];
     if (lockedTabs.includes(tabId) && !isGateUnlocked()) {
       openLockedTab(tabId);
       return;
@@ -4854,6 +5119,7 @@
       'tab-ai-pack': 'nav-item-ai-pack',
       'tab-cs-console': 'nav-item-cs',
       'tab-proposal': 'nav-item-proposal',
+      'tab-flyer': 'nav-item-flyer',
       'tab-quote-base': 'nav-item-quote-base',
       'tab-quote-opt': 'nav-item-quote-opt'
     };
@@ -5841,6 +6107,7 @@ ${desc}
   function updateLockBadges(unlocked) {
     const badges = [
       document.getElementById('badge-proposal-lock'),
+      document.getElementById('badge-flyer-lock'),
       document.getElementById('badge-quote-base-lock'),
       document.getElementById('badge-quote-opt-lock')
     ];
@@ -5856,6 +6123,25 @@ ${desc}
           badge.style.color = '#0284c7';
         }
       }
+    });
+  }
+
+  // --- 📄 販促チラシ用 ChatGPT プロンプト制御 ---
+  function toggleChatGptPromptBox() {
+    const box = document.getElementById('chatgpt-prompt-box');
+    if (!box) return;
+    box.style.display = box.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function copyChatGptPrompt() {
+    const textarea = document.getElementById('chatgpt-prompt-text');
+    if (!textarea) return;
+    navigator.clipboard.writeText(textarea.value).then(() => {
+      showToast('📋 ChatGPT用プロンプトをクリップボードにコピーしました！');
+    }).catch(() => {
+      textarea.select();
+      document.execCommand('copy');
+      showToast('📋 ChatGPT用プロンプトをコピーしました！');
     });
   }
 
