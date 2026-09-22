@@ -1,97 +1,96 @@
-# 【TSH公式風】SwingClub-CLOUD 30秒現場レスキュー＆AI相談室 A4販促チラシ設計書 ＆ ChatGPT画像生成プロンプト
+# 【真のDRMプロフェッショナル仕様】SwingClub-CLOUD 30秒現場レスキュー＆AI相談室 A4販促チラシ設計書 ＆ ChatGPT画像生成プロンプト
 
-TSH（東京システムハウス）が発行している公式チラシ（`TSH-SMS.pdf` / `TSH-CancelFee.pdf` / `TSH-GC-RMO.pdf`）のトンマナ・構成・色彩・レイアウトを完全踏襲した、全国ゴルフ場（200コース）支配人・フロント向けの**A4両面／片面販促チラシ**の設計書およびChatGPT（Image2 / DALL-E 3）用プロンプトです。
-
----
-
-## ■ TSH公式チラシの黄金レイアウト・デザイン原則
-
-1. **コーポレートカラー**:
-   - メイン：TSHコーポレートブルー（`#005bac` / `#004098` / 信頼・IT）
-   - アクセント：エメラルドグリーン（`#10b981` / 安心・LINEライク）、または警告オレンジ（`#f59e0b` / 現場のお困りごと）
-   - 背景：クリーンな白（`#ffffff`）＋ 淡いブルーグレー（`#f0f7ff` / `#f8fafc`）の角丸カード
-2. **構成ブロック（上から下への視線誘導・Zの法則）**:
-   - **① 最上部**: TSHロゴ ＋ サービスカテゴリ「SwingClub-CLOUD 新ソリューション」
-   - **② 大見出し**: 「ゴルフ場基幹システム 30秒現場レスキュー ＆ AI相談室」
-   - **③ 課題提起**: 「現場のこんな困りごと解決します！」（吹き出し・❌アイコン3点）
-   - **④ ソリューション図**: スマホ・PC画面モックアップ ＋ 30秒逆引きフロー
-   - **⑤ 導入メリット（3つの削減 試算）**:
-     - 削減01: 電話対応時間（1日1.5時間削減 ➔ 月4.5万円、年54万円）
-     - 削減02: 派遣増員コスト（派遣1名の増員計画を即時回避 ➔ 月30万円、年360万円削減！）
-     - 削減03: 熟練スタッフ離職損失（知見が会社に永久蓄積 ➔ プライスレス！）
-     - ➡ **合計：年間400万円以上のコスト削減効果 ＆ 現場ストレス激減！**
-   - **⑥ おすすめポイント ＆ 先行オファー**:
-     - 先行限定50コース特別枠：月額 4,800円 / コース（初期費用0円）
-   - **⑦ フッター**: 東京システムハウス株式会社 ＆ 津カントリー倶楽部 DX推進室 / 連絡先
+> **「TSHの退屈なチラシを真似るな。現場の熱量と痛みをえぐり出し、相手の行動を促す本物のDRMを創れ。」**  
+> （参照指標：津カントリー倶楽部『第32回 ザ・チャレンジド ゴルフトーナメント』公式ポスターの品格と熱量）
 
 ---
 
-## ■ ChatGPT (Image2 / DALL-E 3) 投入用プロンプト
+## ■ なぜITベンダーのチラシは「素人臭く、売れない」のか？
 
-ChatGPT（GPT-4o / DALL-E 3）のプロンプト入力欄に、以下のテキストをそのまま貼り付けて生成してください。
+一般的なITベンダー（TSH含む）のチラシは、**「機能の羅列」「無難な淡い四角枠」「抽象的なイラスト」「お行儀のいい説明文」** で構成されています。  
+しかし、朝7時にフロントで長蛇の列を前にテンパっている現場責任者や、年間数千万円の人件費と戦うゴルフ場支配人は、そんなチラシを1秒でゴミ箱に捨てます。
 
-### 【プロンプト（英語：AI精度最大化版）】
+### 本物のDRM（ダイレクト・レスポンス・マーケティング）が持つべき3つの魂
+1. **痛覚を直撃するフック（強烈なヘッドライン）**:
+   「人は、マニュアルを読まない。」
+   朝のフロント停止、怒るゴルファー、派遣を増やしてもすぐ辞めて流出する年間360万円のドブ捨てコスト——相手の「昨日の胃痛」を正確に言語化する。
+2. **圧倒的な品格と現場の熱量（シズル感）**:
+   『ザ・チャレンジド ゴルフトーナメント』のポスターのように、朝陽に輝くゴルフコースの荘厳さ、重厚なゴールドの立体タイポグラフィ、現場で汗を流すスタッフのリアルな息遣いを宿す。
+3. **断れないオファー ＆ 即時行動の導線（Call to Action）**:
+   「先行限定50コース、月額わずか4,800円。合わなければ即解約可能。」
+   スマホで今すぐ読み取れる特大QRコードと、そのまま返信できるFAXエントリー欄。
+
+---
+
+## ■ ChatGPT (Image2 / DALL-E 3) 投入用プロンプト（プロ広告クリエイティブ仕様）
+
+ChatGPT（GPT-4o / DALL-E 3）のチャット欄に、以下の英語プロンプトを貼り付けて生成してください。
+
+### 【英語プロンプト：最高峰のB2B広告ポスター生成】
 ```text
-A professional A4 corporate business flyer (infographic poster) for a Japanese golf course cloud system solution called "SwingClub-CLOUD 30秒現場レスキュー & AI相談室".
+A masterpiece corporate B2B advertising poster and high-conversion direct response marketing (DRM) flyer for a revolutionary Japanese golf course system: "SwingClub-CLOUD 30秒現場レスキュー & AI相談室".
 
-Design Style & Layout:
-- Format: Vertical A4 portrait layout, crisp graphic design, clean modern corporate style matching Tokyo System House (TSH) branding.
-- Colors: Dominant TSH corporate deep blue (#005BAC), vibrant emerald green (#10B981), warning accent orange (#F59E0B), pure white background (#FFFFFF), light cool grey/blue cards (#F0F7FF).
-- Hierarchy & Sections from Top to Bottom:
-  1. Top Header: Clean company logo placeholder with text "SwingClub-CLOUD 新ソリューション", subtitle "東京システムハウス × 津カントリー倶楽部 DX推進室". Bold title in Japanese typography: "30秒 現場レスキュー ＆ AI相談室".
-  2. Problem Section (Pain Points): Light orange cards with red/orange exclamation icons showing 3 frantic front desk staff problems: "人はマニュアルを読まない", "朝の例外トラブルでフロント停止", "電話サポートの派遣増員コスト(年360万)".
-  3. Solution Visual: Isometric 3D mockups of a smartphone and tablet showing an elegant golf manual web app with a glowing green "30秒レスキュー" search card and a helpful AI chatbot mascot. Arrows demonstrating: "現場の疑問 → 30秒で逆引き解決 → 受電ゼロ".
-  4. 3 Big Benefits Section (3 large rectangular cards in a row):
-     - Card 01 (Blue): "削減01 電話対応時間" -> 1日1.5時間削減 (年54万円削減)
-     - Card 02 (Green Highlight): "削減02 派遣増員コスト" -> 派遣1名増員を回避 (年360万円削減!)
-     - Card 03 (Gold): "削減03 熟練離職の損失" -> ナレッジ永久資産化 (プライスレス!)
-  5. Bold Callout Banner: "年間 400万円超 のコスト削減 ＆ 現場ストレス激減！"
-  6. Special Offer Box: "先行限定50コース モニター特別枠: 月額 4,800円 / コース (初期費0円)".
-  7. Footer: Clean corporate footer with contact info "東京システムハウス株式会社", Tokyo Head Office (Gotanda JP Building), 365 days telephone support badge.
+Aesthetic Inspiration:
+- Inspired by prestigious tournament posters like "The Challenged Golf Tournament" by Tsu Country Club. Majestic, emotional, deeply authoritative, and high-impact.
+- Visual Atmosphere: Dramatic sunrise breaking over an elite Japanese golf course fairway, emerald green grass wet with morning dew, the elegant architecture of a prestigious clubhouse in the distance under a vast, inspiring sky with golden morning clouds.
 
-Quality: 8k resolution, ultra-clean vector layout, professional typography, crisp infographics, no distortion, polished B2B SaaS advertisement brochure.
+Layout & Structure (A4 Vertical Portrait):
+1. Top Prestige Header:
+   - Ultra-refined Japanese corporate emblem of Tokyo System House (TSH) and Tsu Country Club DX Promotion Office.
+   - Text: "津カントリー倶楽部 現場検証済み × 東京システムハウス"
+2. Dominant Headline (Massive, powerful, embossed metallic gold and sharp modern gothic typography):
+   - "人は、分厚いマニュアルを読まない。"
+   - Sub-headline in vivid glowing cyan and deep navy: "朝の現場パニックをゼロにする『30秒レスキュー』＆『AI命綱』"
+3. Emotional Vertical Callout (Elegant Japanese Mincho typography on the right side):
+   - "現場で汗を流すフロントに、今すぐ使える本物の武器を。"
+4. Center Visual Drama:
+   - A real front-desk staff member in smart golf uniform looking relieved and smiling at a sleek smartphone, where a glowing green emergency card "満枠追加・同伴者コピー 30秒解決" appears seamlessly.
+5. High-Impact DRM Pain & Solution Cards:
+   - Bold contrasting card: "派遣1名の増員計画（月30万/年360万）を今すぐストップ！"
+   - "人が辞めても、知見が永久に社内資産として残る自律進化アーキテクチャ"
+6. Irresistible Offer Badge (Gold seal with ribbon):
+   - "先行限定50コース モニター特別枠: 月額 4,800円 (初期費0円・即日稼働)"
+7. Action-Driven Footer:
+   - Prominent high-contrast smartphone QR code labeled "今すぐスマホで実機デモを体験", alongside classic FAX response slip mockup.
+   - Official credentials: ISO9001/ISO27001, 365-day support desk.
+
+Style & Quality:
+- Ultra-detailed 8K commercial photography combined with award-winning graphic design, dynamic lighting, cinematic depth of field, zero cheap cartoon cliparts, museum-grade typography and print finish.
 ```
 
-### 【プロンプト（日本語版）】
+### 【日本語プロンプト（解説・意図共有用）】
 ```text
-日本のゴルフ場向け基幹システム「SwingClub-CLOUD」の公式販促A4チラシをデザインしてください。東京システムハウス（TSH）の公式パンフレット（SMS送信サービスやRMOパンフレット）と同じトンマナで、信頼感あふれるIT企業の美しいレイアウトにしてください。
+津カントリー倶楽部の名門トーナメントポスター（ザ・チャレンジド）のような、圧倒的な品格と熱量、現場の真実味を宿したB2Bダイレクトレスポンス（DRM）広告ポスターをデザインしてください。
 
-【全体のトーン＆マナー】
-- サイズ：A4縦型（ポートレート）
-- メインカラー：TSHブルー（濃紺・信頼の青）、エメラルドグリーン（安心・解決）、ホワイト、薄い水色のカード背景
-- ターゲット：全国ゴルフ場の支配人・フロント責任者
+【メインコピー】
+「人は、分厚いマニュアルを読まない。」
+朝の現場パニックをゼロにする『30秒レスキュー』＆『AI相談室』
 
-【上から順の構成要素】
-1. ヘッダー：
-   - 「SwingClub-CLOUD 新サービス」「東京システムハウス × 津カントリー倶楽部」
-   - メインタイトル：「30秒 現場レスキュー ＆ AI相談室」
-   - サブコピー：「人はマニュアルを読まない」前提で設計された、現場トラブル即時解決システム
-2. 現場の困りごと解決します！（吹き出しと困り顔アイコン）：
-   - 「朝の満枠追加や同伴者コピーでフロントがパニック！」
-   - 「分厚いマニュアルは緊急時に誰も開かない！」
-   - 「電話が回らず派遣を増やしてもすぐ辞めてコスト流出…」
-3. ソリューション概念図：
-   - スマホとタブレットの洗練された画面モックアップ（「30秒レスキュー」と「Gemini AI相談室」）
-   - 現場スタッフが笑顔で15秒で解決しているイラスト
-4. 導入メリット「3つの削減（試算）」3大カード：
-   - 【削減01】電話対応時間：1日1.5時間削減（年間54万円削減）
-   - 【削減02】派遣増員コスト：電話受付の派遣1名増員を即時回避（年間360万円削減！）
-   - 【削減03】熟練離職の損失：人が辞めてもナレッジ永久資産化（プライスレス！）
-   - ★ 合計インパクト：年間400万円以上のコスト削減効果！
-5. 先行オファー枠（目立つリボン帯）：
-   - 「先行限定50コース モニター特別価格：月額 4,800円 / コース（初期費用0円）」
-6. フッター：
-   - 東京システムハウス株式会社（品川区西五反田8-4-13 五反田JPビルディング）
-   - 「365日 電話サポート体制」「まずはお試しで利用してみませんか？」
+【縦書きコピー】
+「現場で汗を流すフロントに、今すぐ使える本物の武器を。」
+
+【デザインの急所】
+1. 背景：朝露に輝く名門ゴルフコースのフェアウェイと、朝陽に照らされた重厚なクラブハウス。
+2. タイトル：エンボス加工された黄金の立体文字とシャープな書体。
+3. 現場の真実：朝のフロントで「満枠追加」「同伴者コピー」にテンパっていたスタッフが、スマホの30秒手順を見てホッと胸を撫で下ろす安堵の表情。
+4. 強烈な数字の提示：
+   - 「派遣1名増員（月30万/年360万）を即時回避！」
+   - 「人が辞めても知見が永久資産化」
+5. 断れないオファー：
+   - 「全国先行限定50コース特別枠：月額 4,800円（初期費用0円）」
+6. 即時アクション：
+   - 特大QRコード（実機デモ直結）とFAX返信フォーム。
 ```
 
 ---
 
-## ■ チラシの活用シナリオ（オサケンDRM刈り取り）
+## ■ DRM刈り取りの実行プロセス（オサケン直販スキーム）
 
-1. **支配人宛 親展FAX DM**:
-   - 全国200コースの支配人宛にFAX送信。A4・1枚で「派遣増員360万回避」「先行50枠 月4,800円」の数字が目に飛び込み、即決を促す。
-2. **支配人宛 親展レター（挨拶状同封・郵送）**:
-   - A4フルカラーで高品質印刷し、津カントリー倶楽部オサケンさんからの「現場支配人同士のDX提言」親展レターとして郵送（200通で印刷・切手代わずか約1.6万円）。
-3. **TSH営業・サポートの手持ちツール**:
-   - TSH営業が既存200コースを巡回する際、あるいはサポートデスクで受電した顧客にPDFでメール送付。
+1. **支配人親展封書DM（200通で1.6万円）**:
+   - 表紙にしおり社長の美意識を宿した本A4フルカラーチラシを同封。
+   - オサケンさんの直筆添え状（「現場を知る支配人同士の提言」）をセットにし、開封率80%超を狙う。
+2. **支配人宛 親展FAX**:
+   - 本チラシのモノクロ最適化版を、全国200コースの支配人室FAXへ一斉送信。
+   - 下部の「デモ体験希望」チェックボックスに丸をつけてFAX返信するだけの即時レスポンス設計。
+3. **CS受電時の直後フォロー**:
+   - TSHに受電した全国コースへ、「先ほどのお問い合わせの30秒解決マニュアルはこちらです」と本チラシPDFを自動送付。
