@@ -4320,6 +4320,7 @@ Style & Quality:
 
                 <!-- Interactive VSL Demo Player (Active when clicked) -->
                 <div id="vsl-player-active" style="display: none; width: 100%; height: 100%; position: relative; background: #020617; flex-direction: column; justify-content: space-between; padding: 24px; box-sizing: border-box;">
+                  <audio id="vsl-audio-index" preload="auto"></audio>
                   <div style="display: flex; justify-content: space-between; align-items: center;">
                     <span id="vsl-scene-badge" style="background: #0284c7; color: #fff; font-size: 10.5px; font-weight: 800; padding: 3px 10px; border-radius: 4px;">
                       第1幕: 現場の痛みの直撃
@@ -6543,39 +6544,61 @@ ${desc}
   // --- 🎥 VSL（Video Sales Letter）プレイヤー制御 ---
   const vslScenes = [
     {
-      badge: "第1幕: 現場の痛みの直撃",
-      time: "00:00 / 03:20",
-      progress: 20,
-      caption: "「全国のゴルフ場支配人、フロント責任者の皆様。朝7時のフロントで急な同伴者追加エラー。20人ものお客様の前で新人が青ざめて固まる…そんな胃の痛む悪夢を、あと何回繰り返しますか？」"
+      badge: "第1幕: 🚨【現場緊急録画】朝7:15 フロント停止の瞬間",
+      audio: "assets/audio/vsl_scene1.mp3",
+      caption: "「全国のゴルフ場支配人、そしてフロント責任者の皆様……この光景に、見覚えはありませんか？ 土曜朝7時15分、スタート枠は満杯。突然の同伴者追加エラーで新人が青ざめて固まり、20人のゴルファーの冷たい視線が突き刺さる……。胃がキリキリと痛むこの悲劇を、皆様のゴルフ場ではあと何回繰り返しますか？」"
     },
     {
-      badge: "第2幕: 机上の空論への告発",
-      time: "00:35 / 03:20",
-      progress: 40,
-      caption: "「人は、分厚いマニュアルを読まないのです。電話が回らず派遣を増やしても、業務を覚えた頃に辞めてしまう…教育コストが流出し、年間360万円もの費用がドブに捨てられているのが現場の真実です。」"
+      badge: "第2幕: 📚❌【絶望の連鎖】埃をかぶるマニュアルと繋がらない電話",
+      audio: "assets/audio/vsl_scene2.mp3",
+      caption: "「人は、分厚いマニュアルを読まないのです。電話が回らず派遣を増やしても、業務を覚えた頃に辞めてしまう…教育費が流出し、年間360万円もの費用がドブに捨てられているのが現場の偽らざる真実です。」"
     },
     {
-      badge: "第3幕: 津カントリーの実演解決",
-      time: "01:10 / 03:20",
-      progress: 60,
-      caption: "「そこで津カントリー倶楽部が開発したのが『30秒現場レスキュー』です。スマホで『同伴者コピー』と引くだけで、安全な手順が15秒で表示。ゴルフマーケティングのプロであり北村氏のアドバイザーを務める伊藤氏も実機を検証し、『これなら現場が電話なしで自立できる』と絶賛しています。」"
+      badge: "第3幕: 🧯✨【15秒の救済】スマホを取り出した瞬間、列が流れた！",
+      audio: "assets/audio/vsl_scene3.mp3",
+      caption: "「そこで津カントリー倶楽部が開発したのが『30秒現場レスキュー』です。新人がポケットからスマホを取り出し『同伴者コピー』と検索。わずか15秒で安全な回避手順が表示され、電話もかけずに長蛇の列が笑顔で流れ始めました。ゴルフマーケティングのプロ・伊藤氏も『これなら現場が電話に依存せず自立できる』と太鼓判を押しています。」"
     },
     {
-      badge: "第4幕: 経営陣への確定ROI",
-      time: "02:00 / 03:20",
-      progress: 80,
-      caption: "「電話受付の派遣1名増員（年360万円）を即時回避し、知見を永久資産化。さらに外販レベニューシェアで年間最大1,344万円の純利を還元。守りと攻めで年間約1,704万円の純プラス効果をもたらします。」"
+      badge: "第4幕: 📈💰【経営の勝利】守りの360万削減 ＆ 攻めの1,344万還元",
+      audio: "assets/audio/vsl_scene4.mp3",
+      caption: "「電話受付の派遣1名増員（年360万円）を即時回避し、日々の受電からAIが知見を永久資産化。さらに外販レベニューシェアで年間最大1,344万円の純利を還元。守りと攻めを合わせ、年間約1,704万円の確実な経済インパクトを経営陣にお届けします。」"
     },
     {
-      badge: "第5幕: 断れないオファー ＆ 行動喚起",
-      time: "02:45 / 03:20",
-      progress: 100,
-      caption: "「全国先行限定50コース、月額わずか4,800円（初期費用¥0）。合わなければいつでも解約可能。今すぐ画面下のボタンから実機デモをご体感ください。現場スタッフに本物の武器を届けましょう。」"
+      badge: "第5幕: 🎁🛡️【断れないオファー】全国先行50コース、現場に本物の武器を",
+      audio: "assets/audio/vsl_scene5.mp3",
+      caption: "「全国先行限定50コース、月額わずか4,800円（初期費用¥0）。現場に合わなければいつでも解約可能、リスクはゼロです。今すぐ画面下のボタンから実機デモをご体感ください。現場で汗を流すスタッフに、今すぐ使える本物の武器を届けましょう。」"
     }
   ];
 
   let currentVslSceneIdx = 0;
-  let vslTimer = null;
+  let audioIndex = null;
+
+  function getAudioIndex() {
+    if (!audioIndex) {
+      audioIndex = document.getElementById('vsl-audio-index');
+      if (audioIndex) {
+        audioIndex.ontimeupdate = function() {
+          if (audioIndex.duration) {
+            const cur = audioIndex.currentTime;
+            const dur = audioIndex.duration;
+            const pct = (cur / dur) * 100;
+            const bar = document.getElementById('vsl-progress-bar');
+            if (bar) bar.style.width = pct + '%';
+            const curSec = String(Math.floor(cur % 60)).padStart(2, '0');
+            const durSec = String(Math.floor(dur % 60)).padStart(2, '0');
+            const timeEl = document.getElementById('vsl-time-display');
+            if (timeEl) timeEl.textContent = `00:${curSec} / 00:${durSec}`;
+          }
+        };
+        audioIndex.onended = function() {
+          if (currentVslSceneIdx < vslScenes.length - 1) {
+            playVslScene(currentVslSceneIdx + 1);
+          }
+        };
+      }
+    }
+    return audioIndex;
+  }
 
   function playVslVideo() {
     const poster = document.getElementById('vsl-poster-view');
@@ -6583,23 +6606,20 @@ ${desc}
     if (poster) poster.style.display = 'none';
     if (player) {
       player.style.display = 'flex';
-      renderVslScene(0);
-      startVslAutoPlay();
+      playVslScene(0);
     }
   }
 
-  function renderVslScene(idx) {
+  function playVslScene(idx) {
     currentVslSceneIdx = idx;
     const scene = vslScenes[idx];
     if (!scene) return;
 
     const badge = document.getElementById('vsl-scene-badge');
-    const time = document.getElementById('vsl-time-display');
     const caption = document.getElementById('vsl-caption-text');
     const bar = document.getElementById('vsl-progress-bar');
 
     if (badge) badge.textContent = scene.badge;
-    if (time) time.textContent = scene.time;
     if (caption) {
       caption.style.opacity = 0;
       setTimeout(() => {
@@ -6607,24 +6627,21 @@ ${desc}
         caption.style.opacity = 1;
       }, 150);
     }
-    if (bar) bar.style.width = scene.progress + '%';
-  }
+    if (bar) bar.style.width = '0%';
 
-  function startVslAutoPlay() {
-    clearInterval(vslTimer);
-    vslTimer = setInterval(() => {
-      if (currentVslSceneIdx < vslScenes.length - 1) {
-        renderVslScene(currentVslSceneIdx + 1);
-      } else {
-        clearInterval(vslTimer);
-      }
-    }, 7000); // 7秒ごとに自動で次の幕へ
+    const audio = getAudioIndex();
+    if (audio) {
+      audio.src = scene.audio;
+      audio.currentTime = 0;
+      audio.play().catch(e => console.log('Audio playback note:', e));
+    }
   }
 
   function nextVslScene() {
-    clearInterval(vslTimer);
     if (currentVslSceneIdx < vslScenes.length - 1) {
-      renderVslScene(currentVslSceneIdx + 1);
+      playVslScene(currentVslSceneIdx + 1);
+    } else {
+      playVslScene(0);
     }
   }
 

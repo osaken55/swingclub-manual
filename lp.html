@@ -1367,17 +1367,37 @@
             </div>
 
             <div class="vsl-caption-container">
-              <div class="vsl-speaker">
-                <span>🎙️</span> 小島しおり（津カントリー倶楽部 代表取締役）
+              <!-- Audio Element -->
+              <audio id="vsl-audio-core" preload="auto"></audio>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <div class="vsl-speaker">
+                  <span>🎙️</span> 小島しおり（津カントリー倶楽部 代表取締役）
+                  <span id="vsl-voice-indicator" style="background: rgba(16, 185, 129, 0.2); border: 1px solid #10b981; color: #6ee7b7; font-size: 10px; padding: 1px 6px; border-radius: 9999px; margin-left: 6px; display: inline-flex; align-items: center; gap: 4px;">
+                    <span style="width: 5px; height: 5px; background: #10b981; border-radius: 50%; animation: pulse 1s infinite;"></span> 音声再生中
+                  </span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <button id="vsl-mute-btn" onclick="toggleMute()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; cursor: pointer;">
+                    🔊 音声ON
+                  </button>
+                  <button id="vsl-replay-btn" onclick="replayCurrentScene()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; cursor: pointer;">
+                    ↺ もう一度聞く
+                  </button>
+                </div>
               </div>
+
               <div class="vsl-text" id="vsl-caption-text">
                 「全国のゴルフ場支配人、そしてフロント責任者の皆様、こんにちは。津カントリー倶楽部の小島しおりです。」
               </div>
               <div class="vsl-controls">
+                <button id="vsl-playpause-btn" onclick="togglePlayPause()" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); color: #fff; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 4px; cursor: pointer; min-width: 32px;">
+                  ⏸
+                </button>
                 <div class="vsl-progress-bg">
-                  <div class="vsl-progress-fill" id="vsl-progress" style="width: 20%;"></div>
+                  <div class="vsl-progress-fill" id="vsl-progress" style="width: 0%;"></div>
                 </div>
-                <button onclick="nextVslScene()" style="background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 4px; cursor: pointer;">
+                <button onclick="nextVslScene()" style="background: var(--gold-gradient); color: #1e1300; border: none; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 4px; cursor: pointer;">
                   次へ ▶
                 </button>
               </div>
@@ -1959,140 +1979,225 @@
 
   <!-- Scripts -->
   <script>
-    // VSL Player Scenario Data
+    // VSL Player Scenario Data with Real ElevenLabs Audio
     const vslScenes = [
       {
         badge: "第1幕: 🚨【現場緊急録画】朝7:15 フロント停止の瞬間",
-        time: "00:15 / 03:20",
-        progress: 20,
+        audio: "assets/audio/vsl_scene1.mp3",
         icon: "🚨",
         title: "「満枠エラーで新人が青ざめてフリーズ…20人の冷たい視線」",
         caption: "「全国のゴルフ場支配人、そしてフロント責任者の皆様……この光景に、見覚えはありませんか？ 土曜朝7時15分、スタート枠は満杯。突然の同伴者追加エラーで新人が青ざめて固まり、20人のゴルファーの冷たい視線が突き刺さる……。胃がキリキリと痛むこの悲劇を、皆様のゴルフ場ではあと何回繰り返しますか？」"
       },
       {
         badge: "第2幕: 📚❌【絶望の連鎖】埃をかぶるマニュアルと繋がらない電話",
-        time: "00:45 / 03:20",
-        progress: 40,
+        audio: "assets/audio/vsl_scene2.mp3",
         icon: "📞",
         title: "「500Pのバインダーは誰も読まない。派遣360万のドブ捨て」",
         caption: "「『マニュアルを読め』と言っても、お客様を目の前でお待たせしている1分1秒を争う緊迫時に、500ページのファイルを開くスタッフはいません。人は、分厚いマニュアルを読まないのです。かといってサポート電話も繋がらない。派遣を増やしても仕事を覚えた頃に辞めてしまう…教育費が流出し、年間360万円もの費用がドブに捨てられているのが現場の偽らざる真実です。」"
       },
       {
         badge: "第3幕: 🧯✨【15秒の救済】スマホを取り出した瞬間、列が流れた！",
-        time: "01:25 / 03:20",
-        progress: 60,
+        audio: "assets/audio/vsl_scene3.mp3",
         icon: "📱",
         title: "「津カントリー実戦実録：伊藤氏も『現場が電話なしで自立できる』と絶賛」",
         caption: "「その絶望を打ち破るために、津カントリー倶楽部が開発したのが『30秒現場レスキュー』です。新人がポケットからスマホを取り出し『同伴者コピー』と検索。わずか15秒で安全な回避手順が表示され、電話もかけずに長蛇の列が笑顔で流れ始めました。ゴルフマーケティングのプロ・伊藤氏も『これなら現場が電話に依存せず自立できる』と太鼓判を押しています。」"
       },
       {
         badge: "第4幕: 📈💰【経営の勝利】守りの360万削減 ＆ 攻めの1,344万還元",
-        time: "02:10 / 03:20",
-        progress: 80,
+        audio: "assets/audio/vsl_scene4.mp3",
         icon: "📈",
         title: "「派遣1名増員を完全回避 ＆ 年間約1,704万円の純プラス効果確定」",
         caption: "「電話受付の派遣1名増員（年360万円）を即時回避し、日々の受電からAIが知見を永久資産化。さらに外販レベニューシェアで年間最大1,344万円の純利を還元。守りと攻めを合わせ、年間約1,704万円の確実な経済インパクトを経営陣にお届けします。」"
       },
       {
         badge: "第5幕: 🎁🛡️【断れないオファー】全国先行50コース、現場に本物の武器を",
-        time: "03:00 / 03:20",
-        progress: 100,
+        audio: "assets/audio/vsl_scene5.mp3",
         icon: "🛡️",
         title: "「先行限定50コース、初期費¥0・月¥4,800・いつでも解約可」",
         caption: "「全国先行限定50コース、月額わずか4,800円（初期費用¥0）。現場に合わなければいつでも解約可能、リスクはゼロです。今すぐ画面下のボタンから実機デモをご体感ください。現場で汗を流すスタッフに、今すぐ使える本物の武器を届けましょう。」"
       }
     ];
 
-    let currentScene = 0;
-    let sceneTimer = null;
-
-    function startVslPlayer() {
-      document.getElementById('vsl-poster').style.display = 'none';
-      document.getElementById('vsl-active').style.display = 'flex';
-      currentScene = 0;
-      renderVslScene();
-      startAutoPlay();
-    }
-
-    function renderVslScene() {
-      const s = vslScenes[currentScene];
-      document.getElementById('vsl-scene-badge').innerText = s.badge;
-      document.getElementById('vsl-timer-text').innerText = s.time;
-      document.getElementById('vsl-visual-icon').innerText = s.icon;
-      document.getElementById('vsl-visual-title').innerText = s.title;
-      document.getElementById('vsl-caption-text').innerText = s.caption;
-      document.getElementById('vsl-progress').style.width = s.progress + '%';
-    }
-
-    function nextVslScene() {
-      currentScene = (currentScene + 1) % vslScenes.length;
-      renderVslScene();
-      resetAutoPlay();
-    }
-
-    function startAutoPlay() {
-      sceneTimer = setInterval(() => {
-        if (currentScene < vslScenes.length - 1) {
-          currentScene++;
-          renderVslScene();
-        } else {
-          clearInterval(sceneTimer);
-        }
-      }, 7000);
-    }
-
     const distressCases = [
       {
         badge: "CASE 01: 🚨【土曜朝7:15 満枠エラー】",
-        time: "現場実録シミュレーション",
-        progress: 30,
+        audio: "assets/audio/distress_case1.mp3",
         icon: "👥",
         title: "「満枠なのに急な同伴者追加！20人の前で新人がフリーズ」",
         caption: "【修羅場】土曜朝7:15、枠は満杯。同伴者を1名足そうとしたら「予約上限枠数超過」エラー。後ろには20人のゴルファーの列……。\n【15秒レスキュー解決】スマホで『満枠追加』を検索 ➔『予備枠コードへの一時スライド登録（安全手順）』が15秒で表示！電話を1本もかけずに列が笑顔で流れ出しました。"
       },
       {
         badge: "CASE 02: 💸【精算ピーク レジ停止】",
-        time: "現場実録シミュレーション",
-        progress: 50,
+        audio: "assets/audio/distress_case2.mp3",
         icon: "💳",
         title: "「割引券の適用ミスでレジ停止、後ろが詰まって怒号」",
         caption: "【修羅場】夕方の精算ラッシュ。新人がクーポンを二重適用してしまい、取消ボタンがグレーアウト。「早くしてくれ！」とお客様の怒号……。\n【15秒レスキュー解決】スマホで『割引券取消』を検索 ➔『管理権限での即時赤伝マイナス相殺法』を15秒で実行！精算を止めずに安全クリア。"
       },
       {
         badge: "CASE 03: 🔐【ロッカー二重発券パニック】",
-        time: "現場実録シミュレーション",
-        progress: 70,
+        audio: "assets/audio/distress_case3.mp3",
         icon: "🚪",
         title: "「ロッカー二重発券！脱衣所でお客様同士が鉢合わせ」",
         caption: "【修羅場】朝の混雑時、システムが同じロッカー番号を発券。脱衣所でお客様同士が鉢合わせして激怒クレームに発展寸前……。\n【15秒レスキュー解決】スマホで『ロッカー二重』を検索 ➔『マスターでの空きロッカー強制アサイン ＆ お詫びドリンク券発行手順』が即座にガイダンスされ、誠心誠意の神対応へ昇華！"
       },
       {
         badge: "CASE 04: ⚡️【ゲリラ豪雨・ハーフ打切り】",
-        time: "現場実録シミュレーション",
-        progress: 90,
+        audio: "assets/audio/distress_case4.mp3",
         icon: "⛈️",
         title: "「雷雲接近でハーフ打切り！返金精算の長蛇の列」",
         caption: "【修羅場】午後2時、突然の雷警報で全組プレー中断・ハーフ打切り決定。40組が一斉にフロントへ殺到し「料金はどうなるんだ！」とパニック……。\n【15秒レスキュー解決】Gemini AI相談室に『ハーフ打切り時の按分精算』と話しかけるだけで、SwingClubでの一括半額割戻しバッチ手順を即答！混乱をゼロに。"
       }
     ];
 
+    let currentScene = 0;
+    let isPlayingDistress = false;
+    let currentDistressIdx = 0;
+    let audioCore = null;
+
+    function getAudioCore() {
+      if (!audioCore) {
+        audioCore = document.getElementById('vsl-audio-core');
+        initAudioEvents();
+      }
+      return audioCore;
+    }
+
+    function initAudioEvents() {
+      if (!audioCore) return;
+      audioCore.ontimeupdate = function() {
+        if (audioCore.duration) {
+          const cur = audioCore.currentTime;
+          const dur = audioCore.duration;
+          const pct = (cur / dur) * 100;
+          document.getElementById('vsl-progress').style.width = pct + '%';
+          const curMin = Math.floor(cur / 60);
+          const curSec = Math.floor(cur % 60);
+          const durMin = Math.floor(dur / 60);
+          const durSec = Math.floor(dur % 60);
+          document.getElementById('vsl-timer-text').innerText = 
+            `${String(curMin).padStart(2,'0')}:${String(curSec).padStart(2,'0')} / ${String(durMin).padStart(2,'0')}:${String(durSec).padStart(2,'0')}`;
+        }
+      };
+
+      audioCore.onended = function() {
+        if (!isPlayingDistress) {
+          if (currentScene < vslScenes.length - 1) {
+            currentScene++;
+            playSceneAudio(currentScene);
+          } else {
+            document.getElementById('vsl-playpause-btn').innerText = '▶';
+            document.getElementById('vsl-voice-indicator').style.display = 'none';
+          }
+        } else {
+          document.getElementById('vsl-playpause-btn').innerText = '▶';
+          document.getElementById('vsl-voice-indicator').style.display = 'none';
+        }
+      };
+    }
+
+    function startVslPlayer() {
+      document.getElementById('vsl-poster').style.display = 'none';
+      document.getElementById('vsl-active').style.display = 'flex';
+      isPlayingDistress = false;
+      currentScene = 0;
+      playSceneAudio(currentScene);
+    }
+
+    function playSceneAudio(idx) {
+      isPlayingDistress = false;
+      currentScene = idx;
+      const s = vslScenes[currentScene];
+      document.getElementById('vsl-scene-badge').innerText = s.badge;
+      document.getElementById('vsl-visual-icon').innerText = s.icon;
+      document.getElementById('vsl-visual-title').innerText = s.title;
+      document.getElementById('vsl-caption-text').innerText = s.caption;
+      document.getElementById('vsl-playpause-btn').innerText = '⏸';
+      document.getElementById('vsl-voice-indicator').style.display = 'inline-flex';
+      document.getElementById('vsl-progress').style.width = '0%';
+
+      const audio = getAudioCore();
+      audio.src = s.audio;
+      audio.currentTime = 0;
+      const p = audio.play();
+      if (p !== undefined) {
+        p.catch(e => {
+          console.log('Audio autoplay policy note:', e);
+          fallbackSpeak(s.caption);
+        });
+      }
+    }
+
     function playSpecificDistress(idx) {
       document.getElementById('vsl-poster').style.display = 'none';
       document.getElementById('vsl-active').style.display = 'flex';
+      isPlayingDistress = true;
+      currentDistressIdx = idx;
       const c = distressCases[idx];
       document.getElementById('vsl-scene-badge').innerText = c.badge;
-      document.getElementById('vsl-timer-text').innerText = c.time;
       document.getElementById('vsl-visual-icon').innerText = c.icon;
       document.getElementById('vsl-visual-title').innerText = c.title;
       document.getElementById('vsl-caption-text').innerText = c.caption;
-      document.getElementById('vsl-progress').style.width = c.progress + '%';
-      clearInterval(sceneTimer);
+      document.getElementById('vsl-playpause-btn').innerText = '⏸';
+      document.getElementById('vsl-voice-indicator').style.display = 'inline-flex';
+      document.getElementById('vsl-progress').style.width = '0%';
+
+      const audio = getAudioCore();
+      audio.src = c.audio;
+      audio.currentTime = 0;
+      const p = audio.play();
+      if (p !== undefined) {
+        p.catch(e => {
+          console.log('Audio play note:', e);
+          fallbackSpeak(c.caption);
+        });
+      }
       document.getElementById('vsl-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 
-    function resetAutoPlay() {
-      clearInterval(sceneTimer);
-      startAutoPlay();
+    function nextVslScene() {
+      if (currentScene < vslScenes.length - 1) {
+        currentScene++;
+      } else {
+        currentScene = 0;
+      }
+      playSceneAudio(currentScene);
+    }
+
+    function togglePlayPause() {
+      const audio = getAudioCore();
+      if (audio.paused) {
+        audio.play();
+        document.getElementById('vsl-playpause-btn').innerText = '⏸';
+        document.getElementById('vsl-voice-indicator').style.display = 'inline-flex';
+      } else {
+        audio.pause();
+        document.getElementById('vsl-playpause-btn').innerText = '▶';
+        document.getElementById('vsl-voice-indicator').style.display = 'none';
+      }
+    }
+
+    function toggleMute() {
+      const audio = getAudioCore();
+      audio.muted = !audio.muted;
+      document.getElementById('vsl-mute-btn').innerText = audio.muted ? '🔇 ミュート中' : '🔊 音声ON';
+    }
+
+    function replayCurrentScene() {
+      const audio = getAudioCore();
+      audio.currentTime = 0;
+      audio.play();
+      document.getElementById('vsl-playpause-btn').innerText = '⏸';
+      document.getElementById('vsl-voice-indicator').style.display = 'inline-flex';
+    }
+
+    function fallbackSpeak(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const ut = new SpeechSynthesisUtterance(text.replace(/【.*?】/g, ''));
+        ut.lang = 'ja-JP';
+        ut.rate = 1.05;
+        window.speechSynthesis.speak(ut);
+      }
     }
 
     // FAQ Accordion
