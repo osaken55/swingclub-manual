@@ -3705,6 +3705,75 @@
             </div>
           </div>
 
+          <!-- Infographic Mode Switcher -->
+          <div style="display: flex; justify-content: space-between; align-items: center; background: #f8fafc; border: 1px solid var(--border); border-radius: 10px; padding: 10px 16px; margin-bottom: 24px; flex-wrap: wrap; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 12.5px; font-weight: 700; color: var(--text-main);">🖼️ 概要表示モード:</span>
+              <div style="display: inline-flex; background: #e2e8f0; padding: 2px; border-radius: 8px;">
+                <button id="btn-mode-visual" onclick="setInfographicMode('visual')" style="background: #005bac; color: #ffffff; border: none; font-size: 11.5px; font-weight: 700; padding: 5px 14px; border-radius: 6px; cursor: pointer; transition: all 0.15s ease;">
+                  🖼️ 1枚ビジュアル（NotebookLM版）
+                </button>
+                <button id="btn-mode-html" onclick="setInfographicMode('html')" style="background: transparent; color: #64748b; border: none; font-size: 11.5px; font-weight: 700; padding: 5px 14px; border-radius: 6px; cursor: pointer; transition: all 0.15s ease;">
+                  📊 HTML詳細構造版
+                </button>
+              </div>
+            </div>
+            <div style="font-size: 11px; color: #64748b;">
+              ※ NotebookLM Studioで生成した1枚画像をそのまま閲覧・即時差し替え可能
+            </div>
+          </div>
+
+          <!-- Section: 1枚ビジュアル（NotebookLMインフォグラフィック） -->
+          <div id="infographic-visual-section" style="margin-bottom: 24px;">
+            <div style="background: #ffffff; border: 2px dashed #38bdf8; border-radius: 14px; padding: 20px; text-align: center; position: relative; background: #f0f9ff;">
+              
+              <!-- 登録済み画像表示コンテナ -->
+              <div id="infographic-img-container" style="display: none;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; background: #ffffff; padding: 8px 14px; border-radius: 8px; border: 1px solid #bae6fd;">
+                  <span style="font-size: 12px; font-weight: 700; color: #0284c7; display: flex; align-items: center; gap: 6px;">
+                    <span>✨</span> NotebookLM 公式生成 1枚インフォグラフィック
+                  </span>
+                  <div style="display: flex; gap: 8px;">
+                    <button onclick="openImageModal(document.getElementById('infographic-img').src)" class="btn btn-secondary" style="font-size: 11.5px; padding: 4px 12px;">
+                      🔍 全画面拡大
+                    </button>
+                    <label class="btn btn-secondary" style="font-size: 11.5px; padding: 4px 12px; cursor: pointer;">
+                      📁 画像を差し替える
+                      <input type="file" accept="image/*" style="display: none;" onchange="uploadInfographicLocal(event)">
+                    </label>
+                  </div>
+                </div>
+                <img id="infographic-img" src="assets/infographic_proposal.png" alt="NotebookLM 1枚インフォグラフィック" style="max-width: 100%; max-height: 85vh; height: auto; border-radius: 10px; box-shadow: var(--shadow-lg); cursor: zoom-in; object-fit: contain; background: #fff;" onclick="openImageModal(this.src)" onerror="handleInfographicImgError()">
+              </div>
+
+              <!-- 未登録時プレースホルダー -->
+              <div id="infographic-placeholder" style="padding: 40px 24px;">
+                <div style="font-size: 52px; margin-bottom: 12px;">🎨</div>
+                <h3 style="font-size: 17px; font-weight: 800; color: #004482; margin-bottom: 8px;">
+                  NotebookLM公式 1枚インフォグラフィック待機中
+                </h3>
+                <p style="font-size: 13px; color: var(--text-muted); max-width: 580px; margin: 0 auto 20px; line-height: 1.6;">
+                  <code>NotebookLM_インフォグラフィック作成用ソース.md</code> をNotebookLMに投入して生成した画像を、ここに配置またはアップロードしてください。画面1枚でスッキリと商談プレゼンできます。
+                </p>
+                <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                  <label class="btn btn-primary" style="background: #005bac; border: none; font-size: 12.5px; font-weight: 700; padding: 10px 22px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                    <span>📤</span> 生成した画像（PNG/JPG）を選択
+                    <input type="file" accept="image/*" style="display: none;" onchange="uploadInfographicLocal(event)">
+                  </label>
+                  <button onclick="setInfographicMode('html')" class="btn btn-secondary" style="font-size: 12.5px; padding: 10px 18px;">
+                    📊 現行のHTML詳細構造版を見る
+                  </button>
+                </div>
+                <div style="margin-top: 18px; font-size: 11.5px; color: #64748b;">
+                  ※ <code>assets/infographic_proposal.png</code> に保存することでも自動表示されます。
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Section: HTML詳細構造版 -->
+          <div id="infographic-html-section" style="display: none;">
           <!-- Infographic Section 1: The Problem & The Solution -->
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
             <!-- Pain -->
@@ -3785,6 +3854,7 @@
               </div>
             </div>
           </div>
+          </div><!-- /#infographic-html-section -->
         </div>
       </div>
 
@@ -4359,6 +4429,14 @@
     <div style="margin-top: 20px; padding-top: 14px; border-top: 1px dashed var(--border); font-size: 11px; color: #64748b;">
       ※ 商談デモ・検証用パスコード: <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-weight: 700; color: #005bac;">tsh2026</code> または <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-weight: 700; color: #005bac;">tcc</code>
     </div>
+  </div>
+</div>
+
+<!-- Image Lightbox Modal (インフォグラフィック大画面拡大) -->
+<div id="image-lightbox-modal" class="modal-overlay" onclick="closeImageModal()">
+  <div style="max-width: 95vw; max-height: 95vh; position: relative; display: flex; flex-direction: column; align-items: center;" onclick="event.stopPropagation()">
+    <button onclick="closeImageModal()" style="position: absolute; top: -40px; right: 0; background: rgba(0,0,0,0.6); color: #fff; border: none; font-size: 24px; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">✕</button>
+    <img id="lightbox-img" src="" alt="拡大画像" style="max-width: 95vw; max-height: 90vh; object-fit: contain; border-radius: 8px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); background: #ffffff;">
   </div>
 </div>
 
@@ -5498,10 +5576,112 @@ ${desc}
     }
   }
 
+  // --- 🖼️ NotebookLM 1枚インフォグラフィック制御 ---
+  function setInfographicMode(mode) {
+    const visualSec = document.getElementById('infographic-visual-section');
+    const htmlSec = document.getElementById('infographic-html-section');
+    const btnVisual = document.getElementById('btn-mode-visual');
+    const btnHtml = document.getElementById('btn-mode-html');
+
+    if (mode === 'visual') {
+      if (visualSec) visualSec.style.display = 'block';
+      if (htmlSec) htmlSec.style.display = 'none';
+      if (btnVisual) {
+        btnVisual.style.background = '#005bac';
+        btnVisual.style.color = '#ffffff';
+      }
+      if (btnHtml) {
+        btnHtml.style.background = 'transparent';
+        btnHtml.style.color = '#64748b';
+      }
+    } else {
+      if (visualSec) visualSec.style.display = 'none';
+      if (htmlSec) htmlSec.style.display = 'block';
+      if (btnVisual) {
+        btnVisual.style.background = 'transparent';
+        btnVisual.style.color = '#64748b';
+      }
+      if (btnHtml) {
+        btnHtml.style.background = '#005bac';
+        btnHtml.style.color = '#ffffff';
+      }
+    }
+  }
+
+  function handleInfographicImgError() {
+    const container = document.getElementById('infographic-img-container');
+    const placeholder = document.getElementById('infographic-placeholder');
+    if (container) container.style.display = 'none';
+    if (placeholder) placeholder.style.display = 'block';
+  }
+
+  function showInfographicImage(src) {
+    const container = document.getElementById('infographic-img-container');
+    const placeholder = document.getElementById('infographic-placeholder');
+    const img = document.getElementById('infographic-img');
+    if (img && src) {
+      img.src = src;
+      if (container) container.style.display = 'block';
+      if (placeholder) placeholder.style.display = 'none';
+    }
+  }
+
+  function uploadInfographicLocal(e) {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(evt) {
+      const dataUrl = evt.target.result;
+      showInfographicImage(dataUrl);
+      try {
+        localStorage.setItem('swingclub_infographic_data', dataUrl);
+      } catch(err) {
+        console.warn('LocalStorage quota exceeded for image:', err);
+      }
+      showToast('✨ NotebookLMインフォグラフィック画像を反映しました！');
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function openImageModal(src) {
+    if (!src) return;
+    const modal = document.getElementById('image-lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    if (img) img.src = src;
+    if (modal) modal.classList.add('open');
+  }
+
+  function closeImageModal() {
+    const modal = document.getElementById('image-lightbox-modal');
+    if (modal) modal.classList.remove('open');
+  }
+
+  function initInfographic() {
+    // 保存済み画像があれば読み込み
+    try {
+      const saved = localStorage.getItem('swingclub_infographic_data');
+      if (saved) {
+        showInfographicImage(saved);
+        return;
+      }
+    } catch(e) {}
+
+    // assets/infographic_proposal.png の存在チェック
+    const testImg = new Image();
+    testImg.onload = function() {
+      showInfographicImage('assets/infographic_proposal.png');
+    };
+    testImg.onerror = function() {
+      handleInfographicImgError();
+    };
+    testImg.src = 'assets/infographic_proposal.png';
+  }
+
   // 初期化実行
   window.addEventListener('DOMContentLoaded', () => {
     initAppTheme();
     initAuth();
+    initInfographic();
     initSavedFaqs();
     // 30秒レスキューの初期選択を「予約・枠管理」に設定（カードが縦長に圧倒されるのを防止）
     const resBtn = document.querySelector('#category-filter-bar [data-cat="reservation"]');
