@@ -1566,17 +1566,281 @@
       font-size: 12px;
       color: #475569;
     }
+
+    /* --- 📱 Mobile Responsive Styles (スマホ・タブレット完全最適化) --- */
+    .mobile-menu-btn, .mobile-brand-title, .sidebar-close-btn, .sidebar-backdrop {
+      display: none;
+    }
+
+    @media (max-width: 992px) {
+      .app-container {
+        display: block;
+        width: 100%;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* Drawer Sidebar */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 285px;
+        max-width: 82vw;
+        height: 100vh;
+        height: 100dvh;
+        z-index: 1050;
+        background: #ffffff;
+        box-shadow: 4px 0 24px rgba(15, 23, 42, 0.18);
+        transform: translateX(-100%);
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .sidebar.open {
+        transform: translateX(0);
+      }
+      .sidebar-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.55);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        z-index: 1040;
+        display: none;
+      }
+      .sidebar-backdrop.open {
+        display: block;
+      }
+      .sidebar-close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #f8fafc;
+        color: var(--text-main);
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.15s ease;
+      }
+      .sidebar-close-btn:hover {
+        background: #fee2e2;
+        color: #ef4444;
+      }
+
+      /* Topbar Mobile */
+      .topbar {
+        padding: 0 12px;
+        height: 56px;
+        gap: 8px;
+        justify-content: space-between;
+      }
+      .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #ffffff;
+        color: var(--text-main);
+        font-size: 20px;
+        cursor: pointer;
+        flex-shrink: 0;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.15s ease;
+      }
+      .mobile-menu-btn:active {
+        background: var(--primary-soft);
+        color: var(--primary);
+      }
+      .mobile-brand-title {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13.5px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .search-box {
+        flex: 1;
+        min-width: 0;
+        width: auto;
+        max-width: 240px;
+        margin: 0;
+      }
+      .search-input {
+        padding: 6px 10px 6px 28px;
+        font-size: 12px;
+        height: 34px;
+      }
+      .search-box::before {
+        font-size: 12px;
+        left: 8px;
+        top: 8px;
+      }
+
+      /* Hide verbose desktop buttons in topbar on mobile */
+      .topbar .status-pill,
+      .topbar .version-badge {
+        display: none !important;
+      }
+      .topbar button span.btn-label-desktop {
+        display: none;
+      }
+      .topbar button {
+        padding: 6px 8px !important;
+        font-size: 12px !important;
+      }
+
+      /* Content Container */
+      .content-container {
+        padding: 14px 10px 80px;
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      /* Hero Headers Mobile */
+      .hero-banner, .cs-hero, .rescue-hero {
+        padding: 16px 14px;
+        margin-bottom: 14px;
+        border-radius: 12px;
+      }
+      .hero-banner h2, .cs-hero h2, .rescue-hero h2 {
+        font-size: 17px !important;
+        line-height: 1.35;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .hero-banner p, .cs-hero p, .rescue-hero p {
+        font-size: 12px !important;
+        line-height: 1.55;
+      }
+
+      /* Category Filter Bar Mobile: Swipeable Chips */
+      #category-filter-bar {
+        display: flex !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        flex-wrap: nowrap !important;
+        gap: 6px !important;
+        padding: 2px 2px 8px !important;
+        margin-bottom: 10px !important;
+        scrollbar-width: none !important;
+      }
+      #category-filter-bar::-webkit-scrollbar {
+        display: none;
+      }
+      #category-filter-bar .filter-btn {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        font-size: 11.5px !important;
+        padding: 6px 12px !important;
+      }
+
+      /* Rescue Card Mobile */
+      .rescue-card {
+        padding: 14px 12px !important;
+        border-radius: 12px !important;
+        margin-bottom: 12px !important;
+      }
+      .rescue-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+      }
+      .copy-btn {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+        margin-top: 8px !important;
+      }
+
+      /* Grids to Single Column on Mobile */
+      .sim-grid, .sim-grid-3, .cs-grid, .quote-grid, .memo-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+
+      /* Documents & Tables Mobile */
+      .doc-page {
+        padding: 16px 12px !important;
+        border-radius: 10px !important;
+      }
+      .player-table, table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        white-space: nowrap;
+      }
+
+      /* Floating Gemini AI Chat Widget Mobile: Fullscreen on open */
+      .chat-widget {
+        bottom: 16px;
+        right: 16px;
+      }
+      .chat-toggle-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+      }
+      .chat-window.open {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        max-height: 100dvh !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        z-index: 2000 !important;
+        border: none !important;
+      }
+
+      /* Infographic Image Mobile */
+      #infographic-img {
+        max-height: 60vh !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .topbar {
+        padding: 0 8px;
+        gap: 6px;
+      }
+      .mobile-brand-title {
+        font-size: 12px;
+      }
+      .mobile-brand-title span:last-child {
+        display: none;
+      }
+      .search-box {
+        max-width: 160px;
+      }
+      .content-container {
+        padding: 10px 8px 76px;
+      }
+    }
   </style>
 </head>
 <body>
 
 <div class="app-container">
   <!-- Sidebar -->
-  <aside class="sidebar">
+  <aside class="sidebar" id="app-sidebar">
     <div class="sidebar-header">
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-        <span class="logo-badge">TSH 公式準拠</span>
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; color: #005bac; background: #e0f2fe; padding: 1px 7px; border-radius: 4px;">v2.5.0</span>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span class="logo-badge">TSH 公式準拠</span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700; color: #005bac; background: #e0f2fe; padding: 1px 7px; border-radius: 4px;">v2.5.0</span>
+        </div>
+        <button class="sidebar-close-btn" onclick="toggleMobileSidebar()" aria-label="メニューを閉じる">✕</button>
       </div>
       <h1>SwingClub-CLOUD<br>実践ポータル</h1>
     </div>
@@ -1666,25 +1930,35 @@
       </div>
     </div>
   </aside>
+  <div class="sidebar-backdrop" id="sidebar-backdrop" onclick="toggleMobileSidebar()"></div>
 
   <!-- Main Wrapper -->
   <div class="main-wrapper">
     <header class="topbar">
-      <div class="search-box">
-        <input type="text" class="search-input" id="global-search" placeholder="業務キーワード検索（例: 同伴者, 半角カナ, 資格, 差額, 新ペリア）..." onkeyup="filterContent()">
+      <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="toggleMobileSidebar()" aria-label="ナビゲーションメニューを開く">
+          <span class="hamburger-icon">☰</span>
+        </button>
+        <div class="mobile-brand-title">
+          <span style="font-weight: 800; color: #005bac;">SwingClub</span>
+          <span style="font-size: 10px; background: #e0f2fe; color: #0284c7; padding: 1px 6px; border-radius: 9999px; font-weight: 700;">現場DX</span>
+        </div>
       </div>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <button onclick="openDesignSystemModal()" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; border: 1px solid #cbd5e1; background: #ffffff; color: var(--text-main); font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.15s ease;" title="カラーシステム・書体・テーマ着せ替え">
-          <span>🎨 デザインシステム</span>
+      <div class="search-box">
+        <input type="text" class="search-input" id="global-search" placeholder="業務キーワード検索（例: 同伴者, 枠, 差額）..." onkeyup="filterContent()">
+      </div>
+      <div class="topbar-actions" style="display: flex; align-items: center; gap: 6px; margin-left: auto;">
+        <button onclick="openDesignSystemModal()" style="display: flex; align-items: center; gap: 5px; padding: 6px 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #ffffff; color: var(--text-main); font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.15s ease;" title="カラーシステム・書体・テーマ着せ替え">
+          <span>🎨</span><span class="btn-label-desktop">デザイン</span>
         </button>
-        <button onclick="window.print()" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border); background: #ffffff; color: var(--text-main); font-size: 12px; font-weight: 600; cursor: pointer;" title="現場貼り出し用にA4で印刷">
-          <span>🖨️ A4現場印刷</span>
+        <button onclick="window.print()" style="display: flex; align-items: center; gap: 5px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--border); background: #ffffff; color: var(--text-main); font-size: 12px; font-weight: 600; cursor: pointer;" title="現場貼り出し用にA4で印刷">
+          <span>🖨️</span><span class="btn-label-desktop">印刷</span>
         </button>
-        <button onclick="openSupportMemoModal()" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; border: 1px solid #bae6fd; background: #f0f9ff; color: #0369a1; font-size: 12px; font-weight: 600; cursor: pointer;" title="TSHサポートへ連絡する際の要件メモ作成">
-          <span>📞 サポート連絡メモ</span>
+        <button onclick="openSupportMemoModal()" style="display: flex; align-items: center; gap: 5px; padding: 6px 10px; border-radius: 8px; border: 1px solid #bae6fd; background: #f0f9ff; color: #0369a1; font-size: 12px; font-weight: 600; cursor: pointer;" title="TSHサポートへ連絡する際の要件メモ作成">
+          <span>📞</span><span class="btn-label-desktop">要件メモ</span>
         </button>
-        <button onclick="switchTab('tab-cs-console')" style="display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 8px; border: 1px solid #7dd3fc; background: #f0f7ff; color: #005bac; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.15s ease;" title="CS受電メモからFAQを自動生成">
-          <span>🛠️ AI FAQ Factory</span>
+        <button onclick="switchTab('tab-cs-console')" style="display: flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 8px; border: 1px solid #7dd3fc; background: #f0f7ff; color: #005bac; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.15s ease;" title="CS受電メモからFAQを自動生成">
+          <span>🛠️</span><span class="btn-label-desktop">FAQ Factory</span>
         </button>
         <div class="status-pill">
           <span class="status-dot"></span>
@@ -4514,8 +4788,28 @@
     }
   }
 
+  // --- 📱 Mobile Sidebar Drawer Controls ---
+  function toggleMobileSidebar() {
+    const sb = document.getElementById('app-sidebar');
+    const bd = document.getElementById('sidebar-backdrop');
+    if (!sb) return;
+    const isOpen = sb.classList.toggle('open');
+    if (bd) bd.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
+  function closeMobileSidebar() {
+    const sb = document.getElementById('app-sidebar');
+    const bd = document.getElementById('sidebar-backdrop');
+    if (sb) sb.classList.remove('open');
+    if (bd) bd.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
   // Tab Switching
   function switchTab(tabId) {
+    closeMobileSidebar();
+
     const lockedTabs = ['tab-proposal', 'tab-quote-base', 'tab-quote-opt'];
     if (lockedTabs.includes(tabId) && !isGateUnlocked()) {
       openLockedTab(tabId);
