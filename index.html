@@ -10,26 +10,91 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #047857;
-      --primary-dark: #065f46;
-      --primary-light: #10b981;
-      --primary-soft: #ecfdf5;
-      --accent: #d97706;
-      --accent-soft: #fef3c7;
-      --danger: #dc2626;
+      /* ========================================================
+         SwingClub-CLOUD Design System Tokens (TSH準拠)
+         ======================================================== */
+      
+      /* --- [1] Brand & Context Themes --- */
+      /* Golf Field Standard (ゴルフ場現場向け基調: エメラルドグリーン) */
+      --brand-golf: #047857;
+      --brand-golf-dark: #065f46;
+      --brand-golf-light: #10b981;
+      --brand-golf-soft: #ecfdf5;
+
+      /* TSH Corporate Standard (TSHサポート本部・CS向け基調: TSHブルー) */
+      --brand-tsh: #005bac;
+      --brand-tsh-dark: #004280;
+      --brand-tsh-light: #0284c7;
+      --brand-tsh-soft: #f0f7ff;
+      --brand-tsh-border: #bae6fd;
+
+      /* Executive Slate Standard (高級ホテル・名門コース向け) */
+      --brand-slate: #334155;
+      --brand-slate-dark: #1e293b;
+      --brand-slate-light: #64748b;
+      --brand-slate-soft: #f1f5f9;
+
+      /* Active Primary Theme (初期値: Golf Green) */
+      --primary: var(--brand-golf);
+      --primary-dark: var(--brand-golf-dark);
+      --primary-light: var(--brand-golf-light);
+      --primary-soft: var(--brand-golf-soft);
+
+      /* --- [2] Semantic State Tokens (機能・心理状態の定義) --- */
+      --rescue-alert: #ea580c;       /* 現場レスキュー・注意喚起（オレンジ） */
+      --rescue-alert-soft: #fff7ed;
+      --danger: #dc2626;             /* 物理安全制限・絶対禁止（レッド） */
       --danger-soft: #fee2e2;
-      --blue: #2563eb;
-      --blue-soft: #eff6ff;
+      --warning: #d97706;            /* 法令・税務監査注意（アンバーゴールド） */
+      --warning-soft: #fef3c7;
+      --success: #16a34a;            /* 正常処理・30秒安全手順（グリーン） */
+      --success-soft: #f0fdf4;
+      --info: #0284c7;               /* システム仕様・通知（TSHシアンブルー） */
+      --info-soft: #f0f9ff;
+      --ai-purple: #7c3aed;          /* AI・NotebookLM連携（バイオレット） */
+      --ai-purple-soft: #f5f3ff;
+
+      /* --- [3] Module Identity Palette (7大業務の色分け) --- */
+      --mod-reservation: #059669;   /* 01 予約: Emerald */
+      --mod-front: #0284c7;         /* 02 フロント: Sky Blue */
+      --mod-master: #15803d;        /* 03 マスター室: Course Green */
+      --mod-restaurant: #d97706;    /* 04 レストラン: Amber */
+      --mod-compe: #2563eb;         /* 05 コンペ: Royal Blue */
+      --mod-member: #475569;        /* 06 会員管理: Slate */
+      --mod-closing: #0f172a;       /* 07 経理日締め: Midnight */
+
+      /* --- [4] Neutrals & Base --- */
       --text-main: #0f172a;
       --text-muted: #475569;
+      --text-light: #94a3b8;
       --bg-body: #f8fafc;
       --bg-card: #ffffff;
       --border: #e2e8f0;
       --border-dark: #cbd5e1;
+
+      /* --- [5] Geometry & Elevation --- */
+      --radius-sm: 6px;
       --radius: 12px;
+      --radius-lg: 16px;
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    }
+
+    /* Theme Presets: TSH Corporate Blue */
+    [data-theme="tsh"] {
+      --primary: var(--brand-tsh);
+      --primary-dark: var(--brand-tsh-dark);
+      --primary-light: var(--brand-tsh-light);
+      --primary-soft: var(--brand-tsh-soft);
+    }
+
+    /* Theme Presets: Executive Slate */
+    [data-theme="slate"] {
+      --primary: var(--brand-slate);
+      --primary-dark: var(--brand-slate-dark);
+      --primary-light: var(--brand-slate-light);
+      --primary-soft: var(--brand-slate-soft);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -496,6 +561,54 @@
     }
     .modal-card h3 { font-size: 18px; margin-bottom: 12px; }
 
+    /* Design System Modal Styles */
+    .ds-modal-card {
+      background: #ffffff;
+      border-radius: 16px;
+      width: 760px;
+      max-width: 95%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+    }
+    .theme-picker-btn {
+      flex: 1;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 2px solid var(--border);
+      background: #ffffff;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .theme-picker-btn:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .theme-picker-btn.active {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+    }
+    .color-swatch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .color-swatch-item {
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
     /* Extinguisher (FAQ Red vs Blue) Styles */
     /* 30-Second Field Rescue Styles */
     .nav-rescue {
@@ -902,9 +1015,9 @@
       opacity: 1;
     }
 
-    /* CS Console (AI FAQ Factory) Styles */
+    /* CS Console (AI FAQ Factory) Styles - TSH Corporate Design System */
     .cs-hero {
-      background: linear-gradient(135deg, #4c1d95 0%, #1e1b4b 100%);
+      background: linear-gradient(135deg, #004280 0%, #005bac 60%, #0284c7 100%);
       color: #ffffff;
       border-radius: var(--radius);
       padding: 28px 32px;
@@ -938,7 +1051,11 @@
       margin-bottom: 6px;
       transition: all 0.15s ease;
     }
-    .sample-pill:hover { background: #ede9fe; color: #6d28d9; border-color: #c4b5fd; }
+    .sample-pill:hover {
+      background: var(--brand-tsh-soft);
+      color: var(--brand-tsh);
+      border-color: var(--brand-tsh-border);
+    }
 
     @keyframes pulseHighlight {
       0% { box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7); transform: scale(1); }
@@ -1261,12 +1378,12 @@
         <span class="nav-badge" style="background: #ede9fe; color: #6d28d9; font-weight: 700;">一時金OP</span>
       </a>
 
-      <div class="nav-group-title" style="color: #6d28d9; display: flex; align-items: center; gap: 4px; margin-top: 12px;">
-        <span>🛠️ TSHサポート本部</span>
+      <div class="nav-group-title" style="color: #005bac; display: flex; align-items: center; gap: 4px; margin-top: 12px;">
+        <span>🛡️ TSH公式サポート本部</span>
       </div>
-      <a class="nav-item" id="nav-item-cs" onclick="switchTab('tab-cs-console')" style="background: #faf5ff; color: #6d28d9; border: 1px dashed #c4b5fd;">
+      <a class="nav-item" id="nav-item-cs" onclick="switchTab('tab-cs-console')" style="background: #f0f7ff; color: #005bac; border: 1px dashed #7dd3fc;">
         <span>🪄 AI FAQ Factory</span>
-        <span class="nav-badge" style="background: #ede9fe; color: #6d28d9; font-weight: 700;">CS専用</span>
+        <span class="nav-badge" style="background: #e0f2fe; color: #0284c7; font-weight: 700; border: 1px solid #bae6fd;">TSH公式</span>
       </a>
     </nav>
   </aside>
@@ -1277,14 +1394,17 @@
       <div class="search-box">
         <input type="text" class="search-input" id="global-search" placeholder="業務キーワード検索（例: 同伴者, 半角カナ, 資格, 差額, 新ペリア）..." onkeyup="filterContent()">
       </div>
-      <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <button onclick="openDesignSystemModal()" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; border: 1px solid #cbd5e1; background: #ffffff; color: var(--text-main); font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.15s ease;" title="カラーシステム・書体・テーマ着せ替え">
+          <span>🎨 デザインシステム</span>
+        </button>
         <button onclick="window.print()" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; border: 1px solid var(--border); background: #ffffff; color: var(--text-main); font-size: 12px; font-weight: 600; cursor: pointer;" title="現場貼り出し用にA4で印刷">
           <span>🖨️ A4現場印刷</span>
         </button>
         <button onclick="openSupportMemoModal()" style="display: flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 8px; border: 1px solid #bae6fd; background: #f0f9ff; color: #0369a1; font-size: 12px; font-weight: 600; cursor: pointer;" title="TSHサポートへ連絡する際の要件メモ作成">
           <span>📞 サポート連絡メモ</span>
         </button>
-        <button onclick="switchTab('tab-cs-console')" style="display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 8px; border: 1px solid #c4b5fd; background: #faf5ff; color: #6d28d9; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.15s ease;" title="CS受電メモからFAQを自動生成">
+        <button onclick="switchTab('tab-cs-console')" style="display: flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 8px; border: 1px solid #7dd3fc; background: #f0f7ff; color: #005bac; font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.15s ease;" title="CS受電メモからFAQを自動生成">
           <span>🛠️ AI FAQ Factory</span>
         </button>
         <div class="status-pill">
@@ -3194,8 +3314,8 @@
           <div class="card" style="display: flex; flex-direction: column; gap: 16px;">
             <div>
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-                <h3 style="font-size: 16px; font-weight: 700; color: #4c1d95;">【STEP 1】受電メモ・現場の質問を入力</h3>
-                <span style="font-size: 11px; background: #ede9fe; color: #6d28d9; padding: 2px 8px; border-radius: 4px; font-weight: 700;">CSオペレーター用</span>
+                <h3 style="font-size: 16px; font-weight: 700; color: #004482;">【STEP 1】受電メモ・現場の質問を入力</h3>
+                <span style="font-size: 11px; background: #e0f2fe; color: #0284c7; padding: 2px 8px; border-radius: 4px; font-weight: 700; border: 1px solid #bae6fd;">TSHサポート専用</span>
               </div>
               <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.5;">
                 ゴルフ場のフロントや予約担当者から受電した際のメモをそのまま貼り付けるか、下のクイックサンプルをクリックしてください。
@@ -3233,24 +3353,24 @@
               <textarea id="cs-input-memo" rows="6" style="width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px; line-height: 1.6; font-family: inherit; resize: vertical;" placeholder="例: 楽天GORAから予約が入ったが、SwingClubの予約画面のスタート時間が1組分ズレていると電話があった。手動で直していいか？"></textarea>
             </div>
 
-            <button type="button" class="btn btn-primary" onclick="generateFaqFromAi()" style="background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%); border: none; padding: 12px 20px; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.3); cursor: pointer;">
+            <button type="button" class="btn btn-primary" onclick="generateFaqFromAi()" style="background: linear-gradient(135deg, #005bac 0%, #0284c7 100%); border: none; padding: 12px 20px; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 6px -1px rgba(0, 91, 172, 0.3); cursor: pointer;">
               <span>🪄 Gemini AIでレスキューカードを自動構造化する</span>
             </button>
           </div>
 
           <!-- Right Column: AI Structured Preview & Publish -->
-          <div class="card" style="display: flex; flex-direction: column; gap: 16px; background: #fdfaff; border: 1px solid #ddd6fe;">
-            <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ede9fe; padding-bottom: 10px;">
-              <h3 style="font-size: 16px; font-weight: 700; color: #4c1d95; display: flex; align-items: center; gap: 6px;">
+          <div class="card" style="display: flex; flex-direction: column; gap: 16px; background: #f0f7ff; border: 1px solid #bae6fd;">
+            <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #bae6fd; padding-bottom: 10px;">
+              <h3 style="font-size: 16px; font-weight: 700; color: #004482; display: flex; align-items: center; gap: 6px;">
                 <span>⚡</span> 【STEP 2】Gemini AI 構造化プレビュー
               </h3>
-              <span id="cs-ai-status" style="font-size: 11px; background: #ede9fe; color: #6d28d9; padding: 3px 8px; border-radius: 9999px; font-weight: 700;">待機中</span>
+              <span id="cs-ai-status" style="font-size: 11px; background: #e0f2fe; color: #0284c7; padding: 3px 8px; border-radius: 9999px; font-weight: 700; border: 1px solid #bae6fd;">待機中</span>
             </div>
 
             <!-- Preview Card Area -->
-            <div id="cs-preview-area" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 280px; text-align: center; color: var(--text-muted); border: 2px dashed #c4b5fd; border-radius: 12px; padding: 20px; background: #ffffff;">
+            <div id="cs-preview-area" style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 280px; text-align: center; color: var(--text-muted); border: 2px dashed #7dd3fc; border-radius: 12px; padding: 20px; background: #ffffff;">
               <div style="font-size: 36px; margin-bottom: 8px;">🪄</div>
-              <div style="font-weight: 700; font-size: 14px; color: #4c1d95; margin-bottom: 4px;">受電メモを入力して自動生成を実行してください</div>
+              <div style="font-weight: 700; font-size: 14px; color: #005bac; margin-bottom: 4px;">受電メモを入力して自動生成を実行してください</div>
               <div style="font-size: 12px; max-width: 320px; line-height: 1.5;">Geminiが「現場の困りごと」「安全理由」「30秒安全手順」を自動抽出してここにプレビュー表示します。</div>
             </div>
 
@@ -3354,6 +3474,177 @@
       <button class="btn btn-primary" onclick="copySupportMemo()" style="background: #0284c7; border: none;">
         📋 サポート報告テキストをコピー
       </button>
+    </div>
+  </div>
+</div>
+
+<!-- Design System Modal (デザインシステム ＆ テーマ設定) -->
+<div id="design-system-modal" class="modal-overlay">
+  <div class="ds-modal-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+      <h3 style="margin: 0; padding: 0; border: none; font-size: 18px; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+        <span>🎨</span> SwingClub-CLOUD デザインシステム ＆ テーマ設定
+      </h3>
+      <button onclick="closeDesignSystemModal()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: var(--text-muted);">✕</button>
+    </div>
+
+    <!-- Section 1: Real-time Theme Switcher -->
+    <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 20px;">
+      <div style="font-size: 13.5px; font-weight: 700; color: var(--text-main); margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+        <span>🪄</span> 【リアルタイム テーマ切り替え】（ワンクリックで全体着せ替え）
+      </div>
+      <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">
+        プレゼン時やコースごとのOEM要件に合わせて、ボタン1つで画面全体のトーン＆マナーが即座に切り替わります（自動保存）。
+      </p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <button type="button" class="theme-picker-btn active" id="theme-btn-golf" onclick="setAppTheme('golf')">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="width: 14px; height: 14px; border-radius: 50%; background: #047857; display: inline-block;"></span>
+            <strong style="font-size: 13px; color: #065f46;">Golf Forest（標準）</strong>
+          </div>
+          <span style="font-size: 11px; color: var(--text-muted);">ゴルフ場現場向け・親しみやすいエメラルドグリーン</span>
+        </button>
+
+        <button type="button" class="theme-picker-btn" id="theme-btn-tsh" onclick="setAppTheme('tsh')">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="width: 14px; height: 14px; border-radius: 50%; background: #005bac; display: inline-block;"></span>
+            <strong style="font-size: 13px; color: #004482;">TSH Corporate Blue</strong>
+          </div>
+          <span style="font-size: 11px; color: var(--text-muted);">東京システムハウス公式・信頼と先進のブルー</span>
+        </button>
+
+        <button type="button" class="theme-picker-btn" id="theme-btn-slate" onclick="setAppTheme('slate')">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="width: 14px; height: 14px; border-radius: 50%; background: #334155; display: inline-block;"></span>
+            <strong style="font-size: 13px; color: #1e293b;">Executive Slate</strong>
+          </div>
+          <span style="font-size: 11px; color: var(--text-muted);">名門倶楽部・リゾートホテル向け重厚スレート</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Section 2: UI Architecture Rule -->
+    <div style="border-left: 4px solid #005bac; background: #f0f7ff; padding: 12px 16px; border-radius: 8px; margin-bottom: 20px; font-size: 12.5px; line-height: 1.6;">
+      <strong style="color: #004482; display: block; margin-bottom: 2px;">🛡️ TSHサポート本部 と ゴルフ場現場 のデザイン分離原則:</strong>
+      <span style="color: #334155;">
+        ・<strong>ゴルフ場現場画面:</strong> 毎日使うスタッフの視覚疲労を軽減し、親しみやすい「Golf Forest Green（#047857）」基調。<br>
+        ・<strong>TSHサポート本部画面（CSコンソール）:</strong> 東京システムハウスのCIである「TSH Corporate Blue（#005bac）」を主軸に据え、プロフェッショナルなITインフラとしての信頼性を表現。
+      </span>
+    </div>
+
+    <!-- Section 3: Semantic Tokens Table -->
+    <div style="margin-bottom: 20px;">
+      <div style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 8px;">
+        📐 セマンティック・カラーシステム（色の意味と心理的役割）
+      </div>
+      <table class="player-table" style="font-size: 12px; margin-bottom: 0;">
+        <thead>
+          <tr>
+            <th style="width: 140px;">役割（トークン）</th>
+            <th style="width: 130px;">カラー</th>
+            <th>意味・現場での用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>--primary</code></td>
+            <td><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: var(--primary);"></span>ブランド基調色</span></td>
+            <td>ナビゲーション、主要アクションボタン、見出しアクセント</td>
+          </tr>
+          <tr>
+            <td><code>--brand-tsh</code></td>
+            <td><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #005bac;"></span>#005bac</span></td>
+            <td>TSH公式サポート本部、CS専用コンソール、公式バッジ</td>
+          </tr>
+          <tr>
+            <td><code>--rescue-alert</code></td>
+            <td><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #ea580c;"></span>#ea580c</span></td>
+            <td>現場レスキュー、お困りごと喚起、注意フラグ</td>
+          </tr>
+          <tr>
+            <td><code>--danger</code></td>
+            <td><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #dc2626;"></span>#dc2626</span></td>
+            <td>物理安全制限、二重決済防止、禁止NG操作アラート</td>
+          </tr>
+          <tr>
+            <td><code>--warning</code></td>
+            <td><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #d97706;"></span>#d97706</span></td>
+            <td>法令・税務監査注意（電帳法、利用税免税、インボイス）</td>
+          </tr>
+          <tr>
+            <td><code>--success</code></td>
+            <td><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #16a34a;"></span>#16a34a</span></td>
+            <td>正常処理完了、安全な30秒ワークアラウンド手順</td>
+          </tr>
+          <tr>
+            <td><code>--ai-purple</code></td>
+            <td><span style="display: inline-flex; align-items: center; gap: 6px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: #7c3aed;"></span>#7c3aed</span></td>
+            <td>専用AIアシスタント、NotebookLM、自律生成エンジン</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Section 4: Module Palette -->
+    <div style="margin-bottom: 20px;">
+      <div style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">
+        ⛳ 全7大業務 モジュールカラーシステム
+      </div>
+      <div class="color-swatch-grid">
+        <div class="color-swatch-item" style="background: #ecfdf5; border-color: #a7f3d0;">
+          <strong style="color: #059669;">01. 予約受付</strong>
+          <span style="color: #065f46;">Emerald Green</span>
+        </div>
+        <div class="color-swatch-item" style="background: #f0f9ff; border-color: #bae6fd;">
+          <strong style="color: #0284c7;">02. フロント</strong>
+          <span style="color: #0369a1;">Sky Blue</span>
+        </div>
+        <div class="color-swatch-item" style="background: #f0fdf4; border-color: #bbf7d0;">
+          <strong style="color: #15803d;">03. マスター室</strong>
+          <span style="color: #166534;">Course Green</span>
+        </div>
+        <div class="color-swatch-item" style="background: #fffbeb; border-color: #fde68a;">
+          <strong style="color: #d97706;">04. レストラン</strong>
+          <span style="color: #92400e;">Amber Gold</span>
+        </div>
+        <div class="color-swatch-item" style="background: #eff6ff; border-color: #bfdbfe;">
+          <strong style="color: #2563eb;">05. コンペ集計</strong>
+          <span style="color: #1e40af;">Royal Blue</span>
+        </div>
+        <div class="color-swatch-item" style="background: #f8fafc; border-color: #cbd5e1;">
+          <strong style="color: #475569;">06. 会員管理</strong>
+          <span style="color: #334155;">Slate Charcoal</span>
+        </div>
+        <div class="color-swatch-item" style="background: #f1f5f9; border-color: #94a3b8;">
+          <strong style="color: #0f172a;">07. 経理日締め</strong>
+          <span style="color: #0f172a;">Midnight Navy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: Typography -->
+    <div style="background: #f8fafc; border-radius: 8px; padding: 14px 16px; border: 1px solid var(--border);">
+      <div style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 6px;">
+        🔤 タイポグラフィ規律（3大Webフォント連携）
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; font-size: 12px; color: var(--text-muted);">
+        <div>
+          <strong style="color: var(--text-main); display: block;">Noto Sans JP（和文）</strong>
+          現場スタッフ・年配者でも視認性に優れたユニバーサルゴシック
+        </div>
+        <div>
+          <strong style="color: var(--text-main); display: block;">Inter（欧文・UI）</strong>
+          デジタルプロダクト標準の幾何学・高密度UIフォント
+        </div>
+        <div>
+          <strong style="color: var(--text-main); display: block;">JetBrains Mono（等幅）</strong>
+          金額、時刻、会員番号、コードが縦にズレない精密フォント
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: right; margin-top: 18px;">
+      <button class="btn btn-secondary" onclick="closeDesignSystemModal()">閉じる</button>
     </div>
   </div>
 </div>
@@ -3699,6 +3990,54 @@
 
   function closeSupportMemoModal() {
     document.getElementById('support-memo-modal').classList.remove('active');
+  }
+
+  // --- デザインシステムモーダル ＆ テーマ切り替え操作 ---
+  function openDesignSystemModal() {
+    const modal = document.getElementById('design-system-modal');
+    if (modal) modal.classList.add('open');
+  }
+
+  function closeDesignSystemModal() {
+    const modal = document.getElementById('design-system-modal');
+    if (modal) modal.classList.remove('open');
+  }
+
+  function setAppTheme(theme) {
+    if (theme === 'golf') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', theme);
+    }
+    try {
+      localStorage.setItem('swingclub_theme', theme);
+    } catch(e) {}
+
+    // ボタンのactive表示更新
+    document.querySelectorAll('.theme-picker-btn').forEach(b => b.classList.remove('active'));
+    const targetBtn = document.getElementById('theme-btn-' + theme);
+    if (targetBtn) targetBtn.classList.add('active');
+
+    const names = {
+      golf: 'Golf Forest（ゴルフ場エメラルド）',
+      tsh: 'TSH Corporate Blue（東京システムハウス公式ブルー）',
+      slate: 'Executive Slate（エグゼクティブスレート）'
+    };
+    showToast(`🎨 テーマを「${names[theme] || theme}」に切り替えました！`);
+  }
+
+  function initAppTheme() {
+    try {
+      const savedTheme = localStorage.getItem('swingclub_theme') || 'golf';
+      if (savedTheme === 'golf') {
+        document.documentElement.removeAttribute('data-theme');
+      } else {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      }
+      document.querySelectorAll('.theme-picker-btn').forEach(b => b.classList.remove('active'));
+      const targetBtn = document.getElementById('theme-btn-' + savedTheme);
+      if (targetBtn) targetBtn.classList.add('active');
+    } catch(e) {}
   }
 
   function copySupportMemo() {
@@ -4344,6 +4683,7 @@ ${desc}
 
   // 初期化実行
   window.addEventListener('DOMContentLoaded', () => {
+    initAppTheme();
     initSavedFaqs();
     // 30秒レスキューの初期選択を「予約・枠管理」に設定（カードが縦長に圧倒されるのを防止）
     const resBtn = document.querySelector('#category-filter-bar [data-cat="reservation"]');
